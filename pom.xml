@@ -27,8 +27,21 @@
             <version>2.0.0</version>
         </dependency>
         
+        <dependency>
+            <groupId>org.ini4j</groupId>
+            <artifactId>ini4j</artifactId>
+            <version>0.5.4</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.6.0</version>
+        </dependency>
+        
     </dependencies>
     <build>
+        <finalName>VEC</finalName>
         <resources>
             <resource>
                 <directory>
@@ -36,11 +49,20 @@
                 </directory>
                 <filtering>false</filtering>
             </resource>
+            <resource>
+                <directory>
+                    ./
+                </directory>
+                <includes>
+                    <include>DatabaseConnection.ini</include>
+                </includes>
+            </resource>
         </resources>
         <plugins>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.5.0</version>
+                <!--
                 <dependencies>
                     <dependency>
                         <groupId>org.openjfx</groupId>
@@ -60,6 +82,7 @@
                     </dependency>
                     
                 </dependencies>
+                -->
                 
                 <executions>
                     <execution>
