@@ -49,14 +49,6 @@
                 </directory>
                 <filtering>false</filtering>
             </resource>
-            <resource>
-                <directory>
-                    ./
-                </directory>
-                <includes>
-                    <include>DatabaseConnection.ini</include>
-                </includes>
-            </resource>
         </resources>
         <plugins>
             <plugin>
@@ -94,9 +86,11 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <outputDirectory>./</outputDirectory>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
+                    <appendAssemblyId>false</appendAssemblyId>
                     <archive>
                         <manifest>
                             <mainClass>com.jp.visao.Run</mainClass>
@@ -104,17 +98,24 @@
                     </archive>
                 </configuration>
             </plugin>
+             
             
-            <!--
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
                 <configuration>
                     <release>17</release>
                 </configuration>
-            </plugin> 
-            -->
+                <executions>
+                    <execution>
+                        <id>default-jar</id>
+                        <!-- put the default-jar in the none phase to skip it from being created -->
+                        <phase>none</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            
             
             <plugin>
                 <groupId>org.openjfx</groupId>
