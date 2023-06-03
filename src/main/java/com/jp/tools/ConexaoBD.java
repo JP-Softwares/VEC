@@ -27,7 +27,7 @@ public class ConexaoBD {
                 Class.forName(driver);
                 conexao = DriverManager.getConnection(url, user, password);
             }               
-          }
+        }
         catch(ClassNotFoundException erro){
             //Erro de não encontrar o drive do banco no projeto
             throw new Exception("Drive: "+erro.getMessage());

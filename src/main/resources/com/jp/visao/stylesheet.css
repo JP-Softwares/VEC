@@ -1,0 +1,26 @@
+BorderPane{
+    -fx-background-color: #2a2727;
+}
+ToolBar{
+    -fx-background-color: #2a2727;
+}
+
+#closeButton{
+    -fx-background-color: ToolBar;
+    -fx-text-fill: #fff;
+}
+
+
+#maximizeButton{
+    -fx-background-color: ToolBar;
+    -fx-text-fill: #fff;
+}
+
+#minimizeButton{
+    -fx-background-color: ToolBar;
+    -fx-text-fill: #fff;
+}
+
+#hboxLeft{
+    -fx-background-color: #1c1a1a;
+}

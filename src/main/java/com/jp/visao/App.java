@@ -1,11 +1,13 @@
 package com.jp.visao;
 
+import atlantafx.base.theme.PrimerDark;
 import atlantafx.base.theme.PrimerLight;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -18,8 +20,9 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        Application.setUserAgentStylesheet(new PrimerLight().getUserAgentStylesheet());
-        scene = new Scene(loadFXML("primary"), 640, 480);
+        stage.initStyle(StageStyle.UNDECORATED);
+        Application.setUserAgentStylesheet(new PrimerDark().getUserAgentStylesheet());
+        scene = new Scene(loadFXML("TelaPrincipal"));
         stage.setScene(scene);
         stage.show();
     }
