@@ -2,34 +2,23 @@
 <launch4jConfig>
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
-  <jar>C:\Users\aluno\Desktop\VEC\VEC.jar</jar>
-  <outfile>C:\Users\aluno\Desktop\VEC\VEC.exe</outfile>
+  <jar>C:\Users\Woly\Desktop\VEC\VEC.jar</jar>
+  <outfile>C:\Users\Woly\Desktop\VEC.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
   <priority>normal</priority>
-  <downloadUrl></downloadUrl>
+  <downloadUrl>http://java.com/download</downloadUrl>
   <supportUrl></supportUrl>
   <stayAlive>false</stayAlive>
   <restartOnCrash>false</restartOnCrash>
   <manifest></manifest>
   <icon></icon>
-  <singleInstance>
-    <mutexName>VEC</mutexName>
-    <windowTitle></windowTitle>
-  </singleInstance>
   <jre>
-    <path>%JAVA_HOME%;%PATH%</path>
-    <requiresJdk>false</requiresJdk>
+    <path>.\jre</path>
+    <requiresJdk>true</requiresJdk>
     <requires64Bit>true</requires64Bit>
-    <minVersion>17</minVersion>
+    <minVersion></minVersion>
     <maxVersion></maxVersion>
   </jre>
-  <messages>
-    <startupErr>An error occurred while starting the application.</startupErr>
-    <jreNotFoundErr>This application requires a Java Runtime Environment.</jreNotFoundErr>
-    <jreVersionErr>This application requires a Java Runtime Environment</jreVersionErr>
-    <launcherErr>The registry refers to a nonexistent Java Runtime Environment installation or the runtime is corrupted.</launcherErr>
-    <instanceAlreadyExistsMsg>An application instance is already running.</instanceAlreadyExistsMsg>
-  </messages>
 </launch4jConfig>
