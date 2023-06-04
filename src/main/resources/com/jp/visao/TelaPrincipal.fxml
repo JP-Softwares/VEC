@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="502.0" prefWidth="962.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jp.visao.TelaPrincipal">
+   <center>
+      <Pane id="centerPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
    <left>
       <HBox id="hboxLeft" prefHeight="400.0" prefWidth="173.0" BorderPane.alignment="CENTER">
          <effect>
@@ -14,15 +24,45 @@
          </effect></HBox>
    </left>
    <top>
-      <ToolBar fx:id="barraDeTitulo" nodeOrientation="RIGHT_TO_LEFT" prefHeight="32.0" prefWidth="962.0" BorderPane.alignment="CENTER">
-        <items>
-          <Button id="closeButton" fx:id="closeButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="39.0" text="❌" textAlignment="CENTER" />
-            <Button id="maximizeButton" mnemonicParsing="false" text="⬜" />
-            <Button id="minimizeButton" mnemonicParsing="false" text="➖" />
-        </items>
+      <BorderPane id="titlebar" fx:id="barraDeTitulo" prefHeight="40.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+         <right>
+            <FlowPane prefHeight="40.0" prefWidth="135.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button id="minimizeButton" fx:id="minimizeButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" text="—" />
+                  <Button id="maximizeButton" fx:id="maximizeButton" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0">
+                     <graphic>
+                        <Pane prefHeight="13.0" prefWidth="13.0">
+                           <children>
+                              <Rectangle fx:id="maximizedRectangle" fill="DODGERBLUE" height="10.0" layoutX="13.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" styleClass="maximizeRectangle" visible="false" width="10.0" />
+                              <Rectangle fill="DODGERBLUE" height="10.0" layoutX="10.0" layoutY="13.0" stroke="BLACK" strokeType="INSIDE" styleClass="maximizeRectangle" width="10.0" />
+                           </children>
+                        </Pane>
+                     </graphic>
+                  </Button>
+                <Button id="closeButton" fx:id="closeButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" text="✕" textAlignment="CENTER">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+               </children>
+            </FlowPane>
+         </right>
+         <left>
+            <ImageView id="logoVEC" fx:id="logoVEC" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 10;" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@../icones/logo.png" />
+               </image>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </ImageView>
+         </left>
          <effect>
-            <DropShadow blurType="GAUSSIAN" height="10.0" radius="7.25" />
+            <DropShadow height="15.0" radius="7.0" width="15.0" />
          </effect>
-      </ToolBar>
+         <center>
+            <Label id="nomeVECTitlebar" alignment="CENTER" text="VEC" textFill="WHITE" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
    </top>
 </BorderPane>

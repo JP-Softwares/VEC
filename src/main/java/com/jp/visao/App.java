@@ -4,8 +4,11 @@ import atlantafx.base.theme.PrimerDark;
 import atlantafx.base.theme.PrimerLight;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.Region;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -16,15 +19,20 @@ import java.io.IOException;
  */
 public class App extends Application {
 
-    private static Scene scene;
+    public static Scene scene;
+    public Stage stage;
 
     @Override
     public void start(Stage stage) throws IOException {
-        stage.initStyle(StageStyle.UNDECORATED);
+        Run.app = this;
+        stage.initStyle(StageStyle.TRANSPARENT);
         Application.setUserAgentStylesheet(new PrimerDark().getUserAgentStylesheet());
         scene = new Scene(loadFXML("TelaPrincipal"));
+        scene.setFill(Color.TRANSPARENT);
+        ((Region) scene.getRoot()).setPadding(new Insets(20,20,20,20));
         stage.setScene(scene);
         stage.show();
+        this.stage = stage;
     }
 
     static void setRoot(String fxml) throws IOException {

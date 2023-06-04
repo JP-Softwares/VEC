@@ -9,7 +9,8 @@ package com.jp.visao;
  * @author Woly
  */
 public class Run {
-    
+
+    public static App app;
     public static void main(String[] args){
         App.main(args);
     }
