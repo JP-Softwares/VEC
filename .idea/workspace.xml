@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3627a75b-168e-4c6c-a924-a9d103931eae" name="Changes" comment="retirei o segundo modelo de fxml e já configurei algumas coisas da tela.">
-      <change beforePath="$PROJECT_DIR$/VEC.jar" beforeDir="false" afterPath="$PROJECT_DIR$/VEC.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configlaunch4j.xml" beforeDir="false" afterPath="$PROJECT_DIR$/configlaunch4j.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/visao/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/visao/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/visao/Run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/visao/Run.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaPrincipal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/stylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +20,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Geydson &lt;geydson87@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -94,7 +90,7 @@
       <workItem from="1685800511241" duration="287000" />
       <workItem from="1685800912311" duration="7349000" />
       <workItem from="1685811732941" duration="23246000" />
-      <workItem from="1685888337251" duration="10164000" />
+      <workItem from="1685888337251" duration="10834000" />
     </task>
     <task id="LOCAL-00001" summary="testing in intellij">
       <created>1685770058727</created>
@@ -110,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685808371912</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="retirei o segundo modelo de fxml e já configurei algumas coisas da tela.">
+      <created>1685908393546</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685908393546</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
