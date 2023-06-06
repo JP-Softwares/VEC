@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3627a75b-168e-4c6c-a924-a9d103931eae" name="Changes" comment="retirei o segundo modelo de fxml e já configurei algumas coisas da tela.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaPrincipal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/stylesheet.css" afterDir="false" />
-    </list>
+    <list default="true" id="3627a75b-168e-4c6c-a924-a9d103931eae" name="Changes" comment="retirei o segundo modelo de fxml e já configurei algumas coisas da tela." />
     <list id="4664a3a3-92ef-4437-ad8d-5180be13ee4f" name="Changes by aluno" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +52,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/SceneBuilder/SceneBuilder.exe",
+    "last_opened_file_path": "C:/Users/aluno/Documents/KYS/VEC",
     "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -100,6 +96,7 @@
       <workItem from="1685888337251" duration="10834000" />
       <workItem from="1686002925555" duration="4619000" />
       <workItem from="1686007582928" duration="762000" />
+      <workItem from="1686019884158" duration="2466000" />
     </task>
     <task id="LOCAL-00001" summary="testing in intellij">
       <created>1685770058727</created>
