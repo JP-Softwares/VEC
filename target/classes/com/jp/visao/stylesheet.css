@@ -3,10 +3,30 @@
     -fx-background-insets: 20;
     /*-grayColor: #2a2727;*/
     -titlebarColor: #2B2D30;
+    -lateralColor: #1c1a1a;
 }
 
 #hboxLeft{
-    -fx-background-color: #1c1a1a;
+    -fx-background-color: -lateralColor;
+}
+
+.lateralButtons{
+    -fx-background-color: -lateralColor;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-border-width: 0;
+}
+
+.lateralMenu{
+    -fx-stroke-width: 2;
+    -fx-stroke: #fff;
+    -fx-translate-x: -3;
+}
+
+
+.lateralButtons:hover{
+    -fx-background-color: #3e3939;
+    -fx-cursor: hand;
 }
 
 
@@ -20,6 +40,7 @@
     -fx-font-family: "Century Gothic";
     -fx-font-size: 2em;
     -fx-font-weight: bold;
+    -fx-translate-x: 75;
 }
 
 #titlebar, #closeButton, #maximizeButton, #minimizeButton, #centerPane {

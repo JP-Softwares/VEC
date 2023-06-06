@@ -1,6 +1,9 @@
 package com.jp.visao;
 
+//import javafx.animation.ScaleTransition;
+import javafx.animation.*;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -8,12 +11,11 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.control.Button;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Region;
+import javafx.scene.layout.*;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.awt.*;
 import java.net.URL;
@@ -39,7 +41,38 @@ public class TelaPrincipal implements Initializable{
     @FXML
     private Rectangle maximizedRectangle;
 
+    @FXML
+    private Pane hboxLeft;
+
+    private boolean lateralMenuOpen = false;
+
     private double x, y;
+
+    Timeline transicao = null;
+
+    @FXML
+    void lateralMenu(ActionEvent event) {
+        if(!lateralMenuOpen){
+            transicao = new Timeline(
+                    //new KeyFrame(Duration.seconds(0.2), new KeyValue(hboxLeft.translateXProperty(), 30, Interpolator.LINEAR)),
+                    new KeyFrame(Duration.seconds(0.2), new KeyValue(hboxLeft.prefWidthProperty(), hboxLeft.getWidth() * 5, Interpolator.EASE_BOTH))
+            );
+
+            transicao.play();
+            lateralMenuOpen = true;
+
+            return;
+        }
+
+
+        transicao = new Timeline(
+                //new KeyFrame(Duration.seconds(0.2), new KeyValue(hboxLeft.translateXProperty(), 30, Interpolator.LINEAR)),
+                new KeyFrame(Duration.seconds(0.2), new KeyValue(hboxLeft.prefWidthProperty(), hboxLeft.getWidth() / 5, Interpolator.EASE_BOTH))
+        );
+
+        transicao.play();
+        lateralMenuOpen = false;
+    }
 
     private void setMaximized(boolean maximize){
         Stage stage = Run.app.stage;
@@ -66,6 +99,7 @@ public class TelaPrincipal implements Initializable{
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //Run.app.scene.getRoot().getLayout
         // Movimentação da barra de título da janela
+
         barraDeTitulo.setOnMousePressed(mouseEvent -> {
             x = mouseEvent.getSceneX();
             y = mouseEvent.getSceneY();

@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1435.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jp.visao.TelaPrincipal">
@@ -18,10 +19,28 @@
       <Pane id="centerPane" prefHeight="200.0" prefWidth="1205.0" BorderPane.alignment="CENTER" />
    </center>
    <left>
-      <HBox id="hboxLeft" prefHeight="400.0" prefWidth="173.0" BorderPane.alignment="CENTER">
+      <Pane id="hboxLeft" fx:id="hboxLeft" BorderPane.alignment="CENTER">
+         <children>
+            <HBox fillHeight="false">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#lateralMenu" styleClass="lateralButtons">
+                     <graphic>
+                        <Pane>
+                           <children>
+                              <Line endX="72.9000015258789" endY="7.62939453125E-6" layoutX="-35.0" layoutY="5.0" startX="37.900001525878906" startY="7.62939453125E-6" styleClass="lateralMenu" />
+                              <Line endX="72.9000015258789" endY="7.62939453125E-6" layoutX="-35.0" layoutY="15.0" startX="37.900001525878906" startY="7.62939453125E-6" styleClass="lateralMenu" />
+                              <Line endX="72.9000015258789" endY="7.62939453125E-6" layoutX="-35.0" layoutY="25.0" startX="37.900001525878906" startY="7.62939453125E-6" styleClass="lateralMenu" />
+                           </children>
+                        </Pane>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
          <effect>
-            <DropShadow blurType="GAUSSIAN" height="10.0" radius="7.25" />
-         </effect></HBox>
+            <DropShadow />
+         </effect>
+      </Pane>
    </left>
    <top>
       <BorderPane id="titlebar" fx:id="barraDeTitulo" prefHeight="40.0" prefWidth="900.0" BorderPane.alignment="CENTER">
