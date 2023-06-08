@@ -25,6 +25,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Run.app = this;
+        this.stage = stage;
         stage.initStyle(StageStyle.TRANSPARENT);
         Application.setUserAgentStylesheet(new PrimerDark().getUserAgentStylesheet());
         scene = new Scene(loadFXML("TelaPrincipal"));
@@ -32,7 +33,6 @@ public class App extends Application {
         ((Region) scene.getRoot()).setPadding(new Insets(20,20,20,20));
         stage.setScene(scene);
         stage.show();
-        this.stage = stage;
     }
 
     static void setRoot(String fxml) throws IOException {

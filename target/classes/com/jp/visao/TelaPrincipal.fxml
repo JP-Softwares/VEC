@@ -9,21 +9,21 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1435.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jp.visao.TelaPrincipal">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1435.0" stylesheets="@TelaPrincipalStylesheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jp.visao.TelaPrincipal">
    <center>
-      <Pane id="centerPane" prefHeight="200.0" prefWidth="1205.0" BorderPane.alignment="CENTER" />
+      <Pane id="centerPane" fx:id="centerPane" />
    </center>
    <left>
-      <Pane id="hboxLeft" fx:id="hboxLeft" BorderPane.alignment="CENTER">
+      <Pane id="paneLeft" fx:id="paneLeft" BorderPane.alignment="CENTER">
          <children>
-            <HBox fillHeight="false">
+            <VBox fx:id="vBoxLeft">
                <children>
-                  <Button mnemonicParsing="false" onAction="#lateralMenu" styleClass="lateralButtons">
+                  <Button fx:id="menuHamburguer" mnemonicParsing="false" onAction="#lateralMenu" prefHeight="45.0" prefWidth="55.0" styleClass="lateralButtons">
                      <graphic>
                         <Pane>
                            <children>
@@ -34,8 +34,44 @@
                         </Pane>
                      </graphic>
                   </Button>
+                  <Button fx:id="botaoHome" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="55.0" styleClass="lateralButtons">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="imageLeft">
+                           <image>
+                              <Image url="@../icones/home.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="botaoVeiculos" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="55.0" styleClass="lateralButtons">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="imageLeft">
+                           <image>
+                              <Image url="@../icones/veiculos.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="botaoProprietarios" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="55.0" styleClass="lateralButtons">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="imageLeft">
+                           <image>
+                              <Image url="@../icones/proprietarios.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="botaoTipoDeGasto" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="55.0" styleClass="lateralButtons">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="imageLeft">
+                           <image>
+                              <Image url="@../icones/gastos.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
-            </HBox>
+            </VBox>
          </children>
          <effect>
             <DropShadow />

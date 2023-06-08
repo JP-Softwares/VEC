@@ -11,6 +11,11 @@ package com.jp.visao;
 public class Run {
 
     public static App app;
+
+    public static TelaPrincipal telaPrincipal;
+
+    public static TelaHome telaHome;
+
     public static void main(String[] args){
         App.main(args);
     }
