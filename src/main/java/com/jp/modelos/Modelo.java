@@ -7,15 +7,18 @@ public class Modelo {
     private String urlModelo = "";
     private TipoDoVeiculo tipo = null;
 
+    private Marca marca = null;
+
 
     public Modelo() {
     }
 
-    public Modelo(int id, String nome, String urlModelo, TipoDoVeiculo tipo) {
+    public Modelo(int id, String nome, String urlModelo, TipoDoVeiculo tipo, Marca marca) {
         this.id = id;
         this.nome = nome;
         this.urlModelo = urlModelo;
         this.tipo = tipo;
+        this.marca = marca;
     }
 
     public int getId() {
@@ -48,5 +51,13 @@ public class Modelo {
 
     public void setTipo(TipoDoVeiculo tipo) {
         this.tipo = tipo;
+    }
+
+    public Marca getMarca() {
+        return marca;
+    }
+
+    public void setMarca(Marca marca) {
+        this.marca = marca;
     }
 }
