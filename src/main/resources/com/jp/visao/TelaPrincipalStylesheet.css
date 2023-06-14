@@ -16,12 +16,22 @@
     -fx-translate-x: -5;
 }
 
+#selectedButtonSideBar{
+    -fx-background-color: #fff;
+}
+
+#selectedButtonSideBar:hover{
+    -fx-background-color: #dcd0d0;
+}
+
 .lateralButtons{
     -fx-background-color: -lateralColor;
     -fx-background-radius: 0;
     -fx-background-insets: 0;
     -fx-border-width: 0;
     -fx-graphic-text-gap: 15;
+    -fx-font-family: "Century Gothic";
+    -fx-font-weight: 500;
     /*-fx-pref-width: 55;*/
     /*-fx-pref-height: 45;*/
 }

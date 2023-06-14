@@ -7,6 +7,7 @@
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.Pane?>
@@ -16,68 +17,70 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1435.0" stylesheets="@TelaPrincipalStylesheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jp.visao.TelaPrincipal">
    <center>
-      <Pane id="centerPane" fx:id="centerPane" />
-   </center>
-   <left>
-      <Pane id="paneLeft" fx:id="paneLeft" BorderPane.alignment="CENTER">
+      <AnchorPane>
          <children>
-            <VBox fx:id="vBoxLeft">
+            <Pane id="centerPane" fx:id="centerPane" layoutX="54.0" prefHeight="730.0" prefWidth="1380.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="54.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Pane id="paneLeft" fx:id="paneLeft" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Button fx:id="menuHamburguer" mnemonicParsing="false" onAction="#lateralMenu" prefHeight="45.0" prefWidth="55.0" styleClass="lateralButtons">
-                     <graphic>
-                        <Pane>
-                           <children>
-                              <Line endX="72.9000015258789" endY="7.62939453125E-6" layoutX="-35.0" layoutY="5.0" startX="37.900001525878906" startY="7.62939453125E-6" styleClass="lateralMenu" />
-                              <Line endX="72.9000015258789" endY="7.62939453125E-6" layoutX="-35.0" layoutY="15.0" startX="37.900001525878906" startY="7.62939453125E-6" styleClass="lateralMenu" />
-                              <Line endX="72.9000015258789" endY="7.62939453125E-6" layoutX="-35.0" layoutY="25.0" startX="37.900001525878906" startY="7.62939453125E-6" styleClass="lateralMenu" />
-                           </children>
-                        </Pane>
-                     </graphic>
-                  </Button>
-                  <Button fx:id="botaoHome" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="55.0" styleClass="lateralButtons">
-                     <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="imageLeft">
-                           <image>
-                              <Image url="@../icones/home.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button fx:id="botaoVeiculos" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="55.0" styleClass="lateralButtons">
-                     <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="imageLeft">
-                           <image>
-                              <Image url="@../icones/veiculos.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button fx:id="botaoProprietarios" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="55.0" styleClass="lateralButtons">
-                     <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="imageLeft">
-                           <image>
-                              <Image url="@../icones/proprietarios.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button fx:id="botaoTipoDeGasto" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="55.0" styleClass="lateralButtons">
-                     <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="imageLeft">
-                           <image>
-                              <Image url="@../icones/gastos.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
+                  <VBox fx:id="vBoxLeft">
+                     <children>
+                        <Button fx:id="menuHamburguer" mnemonicParsing="false" onAction="#lateralMenu" prefHeight="45.0" prefWidth="55.0" styleClass="lateralButtons">
+                           <graphic>
+                              <Pane>
+                                 <children>
+                                    <Line endX="72.9000015258789" endY="7.62939453125E-6" layoutX="-35.0" layoutY="5.0" startX="37.900001525878906" startY="7.62939453125E-6" styleClass="lateralMenu" />
+                                    <Line endX="72.9000015258789" endY="7.62939453125E-6" layoutX="-35.0" layoutY="15.0" startX="37.900001525878906" startY="7.62939453125E-6" styleClass="lateralMenu" />
+                                    <Line endX="72.9000015258789" endY="7.62939453125E-6" layoutX="-35.0" layoutY="25.0" startX="37.900001525878906" startY="7.62939453125E-6" styleClass="lateralMenu" />
+                                 </children>
+                              </Pane>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="botaoHome" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="55.0" styleClass="lateralButtons">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="imageLeft">
+                                 <image>
+                                    <Image url="@../icones/home.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="botaoVeiculos" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="55.0" styleClass="lateralButtons">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="imageLeft">
+                                 <image>
+                                    <Image url="@../icones/veiculos.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="botaoProprietarios" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="55.0" styleClass="lateralButtons">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="imageLeft">
+                                 <image>
+                                    <Image url="@../icones/proprietarios.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="botaoTipoDeGasto" graphicTextGap="15.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="55.0" styleClass="lateralButtons">
+                           <graphic>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="imageLeft">
+                                 <image>
+                                    <Image url="@../icones/gastos.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
                </children>
-            </VBox>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Pane>
          </children>
-         <effect>
-            <DropShadow />
-         </effect>
-      </Pane>
-   </left>
+      </AnchorPane>
+   </center>
    <top>
       <BorderPane id="titlebar" fx:id="barraDeTitulo" prefHeight="40.0" prefWidth="900.0" BorderPane.alignment="CENTER">
          <right>

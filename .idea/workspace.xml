@@ -5,7 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3627a75b-168e-4c6c-a924-a9d103931eae" name="Changes" comment="retirei o segundo modelo de fxml e já configurei algumas coisas da tela.">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/jp/icones/add dados_black.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/jp/icones/add pessoa_black.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/jp/icones/editar_black.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/jp/icones/emitir_black.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/jp/icones/gastos_black.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/jp/icones/home_black.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/jp/icones/proprietarios_black.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/jp/icones/sedan_black.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/jp/icones/veiculos_black.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaPrincipal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaPrincipalStylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaPrincipalStylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaPrincipal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaPrincipalStylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaPrincipalStylesheet.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,29 +60,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "Tela",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/SceneBuilder/SceneBuilder.exe",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "configurable.group.build",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Tela&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/SceneBuilder/SceneBuilder.exe&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.build&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Woly\Desktop\VEC\src\main\resources\com\jp\icones" />

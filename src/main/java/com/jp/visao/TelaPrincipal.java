@@ -169,10 +169,19 @@ public class TelaPrincipal implements Initializable{
             Run.telaHome.imagem.setFitHeight(centerPane.getHeight() - 40);
         }
     }
+
+    public void setBotaoSelecionadoSideBar(){
+        switch(telaAtual){
+            case TELAHOME:
+                //((Button)botaoHome)
+                break;
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Run.telaPrincipal = this;
-
+        botaoHome.setId("selectedButtonSideBar");
         Run.app.stage.setOnShown(windowEvent -> {
             try{
                 centerPane.getChildren().add(FXMLLoader.load(getClass().getResource("TelaHome.fxml")));
