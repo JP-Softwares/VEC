@@ -1,0 +1,64 @@
+Legenda: | | -> quer dizer que é o campo identificador da tabela
+
+
+Proprietario(
+	|id|,
+	CPF,
+	nome,
+	telefone_DDI,
+	telefone_DDD,
+	telefone_numero,
+	email,
+	numeroDaCNH,
+	categoriaDaCNH
+)
+
+Marca(
+	|id|,
+	nome,
+	url
+)
+
+
+Modelo(
+	|id|,
+	nome,
+	url,
+	tipoDoVeiculo,
+	idMarca
+)
+idMarca referencia Marca(id)
+
+
+Veiculo(
+	|id|,
+	placa,
+	anoFabricacao,
+	anoModelo,
+	tipoDoCombustivel,
+	quilometragemAtual,
+	situacaoDoVeiculo,
+	idModelo,
+	idProprietario
+)
+idModelo referencia Modelo(id)
+idProprietario referencia Proprietario(id)
+
+
+TipoDeGasto(
+	|id|,
+	nome,
+	url
+)
+
+
+Gastos(
+	|id|,
+	descricao,
+	valor,
+	data
+	idVeiculo,
+	idTipoDeGasto
+)
+idVeiculo referencia Veiculo(id)
+idTipoDeGasto referencia TipoDeGasto(id)
