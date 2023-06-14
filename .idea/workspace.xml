@@ -4,22 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3627a75b-168e-4c6c-a924-a9d103931eae" name="Changes" comment="retirei o segundo modelo de fxml e já configurei algumas coisas da tela.">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/jp/icones/add dados_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/jp/icones/add pessoa_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/jp/icones/editar_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/jp/icones/emitir_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/jp/icones/gastos_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/jp/icones/home_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/jp/icones/proprietarios_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/jp/icones/sedan_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/jp/icones/veiculos_black.png" afterDir="false" />
+    <list default="true" id="3627a75b-168e-4c6c-a924-a9d103931eae" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaPrincipal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaPrincipalStylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaPrincipalStylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaPrincipal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaPrincipalStylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaPrincipalStylesheet.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +103,7 @@
       <workItem from="1686089704326" duration="22000" />
       <workItem from="1686418229162" duration="216000" />
       <workItem from="1686692599449" duration="674000" />
+      <workItem from="1686702522729" duration="8000" />
     </task>
     <task id="LOCAL-00001" summary="testing in intellij">
       <created>1685770058727</created>
@@ -146,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686008563337</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="commit">
+      <created>1686702491627</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686702491627</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
