@@ -114,7 +114,7 @@ public class ModeloControle {
 
             while(array.hasNext()){
                 Modelo modelo = array.next();
-                marca.buscar(modelo.getMarca().getId());
+                marca.buscar(modelo.getMarca  ().getId());
             }
             return modeloPersistencia.listar();
         }catch(Exception erro){
