@@ -16,6 +16,12 @@ public class Run {
 
     public static TelaHome telaHome;
 
+    public static TelaVeiculos telaVeiculos;
+
+    public static TelaProprietarios telaProprietarios;
+
+    public static TelaTipoDeGasto telaTipoDeGasto;
+
     public static void main(String[] args){
         App.main(args);
     }

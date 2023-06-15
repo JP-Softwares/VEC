@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat.ttf');
+}
+
 .root{
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.0, 2.0, 2.0);
     -fx-background-insets: 20;
@@ -18,6 +23,7 @@
 
 #selectedButtonSideBar{
     -fx-background-color: #fff;
+    -fx-text-fill: #000;
 }
 
 #selectedButtonSideBar:hover{
@@ -30,8 +36,8 @@
     -fx-background-insets: 0;
     -fx-border-width: 0;
     -fx-graphic-text-gap: 15;
-    -fx-font-family: "Century Gothic";
-    -fx-font-weight: 500;
+    -fx-font-family: 'Montserrat';
+    -fx-font-weight: 900;
     /*-fx-pref-width: 55;*/
     /*-fx-pref-height: 45;*/
 }

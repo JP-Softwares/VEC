@@ -1,4 +1,4 @@
 .root{
     -backgroundColor: #1c1a1a;
-    -fx-background-color: #fff;
+    -fx-background-color: -backgroundColor;
 }
