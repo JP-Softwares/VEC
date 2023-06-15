@@ -15,8 +15,8 @@
       <list>
         <option value="SCSS File" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -107,7 +107,7 @@
       <workItem from="1686089704326" duration="22000" />
       <workItem from="1686616923634" duration="5397000" />
       <workItem from="1686707037244" duration="2545000" />
-      <workItem from="1686791741320" duration="3092000" />
+      <workItem from="1686791741320" duration="6667000" />
     </task>
     <task id="LOCAL-00001" summary="testing in intellij">
       <created>1685770058727</created>

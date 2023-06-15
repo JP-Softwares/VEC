@@ -6,6 +6,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class VeiculoControle implements IVeiculoControle{
+
+    IVeiculoDao VeiculoPersistencia = null;
+
+
+    public VeiculoControle(){
+        this.VeiculoPersistencia = new VeiculoDao();
+    }
     @Override
     public void incluir(Veiculo objeto) throws Exception {
         try {
