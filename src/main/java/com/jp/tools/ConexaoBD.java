@@ -15,15 +15,18 @@ public class ConexaoBD {
     public static Connection getConexao() throws Exception{
         try{
             if(conexao == null){
-                String linkUrl = "postgresql://postgres:ME4ULdmfXXn1Bnvy3e6p@containers-us-west-95.railway.app:5785/railway";
-                String DatabaseConnection = linkUrl.replace("postgresql://", "");
-                String user = DatabaseConnection.substring(0, DatabaseConnection.indexOf(":"));
-                DatabaseConnection = DatabaseConnection.replace(user + ":", "");
-                String password = DatabaseConnection.substring(0, DatabaseConnection.indexOf("@"));
-                DatabaseConnection = DatabaseConnection.replace(password + "@", "");
+                //String linkUrl = "postgresql://postgres:ME4ULdmfXXn1Bnvy3e6p@containers-us-west-95.railway.app:5785/railway";
+                //String DatabaseConnection = linkUrl.replace("postgresql://", "");
+                //String user = DatabaseConnection.substring(0, DatabaseConnection.indexOf(":"));
+                //DatabaseConnection = DatabaseConnection.replace(user + ":", "");
+                //String password = DatabaseConnection.substring(0, DatabaseConnection.indexOf("@"));
+                //DatabaseConnection = DatabaseConnection.replace(password + "@", "");
                 
                 String driver = "org.postgresql.Driver";
-                String url = "jdbc:postgresql://" + DatabaseConnection;
+                //String url = "jdbc:postgresql://" + DatabaseConnection; // URL Banco em nuvem
+                String url = "jdbc:postgresql://localhost:5432/DatabaseVEC";
+                String user = "postgres";
+                String password = "aluno";
                 Class.forName(driver);
                 conexao = DriverManager.getConnection(url, user, password);
             }               

@@ -1,6 +1,7 @@
 package com.jp.modelos;
 
 import com.jp.controle.IMarcaControle;
+import com.jp.controle.MarcaControle;
 
 public class Marca {
     private int id = 0;

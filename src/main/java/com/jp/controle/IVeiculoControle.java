@@ -3,7 +3,7 @@ import com.jp.modelos.Veiculo;
 import java.util.ArrayList;
 import java.util.Iterator;
 import com.jp.modelos.Modelo;
-//import com.jp.tools.Data;
+import java.util.Date;
 
 public interface IVeiculoControle {
     void incluir(Veiculo objeto) throws Exception;
@@ -16,5 +16,4 @@ public interface IVeiculoControle {
 
     Veiculo buscar(String placa) throws Exception;
 
-    ArrayList<Veiculo> listarNaoLocados(Data inicio, Categoria categoria) throws Exception;
 }
