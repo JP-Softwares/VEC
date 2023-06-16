@@ -1,7 +1,7 @@
 package com.jp.controle;
 import com.jp.modelos.Marca;
-//import com.jp.persistencia.IMarcaDao;
-//import com.jp.persistencia.MarcaDao;
+import com.jp.persistencia.IMarcaDao;
+import com.jp.persistencia.MarcaDao;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -10,7 +10,11 @@ public class MarcaControle implements IMarcaControle{
 
 
     public MarcaControle(){
-        this.marcaPersistencia = new MarcaDao();
+        try {
+            this.marcaPersistencia = new MarcaDao();
+        }catch (Exception erro){
+        }
+
     }
     //private String verificarDescricao(String descricao){
     //String str = descricao.replaceAll("\\s+", "");
