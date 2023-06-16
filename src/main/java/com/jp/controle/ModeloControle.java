@@ -1,15 +1,20 @@
 package com.jp.controle;
 import java.util.ArrayList;
 import java.util.Iterator;
-//import com.jp.persistencia.IModeloDao;
-//import com.jp.persistencia.ModeloDao;
-//import com.jp.persistencia.IMarcaDao;
+import com.jp.persistencia.IModeloDao;
+import com.jp.persistencia.ModeloDao;
+import com.jp.persistencia.IMarcaDao;
 import com.jp.modelos.Modelo;
 import com.jp.modelos.Marca;
+import com.jp.persistencia.ModeloDao;
 
-public class ModeloControle {
+public class ModeloControle implements IModeloControle{
     public ModeloControle(){
-        this.modeloPersistencia = new ModeloDao();
+        try {
+            this.modeloPersistencia = new ModeloDao();
+        }catch (Exception erro){
+        }
+
     }
     IModeloDao modeloPersistencia = null;
 
@@ -118,7 +123,6 @@ public class ModeloControle {
             }
             return modeloPersistencia.listar();
         }catch(Exception erro){
-            modeloPersistencia.apagar();
             return new ArrayList<Modelo>();
         }
 

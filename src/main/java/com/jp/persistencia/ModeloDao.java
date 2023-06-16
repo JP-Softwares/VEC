@@ -11,7 +11,7 @@ import com.jp.controle.MarcaControle;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class ModeloDao  implements IModeloControle {
+public class ModeloDao  implements IModeloDao {
 
     private Connection conexao = null;
 
@@ -21,7 +21,7 @@ public class ModeloDao  implements IModeloControle {
     @Override
     public void incluir(Modelo objeto) throws Exception {
         try {
-            String sql = "insert into modelo(nome, url, tipoDoVeiculo, idMarca) values (?, ?, ?, ?)";
+            String sql = "insert into Modelo(nome, url, tipoDoVeiculo, idMarca) values (?, ?, ?, ?)";
             PreparedStatement preparedStatement = conexao.prepareStatement(sql);
             // Parameters iniciar os elementos
             preparedStatement.setString(1, objeto.getNome());
@@ -81,11 +81,43 @@ public class ModeloDao  implements IModeloControle {
 
     @Override
     public Modelo buscar(String descricao) throws Exception {
+        try {
+            String sql = "select * from Modelo where nome = '"+descricao+"'";
+            Statement statement = conexao.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            Modelo modelo = new Modelo();
+            modelo.setId(rs.getInt("id"));
+            modelo.setNome(rs.getString("nome"));
+            modelo.setUrlModelo(rs.getString("url"));
+            modelo.setTipo(TipoDoVeiculo.valueOf((rs.getString("tipoDoVeiculo"))));
+            IMarcaControle marcaControle = new MarcaControle();
+            modelo.setMarca(marcaControle.buscar(rs.getInt("idMarca")));
+            return modelo;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
         return null;
     }
 
     @Override
     public Modelo buscar(int id) throws Exception {
+        try {
+            String sql = "select * from Modelo where id = '"+id+"'";
+            Statement statement = conexao.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            Modelo modelo = new Modelo();
+            modelo.setId(rs.getInt("id"));
+            modelo.setNome(rs.getString("nome"));
+            modelo.setUrlModelo(rs.getString("url"));
+            modelo.setTipo(TipoDoVeiculo.valueOf((rs.getString("tipoDoVeiculo"))));
+            IMarcaControle marcaControle = new MarcaControle();
+            modelo.setMarca(marcaControle.buscar(rs.getInt("idMarca")));
+            return modelo;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
         return null;
     }
 }

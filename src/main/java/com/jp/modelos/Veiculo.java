@@ -11,7 +11,7 @@ public class Veiculo {
     private SituacaoDoVeiculo situacao = null;
     private Modelo modelo = null;
 
-
+    private Proprietario proprietario = null;
 
 
 
@@ -22,7 +22,8 @@ public class Veiculo {
     public Veiculo() {
     }
 
-    public Veiculo(int id, String placa, int anoFabricacao, int anoModelo, int kilometragem, TipoDoCombustivel combustivel, TipoDoVeiculo carro, SituacaoDoVeiculo situacao, Modelo modelo) {
+
+    public Veiculo(int id, String placa, int anoFabricacao, int anoModelo, int kilometragem, TipoDoCombustivel combustivel, TipoDoVeiculo carro, SituacaoDoVeiculo situacao, Modelo modelo, Proprietario proprietario) {
         this.id = id;
         this.placa = placa;
         this.anoFabricacao = anoFabricacao;
@@ -32,6 +33,7 @@ public class Veiculo {
         this.carro = carro;
         this.situacao = situacao;
         this.modelo = modelo;
+        this.proprietario = proprietario;
     }
 
     public int getId() {
@@ -104,5 +106,13 @@ public class Veiculo {
 
     public void setModelo(Modelo modelo) {
         this.modelo = modelo;
+    }
+
+    public Proprietario getProprietario() {
+        return proprietario;
+    }
+
+    public void setProprietario(Proprietario proprietario) {
+        this.proprietario = proprietario;
     }
 }

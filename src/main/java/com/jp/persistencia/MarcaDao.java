@@ -75,7 +75,6 @@ public class MarcaDao implements IMarcaDao{
 
     @Override
     public Marca buscar(String nomeDaMarca) throws Exception {
-        ArrayList<Marca> listaMarcas = new ArrayList<Marca>();
         try {
             String sql = "select * from Marca where nome = '"+nomeDaMarca+"'";
             Statement statement = conexao.createStatement();
