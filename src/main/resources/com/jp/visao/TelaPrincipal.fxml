@@ -21,7 +21,7 @@
       <AnchorPane>
          <children>
             <Pane id="centerPane" fx:id="centerPane" layoutX="54.0" prefHeight="730.0" prefWidth="1380.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="54.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Pane fx:id="blurPane" opacity="0.0" prefHeight="730.0" prefWidth="1267.0" style="-fx-background-color: #000;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Pane fx:id="blurPane" onMouseClicked="#setBlurPaneHidden" opacity="0.0" prefHeight="730.0" prefWidth="1267.0" style="-fx-background-color: #000;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <effect>
                   <BoxBlur />
                </effect>

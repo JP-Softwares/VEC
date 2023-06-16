@@ -17,6 +17,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
@@ -90,6 +91,11 @@ public class TelaPrincipal implements Initializable{
     TelaAtual telaAtual = TelaAtual.TELAHOME;
 
     @FXML
+    void setBlurPaneHidden(MouseEvent event) {
+        if(lateralMenuOpen) menuHamburguer.fire();
+    }
+
+    @FXML
     void lateralMenu(ActionEvent event) {
         double width = paneLeft.getWidth();
         int aumento = 3;
@@ -134,8 +140,9 @@ public class TelaPrincipal implements Initializable{
             botaoProprietarios.setText("");
             botaoTipoDeGasto.setText("");
             botaoVeiculos.setAlignment(Pos.CENTER_LEFT);
-
-            blurPane.setVisible(false);
+            transicao.setOnFinished(actionEvent -> {
+                blurPane.setVisible(false);
+            });
             transicao.play();
             lateralMenuOpen = false;
         }
@@ -144,7 +151,6 @@ public class TelaPrincipal implements Initializable{
     private void setMaximized(boolean maximize){
         double width = centerPane.getWidth();
         Stage stage = Run.app.stage;
-        System.out.println(centerPane.getHeight());
         stage.setMaximized(maximize);
         if(maximize){
             maximizedRectangle.setVisible(true);
@@ -156,14 +162,14 @@ public class TelaPrincipal implements Initializable{
             stage.setWidth(bounds.getWidth());
             stage.setHeight(bounds.getHeight());
 
-            System.out.println(centerPane.getHeight());
             ((Pane)centerPane.getChildren().get(0)).setPrefWidth(centerPane.getWidth() + 40);
             ((Pane)centerPane.getChildren().get(0)).setPrefHeight(centerPane.getHeight() - 10);
             if(telaAtual == TelaAtual.TELAHOME){
                 Run.telaHome.imagem.setFitWidth(centerPane.getWidth() + 40);
                 Run.telaHome.imagem.setFitHeight(centerPane.getHeight() - 10);
             }
-            System.out.println(Run.telaHome.paneRoot.getHeight());
+            alignTabPaneHeader();
+
             return;
         }
         maximizedRectangle.setVisible(false);
@@ -179,6 +185,8 @@ public class TelaPrincipal implements Initializable{
             Run.telaHome.imagem.setFitWidth(centerPane.getWidth() - 40);
             Run.telaHome.imagem.setFitHeight(centerPane.getHeight() - 40);
         }
+
+        alignTabPaneHeader();
     }
 
     @FXML
@@ -207,8 +215,14 @@ public class TelaPrincipal implements Initializable{
         telaAtual = TelaAtual.TELAVEICULOS;
         setBotaoSelecionadoSideBar();
         setScene("TelaVeiculos.fxml");
-        TabPane tabPane = ((TabPane)((AnchorPane) centerPane.getChildren().get(0)).getChildren().get(0));
-        tabPane.setTabMinWidth(1340 / tabPane.getTabs().size() - 40);
+        alignTabPaneHeader();
+    }
+
+    private void alignTabPaneHeader(){
+        if(telaAtual == TelaAtual.TELAVEICULOS){
+            TabPane tabPane = ((TabPane)((AnchorPane) centerPane.getChildren().get(0)).getChildren().get(0));
+            tabPane.setTabMinWidth((Run.app.stage.getWidth() - Run.app.stage.getWidth() * 5/100) / tabPane.getTabs().size() - 40);
+        }
     }
 
     public void setScene(String fxml){
@@ -254,6 +268,7 @@ public class TelaPrincipal implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Run.telaPrincipal = this;
+        //blurPane.setViewOrder(-1); //funcionou
         Run.app.stage.setOnShown(windowEvent -> {
             showHome(null);
             setScene("TelaHome.fxml");
