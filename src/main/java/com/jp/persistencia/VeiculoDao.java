@@ -84,7 +84,7 @@ public class VeiculoDao implements IVeiculoDao{
                 veiculo.setPlaca(rs.getString("placa"));
                 veiculo.setModelo(modeloControle.buscar(rs.getInt("idModelo")));
                 veiculo.setSituacao(SituacaoDoVeiculo.valueOf(rs.getString("situacaoDoVeiculo")));
-                veiculo.setProprietario(proprietarioControle.buscar(rs.getString("idProprietario")));
+                veiculo.setProprietario(proprietarioControle.buscar(rs.getInt("idProprietario")));
                 listaVeiculos.add(veiculo);
             }
         } catch (SQLException e) {
