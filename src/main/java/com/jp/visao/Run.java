@@ -22,7 +22,13 @@ public class Run {
 
     public static TelaTipoDeGasto telaTipoDeGasto;
 
+    public static MarcasEdit marcasEdit;
+
+    public static ModelosEdit modelosEdit;
+
     public static VeiculosEdit veiculosEdit;
+
+
 
     public static void main(String[] args){
         App.main(args);

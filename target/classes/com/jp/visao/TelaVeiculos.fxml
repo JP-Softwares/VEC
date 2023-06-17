@@ -21,7 +21,7 @@
                <content>
                   <AnchorPane>
                      <children>
-                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" styleClass="scrollPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <ScrollPane fx:id="scrollPaneVeiculos" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" styleClass="scrollPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <content>
                             <AnchorPane fx:id="PanefundoVeiculos" minHeight="0.0" minWidth="0.0" styleClass="fundo">
                                  <children>
@@ -29,7 +29,7 @@
                                        <effect>
                                           <DropShadow height="30.0" radius="14.5" width="30.0" />
                                        </effect></TextField>
-                                    <ComboBox layoutX="14.0" layoutY="46.0" prefHeight="38.0" prefWidth="181.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="46.0">
+                                    <ComboBox id="comboBoxVeiculo" layoutX="14.0" layoutY="46.0" prefHeight="38.0" prefWidth="181.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="46.0">
                                        <effect>
                                           <DropShadow height="30.0" radius="14.5" width="30.0" />
                                        </effect>
@@ -61,7 +61,7 @@
                <content>
                   <AnchorPane>
                      <children>
-                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" styleClass="scrollPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <ScrollPane fx:id="scrollPaneModelos" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" styleClass="scrollPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <content>
                               <AnchorPane fx:id="PanefundoModelos" minHeight="0.0" minWidth="0.0" styleClass="fundo">
                                  <children>
@@ -96,7 +96,7 @@
                <content>
                   <AnchorPane>
                      <children>
-                        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" styleClass="scrollPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <ScrollPane fx:id="scrollPaneMarcas" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" styleClass="scrollPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <content>
                               <AnchorPane fx:id="PanefundoMarcas" minHeight="0.0" minWidth="0.0" styleClass="fundo">
                                  <children>

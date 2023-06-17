@@ -3,26 +3,24 @@
 }
 
 .root{
-    -backgroundColor: #1c1a1a;
+    -backgroundColor: #1E1F22;
 }
-@font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/Montserrat.ttf');
-}
+
 
 .searchButton{
     -fx-background-color: rgba(0, 0, 0, 0);
     -fx-border-width: 0;
 }
 
+
 .searchButton:hover{
     -fx-cursor: hand;
 }
 
 .tabLabel{
-    -fx-font-family: 'Montserrat';
+    -fx-font-family: Montserrat-Bold;
     -fx-font-size: 20px;
-    -fx-font-weight: 800;
+    -fx-font-weight: 900;
 }
 
 .buttonNovo{
@@ -31,22 +29,13 @@
     -fx-border-radius: 3px;
     -fx-border-width: 0;
     -fx-font-size: 16px;
-    -fx-font-family: Montserrat;
-    -fx-font-weight: 900;
+    -fx-font-family: Montserrat-Bold;
+    -fx-font-weight: bold;
     -fx-background-color: #d4482b;
 }
 
 .buttonNovo:hover{
     -fx-cursor: hand;
-}
-
-ComboBox{
-    -fx-background-color: #fff;
-    -fx-background-radius: 20;
-    -fx-border-size: 0;
-    /*-fx-border-radius: 20;*/
-    /*-fx-border-color: #00ff00;*/
-    -fx-text-fill: #000;
 }
 
 .searchBar{

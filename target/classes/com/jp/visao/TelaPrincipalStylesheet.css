@@ -3,12 +3,71 @@
     src: url('../fonts/Montserrat.ttf');
 }
 
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('../fonts/Montserrat-ExtraBold.ttf');
+}
+
 .root{
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.0, 2.0, 2.0);
     -fx-background-insets: 20;
     /*-grayColor: #2a2727;*/
     -titlebarColor: #2B2D30;
     -lateralColor: #1c1a1a;
+}
+
+/*  Padrões de Tela */
+
+.scroll-bar{
+    -fx-background-color: -backgroundColor;
+    -fx-pref-width: 10px;
+}
+
+.scroll-bar .thumb{
+    -fx-background-color: #454547;
+    -fx-background-radius: 0;
+}
+
+ComboBox{
+    -fx-background-color: #fff;
+    -fx-border-size: 0;
+    /*-fx-border-radius: 20;*/
+    /*-fx-border-color: #00ff00;*/
+    -fx-text-fill: #000;
+    -fx-highlight-fill: #b5c0cc;
+    -fx-highlight-text-fill: #000;
+    -fx-border-color: rgba(0, 0, 0, 0.25);
+    -fx-border-width: 1px;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+}
+
+ComboBox .list-view{
+    -fx-background-color: #fff;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
+    -fx-border-width: 0;
+    -fx-background-radius: 0 0 5 5;
+}
+
+.text-field{
+    -fx-text-fill: #000;
+    -fx-highlight-fill: #b5c0cc;
+    -fx-highlight-text-fill: #000;
+    -fx-background-color: #fff;
+    -fx-border-color: rgba(0, 0, 0, 0.25);
+    -fx-border-width: 1px;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+}
+
+/* Específicos */
+
+#comboBoxVeiculo{
+    -fx-background-radius: 20;
+}
+
+#comboBoxVeiculo .list-view{
+    -fx-background-radius: 10;
 }
 
 #paneLeft{
@@ -36,7 +95,7 @@
     -fx-background-insets: 0;
     -fx-border-width: 0;
     -fx-graphic-text-gap: 15;
-    -fx-font-family: 'Montserrat';
+    -fx-font-family: Montserrat;
     -fx-font-weight: 900;
     /*-fx-pref-width: 55;*/
     /*-fx-pref-height: 45;*/
@@ -71,7 +130,7 @@
 #labelTitleEdit{
     -fx-text-fill: #000;
     -fx-font-size: 20px;
-    -fx-font-family: Montserrat;
+    -fx-font-family: Montserrat-Bold;
     -fx-font-weight: 900;
 }
 
@@ -79,8 +138,8 @@
     -fx-background-radius: 3px;
     -fx-border-radius: 3px;
     -fx-border-width: 0;
-    -fx-font-size: 14px;
-    -fx-font-family: Montserrat;
+    -fx-font-size: 13px;
+    -fx-font-family: Montserrat-Bold;
     -fx-font-weight: 900;
 }
 
@@ -117,6 +176,10 @@ ScrollPane{
     -fx-stroke: rgba(0, 0, 0, 0.25);
 }
 
+#centerPane{
+    -fx-background-color: #1E1F22;
+}
+
 /*Barra de Título*/
 
 #titlebar{
@@ -124,13 +187,13 @@ ScrollPane{
 }
 
 #nomeVECTitlebar{
-    -fx-font-family: "Century Gothic";
+    -fx-font-family: Montserrat-Bold;
     -fx-font-size: 2em;
     -fx-font-weight: bold;
     -fx-translate-x: 75;
 }
 
-#titlebar, #closeButton, #maximizeButton, #minimizeButton, #centerPane {
+#titlebar, #closeButton, #maximizeButton, #minimizeButton {
     -fx-background-color: -titlebarColor;
 }
 

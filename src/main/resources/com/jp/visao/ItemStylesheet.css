@@ -1,4 +1,4 @@
-#Card{
+AnchorPane{
     -fx-background-color: #e6e6e6;
     -fx-background-radius: 20;
     -fx-border-size: 0;
@@ -6,6 +6,11 @@
 
 Label{
     -fx-text-fill: #000;
+}
+
+FlowPane{
+    -fx-border-width: 0.5;
+    -fx-border-color: rgba(0, 0, 0, 0.2);
 }
 
 #editButton{
