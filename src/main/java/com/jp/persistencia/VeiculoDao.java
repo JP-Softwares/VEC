@@ -100,15 +100,17 @@ public class VeiculoDao implements IVeiculoDao{
             Statement statement = conexao.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             Veiculo veiculo = new Veiculo();
-            veiculo.setId(rs.getInt("id"));
-            veiculo.setAnoFabricacao(Integer.parseInt(rs.getString("anoFabricacao")));
-            veiculo.setAnoModelo(Integer.parseInt(rs.getString("url")));
-            veiculo.setKilometragem(rs.getInt("quilometragemAtual"));
-            veiculo.setCombustivel(TipoDoCombustivel.valueOf(rs.getString("tipoDoCombustivel")));
-            veiculo.setPlaca(rs.getString("placa"));
-            veiculo.setModelo(modeloControle.buscar(rs.getInt("idModelo")));
-            veiculo.setSituacao(SituacaoDoVeiculo.valueOf(rs.getString("situacaoDoVeiculo")));
-            veiculo.setProprietario(proprietarioControle.buscar(rs.getString("idProprietario")));
+            if(rs.next()) {
+                veiculo.setId(rs.getInt("id"));
+                veiculo.setAnoFabricacao(Integer.parseInt(rs.getString("anoFabricacao")));
+                veiculo.setAnoModelo(Integer.parseInt(rs.getString("url")));
+                veiculo.setKilometragem(rs.getInt("quilometragemAtual"));
+                veiculo.setCombustivel(TipoDoCombustivel.valueOf(rs.getString("tipoDoCombustivel")));
+                veiculo.setPlaca(rs.getString("placa"));
+                veiculo.setModelo(modeloControle.buscar(rs.getInt("idModelo")));
+                veiculo.setSituacao(SituacaoDoVeiculo.valueOf(rs.getString("situacaoDoVeiculo")));
+                veiculo.setProprietario(proprietarioControle.buscar(rs.getString("idProprietario")));
+            }
             return veiculo;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -123,15 +125,17 @@ public class VeiculoDao implements IVeiculoDao{
             Statement statement = conexao.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             Veiculo veiculo = new Veiculo();
-            veiculo.setId(rs.getInt("id"));
-            veiculo.setAnoFabricacao(Integer.parseInt(rs.getString("anoFabricacao")));
-            veiculo.setAnoModelo(Integer.parseInt(rs.getString("url")));
-            veiculo.setKilometragem(rs.getInt("quilometragemAtual"));
-            veiculo.setCombustivel(TipoDoCombustivel.valueOf(rs.getString("tipoDoCombustivel")));
-            veiculo.setPlaca(rs.getString("placa"));
-            veiculo.setModelo(modeloControle.buscar(rs.getInt("idModelo")));
-            veiculo.setSituacao(SituacaoDoVeiculo.valueOf(rs.getString("situacaoDoVeiculo")));
-            veiculo.setProprietario(proprietarioControle.buscar(rs.getString("idProprietario")));
+            if(rs.next()) {
+                veiculo.setId(rs.getInt("id"));
+                veiculo.setAnoFabricacao(Integer.parseInt(rs.getString("anoFabricacao")));
+                veiculo.setAnoModelo(Integer.parseInt(rs.getString("url")));
+                veiculo.setKilometragem(rs.getInt("quilometragemAtual"));
+                veiculo.setCombustivel(TipoDoCombustivel.valueOf(rs.getString("tipoDoCombustivel")));
+                veiculo.setPlaca(rs.getString("placa"));
+                veiculo.setModelo(modeloControle.buscar(rs.getInt("idModelo")));
+                veiculo.setSituacao(SituacaoDoVeiculo.valueOf(rs.getString("situacaoDoVeiculo")));
+                veiculo.setProprietario(proprietarioControle.buscar(rs.getString("idProprietario")));
+            }
             return veiculo;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -146,15 +150,17 @@ public class VeiculoDao implements IVeiculoDao{
             Statement statement = conexao.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             Veiculo veiculo = new Veiculo();
-            veiculo.setId(rs.getInt("id"));
-            veiculo.setAnoFabricacao(Integer.parseInt(rs.getString("anoFabricacao")));
-            veiculo.setAnoModelo(Integer.parseInt(rs.getString("url")));
-            veiculo.setKilometragem(rs.getInt("quilometragemAtual"));
-            veiculo.setCombustivel(TipoDoCombustivel.valueOf(rs.getString("tipoDoCombustivel")));
-            veiculo.setPlaca(rs.getString("placa"));
-            veiculo.setModelo(modeloControle.buscar(rs.getInt("idModelo")));
-            veiculo.setSituacao(SituacaoDoVeiculo.valueOf(rs.getString("situacaoDoVeiculo")));
-            veiculo.setProprietario(proprietarioControle.buscar(rs.getString("idProprietario")));
+            if(rs.next()) {
+                veiculo.setId(rs.getInt("id"));
+                veiculo.setAnoFabricacao(Integer.parseInt(rs.getString("anoFabricacao")));
+                veiculo.setAnoModelo(Integer.parseInt(rs.getString("url")));
+                veiculo.setKilometragem(rs.getInt("quilometragemAtual"));
+                veiculo.setCombustivel(TipoDoCombustivel.valueOf(rs.getString("tipoDoCombustivel")));
+                veiculo.setPlaca(rs.getString("placa"));
+                veiculo.setModelo(modeloControle.buscar(rs.getInt("idModelo")));
+                veiculo.setSituacao(SituacaoDoVeiculo.valueOf(rs.getString("situacaoDoVeiculo")));
+                veiculo.setProprietario(proprietarioControle.buscar(rs.getString("idProprietario")));
+            }
             return veiculo;
         } catch (SQLException e) {
             e.printStackTrace();

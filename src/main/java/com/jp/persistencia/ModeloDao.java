@@ -86,12 +86,14 @@ public class ModeloDao  implements IModeloDao {
             Statement statement = conexao.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             Modelo modelo = new Modelo();
-            modelo.setId(rs.getInt("id"));
-            modelo.setNome(rs.getString("nome"));
-            modelo.setUrlModelo(rs.getString("url"));
-            modelo.setTipo(TipoDoVeiculo.valueOf((rs.getString("tipoDoVeiculo"))));
-            IMarcaControle marcaControle = new MarcaControle();
-            modelo.setMarca(marcaControle.buscar(rs.getInt("idMarca")));
+            if(rs.next()) {
+                modelo.setId(rs.getInt("id"));
+                modelo.setNome(rs.getString("nome"));
+                modelo.setUrlModelo(rs.getString("url"));
+                modelo.setTipo(TipoDoVeiculo.valueOf((rs.getString("tipoDoVeiculo"))));
+                IMarcaControle marcaControle = new MarcaControle();
+                modelo.setMarca(marcaControle.buscar(rs.getInt("idMarca")));
+            }
             return modelo;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -107,12 +109,14 @@ public class ModeloDao  implements IModeloDao {
             Statement statement = conexao.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             Modelo modelo = new Modelo();
-            modelo.setId(rs.getInt("id"));
-            modelo.setNome(rs.getString("nome"));
-            modelo.setUrlModelo(rs.getString("url"));
-            modelo.setTipo(TipoDoVeiculo.valueOf((rs.getString("tipoDoVeiculo"))));
-            IMarcaControle marcaControle = new MarcaControle();
-            modelo.setMarca(marcaControle.buscar(rs.getInt("idMarca")));
+            if(rs.next()) {
+                modelo.setId(rs.getInt("id"));
+                modelo.setNome(rs.getString("nome"));
+                modelo.setUrlModelo(rs.getString("url"));
+                modelo.setTipo(TipoDoVeiculo.valueOf((rs.getString("tipoDoVeiculo"))));
+                IMarcaControle marcaControle = new MarcaControle();
+                modelo.setMarca(marcaControle.buscar(rs.getInt("idMarca")));
+            }
             return modelo;
         } catch (SQLException e) {
             e.printStackTrace();

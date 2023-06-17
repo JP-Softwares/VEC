@@ -32,7 +32,11 @@
             <artifactId>postgresql</artifactId>
             <version>42.6.0</version>
         </dependency>
-        
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <version>3.5.0</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>VEC</finalName>

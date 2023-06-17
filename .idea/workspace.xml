@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3627a75b-168e-4c6c-a924-a9d103931eae" name="Changes" comment="commit" />
+    <list default="true" id="3627a75b-168e-4c6c-a924-a9d103931eae" name="Changes" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VEC.jar" beforeDir="false" afterPath="$PROJECT_DIR$/VEC.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/controle/MarcaControle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/controle/MarcaControle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/GastosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/GastosDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/ModeloDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/ModeloDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/ProprietarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/ProprietarioDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/TipoDeGastosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/TipoDeGastosDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/VeiculoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/VeiculoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/iModeloDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/IModeloDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/teste/TesteBancoDeDados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/teste/TesteBancoDeDados.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,16 +69,16 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/SceneBuilder/SceneBuilder.exe&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/andre/OneDrive/Documentos/GitHub/LocaGyn&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.build&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -127,6 +140,9 @@
       <workItem from="1686791741320" duration="6807000" />
       <workItem from="1686875608070" duration="10502000" />
       <workItem from="1686951762885" duration="10149000" />
+      <workItem from="1687020359826" duration="308000" />
+      <workItem from="1687020687501" duration="3375000" />
+      <workItem from="1687024366128" duration="4130000" />
     </task>
     <task id="LOCAL-00001" summary="testing in intellij">
       <created>1685770058727</created>

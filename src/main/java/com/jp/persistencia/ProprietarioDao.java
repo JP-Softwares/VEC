@@ -100,17 +100,19 @@ public class ProprietarioDao implements IProprietarioDao{
             Statement statement = conexao.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             Proprietario proprietario = new Proprietario();
-            proprietario.setId(rs.getInt("id"));
-            proprietario.setNome(rs.getString("nome"));
-            proprietario.setCPF(rs.getString("CPF"));
-            Telefone telefone = new Telefone();
-            telefone.setDDI(rs.getInt("telefone_DDI"));
-            telefone.setDDD(rs.getInt("telefone_DDD"));
-            telefone.setNumero(rs.getInt("telefone_numero"));
-            proprietario.setTelefone(telefone);
-            proprietario.setEmail(rs.getString("email"));
-            proprietario.setCNH(rs.getString("numeroDaCNH"));
-            proprietario.setCategoria(CategoriaCNH.valueOf(rs.getString("categoriaDaCNH")));
+            if(rs.next()) {
+                proprietario.setId(rs.getInt("id"));
+                proprietario.setNome(rs.getString("nome"));
+                proprietario.setCPF(rs.getString("CPF"));
+                Telefone telefone = new Telefone();
+                telefone.setDDI(rs.getInt("telefone_DDI"));
+                telefone.setDDD(rs.getInt("telefone_DDD"));
+                telefone.setNumero(rs.getInt("telefone_numero"));
+                proprietario.setTelefone(telefone);
+                proprietario.setEmail(rs.getString("email"));
+                proprietario.setCNH(rs.getString("numeroDaCNH"));
+                proprietario.setCategoria(CategoriaCNH.valueOf(rs.getString("categoriaDaCNH")));
+            }
             return proprietario;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -125,17 +127,19 @@ public class ProprietarioDao implements IProprietarioDao{
             Statement statement = conexao.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             Proprietario proprietario = new Proprietario();
-            proprietario.setId(rs.getInt("id"));
-            proprietario.setNome(rs.getString("nome"));
-            proprietario.setCPF(rs.getString("CPF"));
-            Telefone telefone = new Telefone();
-            telefone.setDDI(rs.getInt("telefone_DDI"));
-            telefone.setDDD(rs.getInt("telefone_DDD"));
-            telefone.setNumero(rs.getInt("telefone_numero"));
-            proprietario.setTelefone(telefone);
-            proprietario.setEmail(rs.getString("email"));
-            proprietario.setCNH(rs.getString("numeroDaCNH"));
-            proprietario.setCategoria(CategoriaCNH.valueOf(rs.getString("categoriaDaCNH")));
+            if(rs.next()) {
+                proprietario.setId(rs.getInt("id"));
+                proprietario.setNome(rs.getString("nome"));
+                proprietario.setCPF(rs.getString("CPF"));
+                Telefone telefone = new Telefone();
+                telefone.setDDI(rs.getInt("telefone_DDI"));
+                telefone.setDDD(rs.getInt("telefone_DDD"));
+                telefone.setNumero(rs.getInt("telefone_numero"));
+                proprietario.setTelefone(telefone);
+                proprietario.setEmail(rs.getString("email"));
+                proprietario.setCNH(rs.getString("numeroDaCNH"));
+                proprietario.setCategoria(CategoriaCNH.valueOf(rs.getString("categoriaDaCNH")));
+            }
             return proprietario;
         } catch (SQLException e) {
             e.printStackTrace();

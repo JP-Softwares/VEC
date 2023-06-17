@@ -12,7 +12,6 @@ public class MarcaControle implements IMarcaControle{
     public MarcaControle(){
         try {
             this.marcaPersistencia = new MarcaDao();
-            System.out.println("teste");
         }catch (Exception erro){
             erro.printStackTrace();
         }

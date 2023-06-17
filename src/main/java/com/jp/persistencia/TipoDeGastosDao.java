@@ -75,9 +75,11 @@ public class TipoDeGastosDao implements ITipoDeGastosDao{
             Statement statement = conexao.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             TipoDeGastos tipoDeGastos = new TipoDeGastos();
-            tipoDeGastos.setId(rs.getInt("id"));
-            tipoDeGastos.setNome(rs.getString("nome"));
-            tipoDeGastos.setIcone(rs.getString("url"));
+            if(rs.next()) {
+                tipoDeGastos.setId(rs.getInt("id"));
+                tipoDeGastos.setNome(rs.getString("nome"));
+                tipoDeGastos.setIcone(rs.getString("url"));
+            }
             return tipoDeGastos;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -92,9 +94,11 @@ public class TipoDeGastosDao implements ITipoDeGastosDao{
             Statement statement = conexao.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             TipoDeGastos tipoDeGastos = new TipoDeGastos();
-            tipoDeGastos.setId(rs.getInt("id"));
-            tipoDeGastos.setNome(rs.getString("nome"));
-            tipoDeGastos.setIcone(rs.getString("url"));
+            if(rs.next()) {
+                tipoDeGastos.setId(rs.getInt("id"));
+                tipoDeGastos.setNome(rs.getString("nome"));
+                tipoDeGastos.setIcone(rs.getString("url"));
+            }
             return tipoDeGastos;
         } catch (SQLException e) {
             e.printStackTrace();
