@@ -15,6 +15,8 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -26,10 +28,13 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 public class TelaPrincipal implements Initializable{
 
@@ -78,6 +83,15 @@ public class TelaPrincipal implements Initializable{
     @FXML
     private Button menuHamburguer;
 
+    @FXML
+    private AnchorPane editPane;
+
+    @FXML
+    private Label labelTitleEdit;
+
+    @FXML
+    private ScrollPane scrollPaneEdit;
+
     private boolean lateralMenuOpen = false;
 
     private double x, y;
@@ -88,7 +102,55 @@ public class TelaPrincipal implements Initializable{
         TELAHOME, TELAVEICULOS, TELAPROPRIETARIOS, TELATIPODEGASTO
     };
 
+    ActionListener metodoEditExit;
+
     TelaAtual telaAtual = TelaAtual.TELAHOME;
+
+
+    public void setEditWindow(String title, Node anchorPane, ActionListener method){
+        blurPane.setViewOrder(-1); //funcionou
+        editPane.setViewOrder(-1);
+        this.metodoEditExit = method;
+        labelTitleEdit.setText(title);
+        scrollPaneEdit.setContent(anchorPane);
+        editPane.setVisible(true);
+        blurPane.setVisible(true);
+
+        transicao = new Timeline(
+                new KeyFrame(Duration.seconds(0.15), new KeyValue(editPane.opacityProperty(),1, Interpolator.LINEAR)),
+                new KeyFrame(Duration.seconds(0.15), new KeyValue(blurPane.opacityProperty(),0.5, Interpolator.LINEAR))
+        );
+
+        transicao.play();
+    }
+
+    @FXML
+    void closeEdit(ActionEvent event) {
+
+        transicao = new Timeline(
+                new KeyFrame(Duration.seconds(0.15), new KeyValue(editPane.opacityProperty(),0, Interpolator.LINEAR)),
+                new KeyFrame(Duration.seconds(0.15), new KeyValue(blurPane.opacityProperty(),0, Interpolator.LINEAR))
+        );
+
+        transicao.setOnFinished(actionEvent -> {
+            editPane.setVisible(false);
+            blurPane.setVisible(false);
+        });
+
+        transicao.play();
+    }
+
+
+    @FXML
+    void cancelEdit(ActionEvent event) {
+        closeEdit(event);
+    }
+
+    @FXML
+    void saveEdit(ActionEvent event) {
+        closeEdit(event);
+        metodoEditExit.actionPerformed(null);
+    }
 
     @FXML
     void setBlurPaneHidden(MouseEvent event) {
@@ -167,6 +229,8 @@ public class TelaPrincipal implements Initializable{
             if(telaAtual == TelaAtual.TELAHOME){
                 Run.telaHome.imagem.setFitWidth(centerPane.getWidth() + 40);
                 Run.telaHome.imagem.setFitHeight(centerPane.getHeight() - 10);
+                editPane.setLayoutX(stage.getWidth()/2 - editPane.getWidth()/2);
+                editPane.setLayoutY(stage.getHeight()/2 - editPane.getHeight()/2 - 20);
             }
             alignTabPaneHeader();
 
@@ -185,6 +249,9 @@ public class TelaPrincipal implements Initializable{
             Run.telaHome.imagem.setFitWidth(centerPane.getWidth() - 40);
             Run.telaHome.imagem.setFitHeight(centerPane.getHeight() - 40);
         }
+
+        editPane.setLayoutX(stage.getWidth()/2 - editPane.getWidth()/2);
+        editPane.setLayoutY(stage.getHeight()/2 - editPane.getHeight()/2 - 30);
 
         alignTabPaneHeader();
     }
@@ -268,7 +335,6 @@ public class TelaPrincipal implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Run.telaPrincipal = this;
-        //blurPane.setViewOrder(-1); //funcionou
         Run.app.stage.setOnShown(windowEvent -> {
             showHome(null);
             setScene("TelaHome.fxml");

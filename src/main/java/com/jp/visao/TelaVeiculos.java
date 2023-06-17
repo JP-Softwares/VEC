@@ -1,5 +1,6 @@
 package com.jp.visao;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -8,6 +9,7 @@ import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -46,6 +48,25 @@ public class TelaVeiculos implements Initializable {
         }
     }
 
+    private void showNewItem(String title, Node anchorPane, ActionListener method){
+        Run.telaPrincipal.setEditWindow(title, anchorPane, method);
+    }
+
+    @FXML
+    void newItemMarcas(ActionEvent event) {
+
+    }
+
+    @FXML
+    void newItemModelos(ActionEvent event) {
+
+    }
+
+    @FXML
+    void newItemVeiculos(ActionEvent event) {
+        showNewItem("Nova Marca", getScene("VeiculosEdit.fxml"), (m) -> System.out.println("teste") /* Comando do banco de dados */);
+    }
+
     public Node getScene(String fxml){
         try {
             return FXMLLoader.load(getClass().getResource(fxml));
@@ -62,5 +83,7 @@ public class TelaVeiculos implements Initializable {
             addItem(modelosItems, PanefundoModelos, getScene("Item.fxml"));
             addItem(marcasItems, PanefundoMarcas, getScene("Item.fxml"));
         }
+
+        //Run.telaPrincipal.setEditWindow("teste", getScene("VeiculosEdit.fxml"), (m) -> System.out.println("teste"));
     }
 }

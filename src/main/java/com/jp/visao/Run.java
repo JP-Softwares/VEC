@@ -22,6 +22,8 @@ public class Run {
 
     public static TelaTipoDeGasto telaTipoDeGasto;
 
+    public static VeiculosEdit veiculosEdit;
+
     public static void main(String[] args){
         App.main(args);
     }
