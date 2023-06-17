@@ -9,12 +9,12 @@ import com.jp.modelos.TipoDoVeiculo;
 public class TesteBancoDeDados {
 
     public static void main(String[] args) throws Exception {
-        //Marca marcateste = new Marca();
+        Marca marcateste = new Marca();
         MarcaControle marcaControle = new MarcaControle();
-        //marcateste.setUrl("www.google.com.br");
-        //marcateste.setNome("Santaninha");
-        //marcaControle.incluir(marcateste);
-        //System.out.println(marcaControle.buscar(2).getNome());
+        marcateste.setUrl("www.google.com.br");
+        marcateste.setNome("Santaninha");
+        marcaControle.incluir(marcateste);
+        System.out.println(marcaControle.buscar(2).getNome());
 
 
         Modelo modeloteste = new Modelo();
