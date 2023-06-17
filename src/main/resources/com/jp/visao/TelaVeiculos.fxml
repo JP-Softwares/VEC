@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="690.0" prefWidth="1340.0" stylesheets="@TelaVeiculosStylesheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jp.visao.TelaVeiculos">
+   <children>
+      <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab styleClass="tabLabel" text="Veículos">
+               <content>
+                  <AnchorPane>
+                     <children>
+                        <ScrollPane fx:id="scrollPaneVeiculos" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" styleClass="scrollPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <content>
+                            <AnchorPane fx:id="PanefundoVeiculos" minHeight="0.0" minWidth="0.0" styleClass="fundo">
+                                 <children>
+                                    <TextField layoutX="208.0" layoutY="46.0" prefHeight="38.0" prefWidth="951.0" styleClass="searchBar" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="46.0">
+                                       <effect>
+                                          <DropShadow height="30.0" radius="14.5" width="30.0" />
+                                       </effect></TextField>
+                                    <ComboBox id="comboBoxVeiculo" layoutX="14.0" layoutY="46.0" prefHeight="38.0" prefWidth="181.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="46.0">
+                                       <effect>
+                                          <DropShadow height="30.0" radius="14.5" width="30.0" />
+                                       </effect>
+                                    </ComboBox>
+                                    <VBox fx:id="veiculoItems" layoutX="38.0" layoutY="127.0" prefHeight="490.0" prefWidth="1279.0" spacing="15.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="127.0">
+                                       <padding>
+                                          <Insets bottom="20.0" />
+                                       </padding>
+                                    </VBox>
+                                    <Button minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="searchButton" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="46.0">
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icones/lupa_black.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onAction="#newItemVeiculos" prefHeight="38.0" prefWidth="107.0" styleClass="buttonNovo" text="Novo" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="45.0" />
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+          <Tab styleClass="tabLabel" text="Modelos">
+               <content>
+                  <AnchorPane>
+                     <children>
+                        <ScrollPane fx:id="scrollPaneModelos" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" styleClass="scrollPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <AnchorPane fx:id="PanefundoModelos" minHeight="0.0" minWidth="0.0" styleClass="fundo">
+                                 <children>
+                                    <TextField layoutX="208.0" layoutY="46.0" prefHeight="38.0" prefWidth="1080.0" styleClass="searchBar" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="46.0">
+                                       <effect>
+                                          <DropShadow height="30.0" radius="14.5" width="30.0" />
+                                       </effect>
+                                    </TextField>
+                                    <VBox fx:id="modelosItems" layoutX="38.0" layoutY="127.0" prefHeight="490.0" prefWidth="1279.0" spacing="15.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="127.0">
+                                       <padding>
+                                          <Insets bottom="20.0" />
+                                       </padding>
+                                    </VBox>
+                                    <Button minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="searchButton" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="46.0">
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icones/lupa_black.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onAction="#newItemModelos" prefHeight="38.0" prefWidth="107.0" styleClass="buttonNovo" text="Novo" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="45.0" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab styleClass="tabLabel" text="Marcas">
+               <content>
+                  <AnchorPane>
+                     <children>
+                        <ScrollPane fx:id="scrollPaneMarcas" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" styleClass="scrollPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <AnchorPane fx:id="PanefundoMarcas" minHeight="0.0" minWidth="0.0" styleClass="fundo">
+                                 <children>
+                                    <TextField layoutX="208.0" layoutY="46.0" prefHeight="38.0" prefWidth="1080.0" styleClass="searchBar" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="46.0">
+                                       <effect>
+                                          <DropShadow height="30.0" radius="14.5" width="30.0" />
+                                       </effect>
+                                    </TextField>
+                                    <VBox fx:id="marcasItems" layoutX="38.0" layoutY="127.0" prefHeight="490.0" prefWidth="1279.0" spacing="15.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="127.0">
+                                       <padding>
+                                          <Insets bottom="20.0" />
+                                       </padding>
+                                    </VBox>
+                                    <Button minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="searchButton" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="46.0">
+                                       <graphic>
+                                          <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../icones/lupa_black.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onAction="#newItemMarcas" prefHeight="38.0" prefWidth="107.0" styleClass="buttonNovo" text="Novo" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="45.0" />
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

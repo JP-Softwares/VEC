@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -25,14 +26,17 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Run.app = this;
+        this.stage = stage;
+
         stage.initStyle(StageStyle.TRANSPARENT);
+
         Application.setUserAgentStylesheet(new PrimerDark().getUserAgentStylesheet());
+
         scene = new Scene(loadFXML("TelaPrincipal"));
         scene.setFill(Color.TRANSPARENT);
         ((Region) scene.getRoot()).setPadding(new Insets(20,20,20,20));
         stage.setScene(scene);
         stage.show();
-        this.stage = stage;
     }
 
     static void setRoot(String fxml) throws IOException {

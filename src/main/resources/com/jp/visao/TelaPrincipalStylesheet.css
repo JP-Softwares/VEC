@@ -1,0 +1,237 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('../fonts/Montserrat-ExtraBold.ttf');
+}
+
+.root{
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.0, 2.0, 2.0);
+    -fx-background-insets: 20;
+    /*-grayColor: #2a2727;*/
+    -titlebarColor: #2B2D30;
+    -lateralColor: #1c1a1a;
+}
+
+/*  Padrões de Tela */
+
+.scroll-bar{
+    -fx-background-color: -backgroundColor;
+    -fx-pref-width: 10px;
+}
+
+.scroll-bar .thumb{
+    -fx-background-color: #454547;
+    -fx-background-radius: 0;
+}
+
+ComboBox{
+    -fx-background-color: #fff;
+    -fx-border-size: 0;
+    /*-fx-border-radius: 20;*/
+    /*-fx-border-color: #00ff00;*/
+    -fx-text-fill: #000;
+    -fx-highlight-fill: #b5c0cc;
+    -fx-highlight-text-fill: #000;
+    -fx-border-color: rgba(0, 0, 0, 0.25);
+    -fx-border-width: 1px;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+}
+
+ComboBox .list-view{
+    -fx-background-color: #fff;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
+    -fx-border-width: 0;
+    -fx-background-radius: 0 0 5 5;
+}
+
+.text-field{
+    -fx-text-fill: #000;
+    -fx-highlight-fill: #b5c0cc;
+    -fx-highlight-text-fill: #000;
+    -fx-background-color: #fff;
+    -fx-border-color: rgba(0, 0, 0, 0.25);
+    -fx-border-width: 1px;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+}
+
+/* Específicos */
+
+#comboBoxVeiculo{
+    -fx-background-radius: 20;
+}
+
+#comboBoxVeiculo .list-view{
+    -fx-background-radius: 10;
+}
+
+#paneLeft{
+    -fx-background-color: -lateralColor;
+}
+
+.lateralMenu{
+    -fx-stroke-width: 2;
+    -fx-stroke: #fff;
+    -fx-translate-x: -5;
+}
+
+#selectedButtonSideBar{
+    -fx-background-color: #fff;
+    -fx-text-fill: #000;
+}
+
+#selectedButtonSideBar:hover{
+    -fx-background-color: #dcd0d0;
+}
+
+.lateralButtons{
+    -fx-background-color: -lateralColor;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-border-width: 0;
+    -fx-graphic-text-gap: 15;
+    -fx-font-family: Montserrat;
+    -fx-font-weight: 900;
+    /*-fx-pref-width: 55;*/
+    /*-fx-pref-height: 45;*/
+}
+
+.lateralButtons:hover{
+    -fx-background-color: #3e3939;
+    -fx-cursor: hand;
+}
+
+.lateralButtons:pressed{
+    -fx-background-color: #2f2b2b;
+    -fx-cursor: normal;
+}
+
+#editPane{
+    -fx-background-color: #e6e6e6;
+    -fx-background-radius: 20px;
+}
+
+#closeButtonEdit{
+    -fx-background-color: rgba(0, 0, 0, 0);
+    -fx-text-fill: #000;
+    -fx-font-size: 20px;
+}
+
+#closeButtonEdit:hover{
+    -fx-cursor: hand;
+    -fx-text-fill: #232323;
+}
+
+#labelTitleEdit{
+    -fx-text-fill: #000;
+    -fx-font-size: 20px;
+    -fx-font-family: Montserrat-Bold;
+    -fx-font-weight: 900;
+}
+
+.buttonsEdit{
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+    -fx-border-width: 0;
+    -fx-font-size: 13px;
+    -fx-font-family: Montserrat-Bold;
+    -fx-font-weight: 900;
+}
+
+.buttonsEdit:hover{
+    -fx-cursor: hand;
+}
+
+#buttonCancelarEdit{
+    -fx-background-color: #e6e6e6;
+    -fx-border-width: 0.5;
+    -fx-border-color: rgba(0, 0, 0, 0.2);
+    -fx-text-fill: #000;
+}
+
+#buttonCancelarEdit:hover{
+    -fx-background-color: #e0dbdb;
+}
+
+#buttonSalvarEdit{
+    -fx-background-color: #d4482b;
+    -fx-border-width: 0;
+    -fx-text-fill: #fff;
+}
+
+#buttonSalvarEdit:hover{
+    -fx-background-color: #b93f25;
+}
+
+ScrollPane{
+    -fx-border-width: 0;
+}
+
+.lineEdit{
+    -fx-stroke: rgba(0, 0, 0, 0.25);
+}
+
+#centerPane{
+    -fx-background-color: #1E1F22;
+}
+
+/*Barra de Título*/
+
+#titlebar{
+    -fx-padding: 0;
+}
+
+#nomeVECTitlebar{
+    -fx-font-family: Montserrat-Bold;
+    -fx-font-size: 2em;
+    -fx-font-weight: bold;
+    -fx-translate-x: 75;
+}
+
+#titlebar, #closeButton, #maximizeButton, #minimizeButton {
+    -fx-background-color: -titlebarColor;
+}
+
+.maximizeRectangle{
+    -fx-fill: -titlebarColor;
+    -fx-stroke: #fff;
+    -fx-translate-x: -5;
+    -fx-translate-y: -5;
+}
+
+.maximized{
+    /*-fx-stroke-width: 0.5;*/
+    -fx-scale-x: 0.8;
+    -fx-scale-y: 0.8;
+    /*-fx-translate-x: -5;*/
+    -fx-translate-y: -4;
+}
+
+#maximizeButton:hover .maximizeRectangle{
+    -fx-fill: #413c3c;
+}
+
+#maximizeButton:hover, #minimizeButton:hover {
+    -fx-background-color: #413c3c;
+}
+
+
+#closeButton:hover {
+    -fx-background-color: #E81123;
+}
+
+#closeButton:pressed {
+    -fx-background-color: #e81f2d;
+}
+
+#closeButton, #maximizeButton, #minimizeButton{
+    /*-fx-background-color: ToolBar;*/
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-text-fill: #fff;
+}

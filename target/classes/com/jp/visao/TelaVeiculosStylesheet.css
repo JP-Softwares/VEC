@@ -1,0 +1,52 @@
+.fundo{
+    -fx-background-color: -backgroundColor;
+}
+
+.root{
+    -backgroundColor: #1E1F22;
+}
+
+
+.searchButton{
+    -fx-background-color: rgba(0, 0, 0, 0);
+    -fx-border-width: 0;
+}
+
+
+.searchButton:hover{
+    -fx-cursor: hand;
+}
+
+.tabLabel{
+    -fx-font-family: Montserrat-Bold;
+    -fx-font-size: 20px;
+    -fx-font-weight: 900;
+}
+
+.buttonNovo{
+    -fx-text-fill: #fff;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+    -fx-border-width: 0;
+    -fx-font-size: 16px;
+    -fx-font-family: Montserrat-Bold;
+    -fx-font-weight: bold;
+    -fx-background-color: #d4482b;
+}
+
+.buttonNovo:hover{
+    -fx-cursor: hand;
+}
+
+.searchBar{
+    -fx-background-color: #fff;
+    -fx-background-radius: 20;
+    /*-fx-border-radius: 20;*/
+    /*-fx-border-color: #00ff00;*/
+    -fx-border-size: 0;
+    -fx-font-size: 16px;
+    -fx-text-fill: #000;
+    -fx-highlight-fill: rgba(40, 38, 38, 0.4);
+    -fx-highlight-text-fill: #000;
+}
+
