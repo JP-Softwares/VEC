@@ -7,6 +7,7 @@
     <list default="true" id="94477dc1-2af1-4d2f-8314-d66cf37020f3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaVeiculos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaVeiculos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/Item.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/Item.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +35,8 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
@@ -56,6 +59,7 @@
       <option name="presentableId" value="Default" />
       <updated>1687040235978</updated>
       <workItem from="1687040237930" duration="97000" />
+      <workItem from="1687040370766" duration="1081000" />
     </task>
     <servers />
   </component>

@@ -3,6 +3,7 @@ package com.jp.visao;
 import com.jp.controle.*;
 import com.jp.modelos.Marca;
 import com.jp.modelos.Modelo;
+import com.jp.modelos.Veiculo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -179,17 +180,30 @@ public class TelaVeiculos implements Initializable {
                     modelos.forEach(modelo -> {
                         AnchorPane itemModelo = (AnchorPane) getScene("Item.fxml");
                         ((Label) itemModelo.lookup("#title")).setText(modelo.getNome() + " - " + modelo.getMarca().getNome());
-                        ((Label) itemModelo.lookup("#description")).setText(modelo.getTipo().toString());
+                        ((Label) itemModelo.lookup("#description")).setText("Tipo do Veículo: " + modelo.getTipo().toString());
                         ((Label) itemModelo.lookup("#id")).setText(modelo.getId() + "");
-                        //((ImageView) itemModelo.lookup("#imagem")).setImage(new Image(getClass().getResourceAsStream(modelo.getUrl())));
-                        addItem(modelosItems, PanefundoMarcas, itemModelo, tipoDoVeiculo);
+                        //((ImageView) itemModelo.lookup("#imagem")).setImage(new Image(getClass().getResourceAsStream(modelo.getUrlModelo())));
+                        addItem(modelosItems, PanefundoModelos, itemModelo, tipoDoVeiculo);
                     });
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
-
                 break;
             case VEICULO:
+                try {
+                    ArrayList<Veiculo> veiculos = Run.veiculoControle.listar();
+                    veiculos.forEach(veiculo -> {
+                        AnchorPane itemVeiculo = (AnchorPane) getScene("Item.fxml");
+                        ((Label) itemVeiculo.lookup("#title")).setText(veiculo.getPlaca() + " - " + veiculo.getModelo().getNome());
+                        ((Label) itemVeiculo.lookup("#description")).setText("Marca: "+ veiculo.getModelo().getMarca().getNome()
+                                                                                +"\nProprietário: " + veiculo.getProprietario().getNome());
+                        ((Label) itemVeiculo.lookup("#id")).setText(veiculo.getId() + "");
+                        //((ImageView) itemVeiculo.lookup("#imagem")).setImage(new Image(getClass().getResourceAsStream(veiculo.getModelo().getUrlModelo())));
+                        addItem(veiculoItems, PanefundoVeiculos, itemVeiculo, tipoDoVeiculo);
+                    });
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
 
                 break;
         }
