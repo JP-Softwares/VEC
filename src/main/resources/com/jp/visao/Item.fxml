@@ -27,7 +27,7 @@
       <Label id="id" fx:id="id" layoutX="273.0" layoutY="42.0" text="1" visible="false" />
       <FlowPane layoutX="25.0" layoutY="12.0" prefHeight="75.0" prefWidth="75.0" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="12.0">
          <children>
-            <ImageView id="imageView" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView id="imagem" fx:id="imagem" fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </FlowPane>
    </children>

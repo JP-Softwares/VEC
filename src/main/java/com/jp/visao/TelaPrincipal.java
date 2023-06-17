@@ -115,7 +115,7 @@ public class TelaPrincipal implements Initializable{
 
         transicao.play();
 
-        JFXScrollPane.smoothScrolling(scrollPaneEdit);
+        //JFXScrollPane.smoothScrolling(scrollPaneEdit);
     }
 
     @FXML

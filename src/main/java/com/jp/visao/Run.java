@@ -4,6 +4,8 @@
  */
 package com.jp.visao;
 
+import com.jp.controle.*;
+
 /**
  *
  * @author Woly
@@ -29,8 +31,21 @@ public class Run {
     public static VeiculosEdit veiculosEdit;
 
 
+    public static IMarcaControle marcaControle = null;
+    public static IModeloControle modeloControle = null;
+    public static IVeiculoControle veiculoControle = null;
 
     public static void main(String[] args){
+        new Thread(() -> {
+            try {
+                marcaControle = new MarcaControle();
+                modeloControle = new ModeloControle();
+                veiculoControle = new VeiculoControle();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }).start();
+
         App.main(args);
     }
 }

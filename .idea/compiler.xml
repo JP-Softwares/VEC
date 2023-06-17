@@ -9,8 +9,5 @@
         <module name="VEC" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="VEC" target="17" />
-    </bytecodeTargetLevel>
   </component>
 </project>

@@ -95,7 +95,7 @@
                   </Button>
                   <Label id="labelTitleEdit" fx:id="labelTitleEdit" layoutX="28.0" layoutY="14.0" prefHeight="24.0" prefWidth="418.0" text="Title" />
                   <Line endX="358.0" layoutX="121.0" layoutY="52.0" startX="-140.0" styleClass="lineEdit" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="51.5" />
-                  <ScrollPane fx:id="scrollPaneEdit" hbarPolicy="NEVER" layoutX="23.0" layoutY="68.0" pannable="true" prefHeight="460.0" prefWidth="464.0" AnchorPane.bottomAnchor="71.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="68.0" />
+                  <ScrollPane fx:id="scrollPaneEdit" hbarPolicy="NEVER" layoutX="23.0" layoutY="68.0" pannable="true" prefHeight="460.0" prefWidth="464.0" style="-fx-border-color: #000;" AnchorPane.bottomAnchor="71.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="68.0" />
                   <ButtonBar buttonMinWidth="80.0" layoutX="280.0" layoutY="546.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="20.0">
                     <buttons>
                       <Button id="buttonCancelarEdit" mnemonicParsing="false" onAction="#cancelEdit" prefHeight="40.0" styleClass="buttonsEdit" text="Cancelar" />

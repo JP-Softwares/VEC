@@ -29,7 +29,7 @@
                                        <effect>
                                           <DropShadow height="30.0" radius="14.5" width="30.0" />
                                        </effect></TextField>
-                                    <ComboBox id="comboBoxVeiculo" layoutX="14.0" layoutY="46.0" prefHeight="38.0" prefWidth="181.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="46.0">
+                                    <ComboBox id="comboBoxVeiculo" layoutX="30.0" layoutY="46.0" prefHeight="38.0" prefWidth="181.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="46.0">
                                        <effect>
                                           <DropShadow height="30.0" radius="14.5" width="30.0" />
                                        </effect>
