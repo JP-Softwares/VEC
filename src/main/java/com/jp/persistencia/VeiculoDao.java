@@ -31,7 +31,7 @@ public class VeiculoDao implements IVeiculoDao{
             preparedStatement.setString(2, objeto.getAnoFabricacao() + "");
             preparedStatement.setString(3, objeto.getAnoModelo() + "");
             preparedStatement.setString(4, objeto.getCombustivel().toString());
-            preparedStatement.setString(5, objeto.getKilometragem() + "");
+            preparedStatement.setInt(5, objeto.getKilometragem());
             preparedStatement.setString(6, objeto.getSituacao().toString());
             preparedStatement.setInt(7, objeto.getModelo().getId());
             preparedStatement.setInt(8, objeto.getProprietario().getId());
@@ -54,7 +54,7 @@ public class VeiculoDao implements IVeiculoDao{
             preparedStatement.setString(2, objeto.getAnoFabricacao() + "");
             preparedStatement.setString(3, objeto.getAnoModelo() + "");
             preparedStatement.setString(4, objeto.getCombustivel().toString());
-            preparedStatement.setString(5, objeto.getKilometragem() + "");
+            preparedStatement.setInt(5, objeto.getKilometragem());
             preparedStatement.setString(6, objeto.getSituacao().toString());
             preparedStatement.setInt(7, objeto.getModelo().getId());
             preparedStatement.setInt(8, objeto.getProprietario().getId());
@@ -128,7 +128,7 @@ public class VeiculoDao implements IVeiculoDao{
             if(rs.next()) {
                 veiculo.setId(rs.getInt("id"));
                 veiculo.setAnoFabricacao(Integer.parseInt(rs.getString("anoFabricacao")));
-                veiculo.setAnoModelo(Integer.parseInt(rs.getString("url")));
+                veiculo.setAnoModelo(Integer.parseInt(rs.getString("anoModelo")));
                 veiculo.setKilometragem(rs.getInt("quilometragemAtual"));
                 veiculo.setCombustivel(TipoDoCombustivel.valueOf(rs.getString("tipoDoCombustivel")));
                 veiculo.setPlaca(rs.getString("placa"));

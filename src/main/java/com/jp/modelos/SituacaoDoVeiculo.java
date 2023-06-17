@@ -1,5 +1,5 @@
 package com.jp.modelos;
 
 public enum SituacaoDoVeiculo {
-    DISPONIVEL, LOCADO, VENDIDO, MANUTENCAO
+    DISPONIVEL, VENDIDO, MANUTENCAO
 }

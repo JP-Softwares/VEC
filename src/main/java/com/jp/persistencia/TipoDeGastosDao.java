@@ -16,7 +16,7 @@ public class TipoDeGastosDao implements ITipoDeGastosDao{
     @Override
     public void incluir(TipoDeGastos objeto) throws Exception {
         try {
-            String sql = "insert into TipoDeGasto(nome, icone) values (?, ?)";
+            String sql = "insert into TipoDeGasto(nome, url) values (?, ?)";
             PreparedStatement preparedStatement = conexao.prepareStatement(sql);
             // Parameters iniciar os elementos
             preparedStatement.setString(1, objeto.getNome());
@@ -90,7 +90,7 @@ public class TipoDeGastosDao implements ITipoDeGastosDao{
     @Override
     public TipoDeGastos buscar(int id) throws Exception {
         try {
-            String sql = "select * from TipoDeGastos where id = '"+id+"'";
+            String sql = "select * from TipoDeGasto where id = '"+id+"'";
             Statement statement = conexao.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             TipoDeGastos tipoDeGastos = new TipoDeGastos();

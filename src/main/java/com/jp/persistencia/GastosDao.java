@@ -27,7 +27,7 @@ public class GastosDao implements IGastosDao{
             // Parameters iniciar os elementos
             preparedStatement.setString(1, objeto.getDescricao());
             preparedStatement.setFloat(2, Float.parseFloat(objeto.getValor() + ""));
-            preparedStatement.setDate(3, Date.valueOf(objeto.getData().toString()));
+            preparedStatement.setDate(3, objeto.getData());
             preparedStatement.setInt(4, objeto.getVeiculo().getId());
             preparedStatement.setInt(5, objeto.getTipoDeGastos().getId());
             preparedStatement.executeUpdate();
@@ -46,7 +46,7 @@ public class GastosDao implements IGastosDao{
             // Parameters iniciar os elementos
             preparedStatement.setString(1, objeto.getDescricao());
             preparedStatement.setFloat(2, Float.parseFloat(objeto.getValor() + ""));
-            preparedStatement.setDate(3, Date.valueOf(objeto.getData().toString()));
+            preparedStatement.setDate(3, objeto.getData());
             preparedStatement.setInt(4, objeto.getVeiculo().getId());
             preparedStatement.setInt(5, objeto.getTipoDeGastos().getId());
             preparedStatement.setInt(6, objeto.getId());
@@ -104,8 +104,8 @@ public class GastosDao implements IGastosDao{
             ArrayList<Gastos> gastos = new ArrayList<Gastos>();
             Gastos aux = lista.next();
             switch (aux.getData().getMonth()){
-                case 1:
-                    if(hm.get(1).isEmpty()){
+                case 0:
+                    if(hm.get(1)== null){
                         gastos.add(aux);
                         hm.put(1, gastos);
                     }else {
@@ -114,8 +114,8 @@ public class GastosDao implements IGastosDao{
                         hm.put(1, gastos);
                     }
                     break;
-                case 2:
-                    if(hm.get(2).isEmpty()){
+                case 1:
+                    if(hm.get(2)== null){
                         gastos.add(aux);
                         hm.put(2, gastos);
                     }else {
@@ -124,8 +124,8 @@ public class GastosDao implements IGastosDao{
                         hm.put(2, gastos);
                     }
                     break;
-                case 3:
-                    if(hm.get(3).isEmpty()){
+                case 2:
+                    if(hm.get(3)== null){
                         gastos.add(aux);
                         hm.put(3, gastos);
                     }else {
@@ -134,8 +134,8 @@ public class GastosDao implements IGastosDao{
                         hm.put(3, gastos);
                     }
                     break;
-                case 4:
-                    if(hm.get(4).isEmpty()){
+                case 3:
+                    if(hm.get(4)== null){
                         gastos.add(aux);
                         hm.put(4, gastos);
                     }else {
@@ -144,8 +144,8 @@ public class GastosDao implements IGastosDao{
                         hm.put(4, gastos);
                     }
                     break;
-                case 5:
-                    if(hm.get(5).isEmpty()){
+                case 4:
+                    if(hm.get(5) == null){
                         gastos.add(aux);
                         hm.put(5, gastos);
                     }else {
@@ -154,8 +154,8 @@ public class GastosDao implements IGastosDao{
                         hm.put(5, gastos);
                     }
                     break;
-                case 6:
-                    if(hm.get(6).isEmpty()){
+                case 5:
+                    if(hm.get(6) == null){
                         gastos.add(aux);
                         hm.put(6, gastos);
                     }else {
@@ -164,8 +164,8 @@ public class GastosDao implements IGastosDao{
                         hm.put(6, gastos);
                     }
                     break;
-                case 7:
-                    if(hm.get(7).isEmpty()){
+                case 6:
+                    if(hm.get(7)== null){
                         gastos.add(aux);
                         hm.put(7, gastos);
                     }else {
@@ -174,8 +174,8 @@ public class GastosDao implements IGastosDao{
                         hm.put(7, gastos);
                     }
                     break;
-                case 8:
-                    if(hm.get(8).isEmpty()){
+                case 7:
+                    if(hm.get(8)== null){
                         gastos.add(aux);
                         hm.put(8, gastos);
                     }else {
@@ -184,8 +184,8 @@ public class GastosDao implements IGastosDao{
                         hm.put(8, gastos);
                     }
                     break;
-                case 9:
-                    if(hm.get(9).isEmpty()){
+                case 8:
+                    if(hm.get(9)== null){
                         gastos.add(aux);
                         hm.put(9, gastos);
                     }else {
@@ -194,8 +194,8 @@ public class GastosDao implements IGastosDao{
                         hm.put(9, gastos);
                     }
                     break;
-                case 10:
-                    if(hm.get(10).isEmpty()){
+                case 9:
+                    if(hm.get(10)== null){
                         gastos.add(aux);
                         hm.put(10, gastos);
                     }else {
@@ -204,8 +204,8 @@ public class GastosDao implements IGastosDao{
                         hm.put(10, gastos);
                     }
                     break;
-                case 11:
-                    if(hm.get(11).isEmpty()){
+                case 10:
+                    if(hm.get(11)== null){
                         gastos.add(aux);
                         hm.put(11, gastos);
                     }else {
@@ -214,8 +214,8 @@ public class GastosDao implements IGastosDao{
                         hm.put(11, gastos);
                     }
                     break;
-                case 12:
-                    if(hm.get(12).isEmpty()){
+                case 11:
+                    if(hm.get(12)== null){
                         gastos.add(aux);
                         hm.put(12, gastos);
                     }else {
@@ -300,5 +300,14 @@ public class GastosDao implements IGastosDao{
             e.printStackTrace();
         }
         return null;
+    }
+
+    private void sort(HashMap<Integer, ArrayList> hm){
+        int key = 1;
+        ArrayList<Gastos> organizar = new ArrayList<>();
+        while (key < 13){
+            organizar = hm.get(key);
+            //organizar.sort((o1, o2) -> );
+        }
     }
 }

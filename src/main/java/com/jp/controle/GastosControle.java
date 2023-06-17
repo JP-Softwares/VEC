@@ -8,6 +8,7 @@ import com.jp.persistencia.GastosDao;
 import com.jp.persistencia.IGastosDao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.InputMismatchException;
 
 public class GastosControle implements IGastosControle{
@@ -39,6 +40,11 @@ public class GastosControle implements IGastosControle{
         }catch(Exception erro){
             return new ArrayList<Gastos>();
         }
+    }
+
+    @Override
+    public HashMap<Integer, ArrayList> listarPorMes() throws Exception {
+        return GastosPersistencia.listarPorMes();
     }
 
     @Override
