@@ -1,7 +1,10 @@
 package com.jp.persistencia;
 
-import com.jp.modelos.Marca;
-import com.jp.modelos.Veiculo;
+import com.jp.controle.IMarcaControle;
+import com.jp.controle.MarcaControle;
+import com.jp.controle.ModeloControle;
+import com.jp.controle.ProprietarioControle;
+import com.jp.modelos.*;
 import com.jp.tools.ConexaoBD;
 
 import java.sql.*;
@@ -14,6 +17,9 @@ public class VeiculoDao implements IVeiculoDao{
     public VeiculoDao() throws Exception{
         conexao = ConexaoBD.getConexao();
     }
+
+    ModeloControle modeloControle = new ModeloControle();
+    ProprietarioControle proprietarioControle = new ProprietarioControle();
 
     @Override
     public void incluir(Veiculo objeto) throws Exception {
@@ -71,28 +77,88 @@ public class VeiculoDao implements IVeiculoDao{
             while (rs.next()) {
                 Veiculo veiculo = new Veiculo();
                 veiculo.setId(rs.getInt("id"));
-                veiculo.getAnoFabricacao(Integer.parseInt(rs.getString("anoFabricacao")));
-                marca.setUrl(rs.getString("url"));
-                listaMarcas.add(marca);
+                veiculo.setAnoFabricacao(Integer.parseInt(rs.getString("anoFabricacao")));
+                veiculo.setAnoModelo(Integer.parseInt(rs.getString("url")));
+                veiculo.setKilometragem(rs.getInt("quilometragemAtual"));
+                veiculo.setCombustivel(TipoDoCombustivel.valueOf(rs.getString("tipoDoCombustivel")));
+                veiculo.setPlaca(rs.getString("placa"));
+                veiculo.setModelo(modeloControle.buscar(rs.getInt("idModelo")));
+                veiculo.setSituacao(SituacaoDoVeiculo.valueOf(rs.getString("situacaoDoVeiculo")));
+                veiculo.setProprietario(proprietarioControle.buscar(rs.getString("idProprietario")));
+                listaVeiculos.add(veiculo);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return listaMarcas;
+        return listaVeiculos;
     }
 
     @Override
     public Veiculo buscar(String placa) throws Exception {
+        try {
+            String sql = "select * from Veiculo where placa = '"+placa+"'";
+            Statement statement = conexao.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            Veiculo veiculo = new Veiculo();
+            veiculo.setId(rs.getInt("id"));
+            veiculo.setAnoFabricacao(Integer.parseInt(rs.getString("anoFabricacao")));
+            veiculo.setAnoModelo(Integer.parseInt(rs.getString("url")));
+            veiculo.setKilometragem(rs.getInt("quilometragemAtual"));
+            veiculo.setCombustivel(TipoDoCombustivel.valueOf(rs.getString("tipoDoCombustivel")));
+            veiculo.setPlaca(rs.getString("placa"));
+            veiculo.setModelo(modeloControle.buscar(rs.getInt("idModelo")));
+            veiculo.setSituacao(SituacaoDoVeiculo.valueOf(rs.getString("situacaoDoVeiculo")));
+            veiculo.setProprietario(proprietarioControle.buscar(rs.getString("idProprietario")));
+            return veiculo;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 
     @Override
     public Veiculo buscar(int id) throws Exception {
+        try {
+            String sql = "select * from Veiculo where id = '"+id+"'";
+            Statement statement = conexao.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            Veiculo veiculo = new Veiculo();
+            veiculo.setId(rs.getInt("id"));
+            veiculo.setAnoFabricacao(Integer.parseInt(rs.getString("anoFabricacao")));
+            veiculo.setAnoModelo(Integer.parseInt(rs.getString("url")));
+            veiculo.setKilometragem(rs.getInt("quilometragemAtual"));
+            veiculo.setCombustivel(TipoDoCombustivel.valueOf(rs.getString("tipoDoCombustivel")));
+            veiculo.setPlaca(rs.getString("placa"));
+            veiculo.setModelo(modeloControle.buscar(rs.getInt("idModelo")));
+            veiculo.setSituacao(SituacaoDoVeiculo.valueOf(rs.getString("situacaoDoVeiculo")));
+            veiculo.setProprietario(proprietarioControle.buscar(rs.getString("idProprietario")));
+            return veiculo;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 
     @Override
     public Veiculo buscar(int id, boolean modelo) throws Exception {
+        try {
+            String sql = "select * from Veiculo where idModelo = '"+id+"'";
+            Statement statement = conexao.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            Veiculo veiculo = new Veiculo();
+            veiculo.setId(rs.getInt("id"));
+            veiculo.setAnoFabricacao(Integer.parseInt(rs.getString("anoFabricacao")));
+            veiculo.setAnoModelo(Integer.parseInt(rs.getString("url")));
+            veiculo.setKilometragem(rs.getInt("quilometragemAtual"));
+            veiculo.setCombustivel(TipoDoCombustivel.valueOf(rs.getString("tipoDoCombustivel")));
+            veiculo.setPlaca(rs.getString("placa"));
+            veiculo.setModelo(modeloControle.buscar(rs.getInt("idModelo")));
+            veiculo.setSituacao(SituacaoDoVeiculo.valueOf(rs.getString("situacaoDoVeiculo")));
+            veiculo.setProprietario(proprietarioControle.buscar(rs.getString("idProprietario")));
+            return veiculo;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 }

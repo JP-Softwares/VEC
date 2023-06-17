@@ -12,7 +12,9 @@ public class MarcaControle implements IMarcaControle{
     public MarcaControle(){
         try {
             this.marcaPersistencia = new MarcaDao();
+            System.out.println("teste");
         }catch (Exception erro){
+            erro.printStackTrace();
         }
 
     }
@@ -98,19 +100,6 @@ public class MarcaControle implements IMarcaControle{
     }
 
     public void incluir(Marca objeto) throws Exception{
-        objeto.setNome(verificarDescricao(objeto.getNome()));
-        if(!verificarVazio(objeto).equals("")) throw new Exception(verificarVazio(objeto));
-        try{
-            if(buscarMarca(objeto.getNome())){
-                throw new Exception("Marca já cadastrada");
-            }
-        }catch(Exception erro) {
-            if(erro.getMessage().contains("arquivo especificado")){
-
-            }else{
-                throw erro;
-            }
-        }
         marcaPersistencia.incluir(objeto);
     }
 

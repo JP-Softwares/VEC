@@ -24,7 +24,7 @@ public class ConexaoBD {
                 
                 String driver = "org.postgresql.Driver";
                 //String url = "jdbc:postgresql://" + DatabaseConnection; // URL Banco em nuvem
-                String url = "jdbc:postgresql://localhost:5432/DatabaseVEC";
+                String url = "jdbc:postgresql://10.144.102.27:5432/DatabaseVEC";
                 String user = "postgres";
                 String password = "aluno";
                 Class.forName(driver);

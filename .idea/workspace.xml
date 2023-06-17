@@ -35,7 +35,6 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="useMavenConfig" value="true" />
-        <option name="usePluginRegistry" value="true" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -79,7 +78,20 @@
       <recent name="C:\Users\Woly\Desktop\VEC\src\main\resources\com\jp\visao" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.TesteBancoDeDados">
+    <configuration name="TesteBancoDeDados" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jp.teste.TesteBancoDeDados" />
+      <module name="VEC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jp.teste.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="VEC" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.jp.visao.Run" />
       <module name="VEC" />
@@ -87,6 +99,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TesteBancoDeDados" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -108,7 +125,8 @@
       <workItem from="1686616923634" duration="5397000" />
       <workItem from="1686707037244" duration="2545000" />
       <workItem from="1686791741320" duration="6807000" />
-      <workItem from="1686875608070" duration="10389000" />
+      <workItem from="1686875608070" duration="10502000" />
+      <workItem from="1686951762885" duration="10149000" />
     </task>
     <task id="LOCAL-00001" summary="testing in intellij">
       <created>1685770058727</created>
@@ -161,6 +179,16 @@
     <MESSAGE value="retirei o segundo modelo de fxml e já configurei algumas coisas da tela." />
     <MESSAGE value="commit" />
     <option name="LAST_COMMIT_MESSAGE" value="commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

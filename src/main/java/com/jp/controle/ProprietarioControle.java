@@ -1,17 +1,24 @@
 package com.jp.controle;
 
 import com.jp.modelos.Proprietario;
+import com.jp.persistencia.IProprietarioDao;
+import com.jp.persistencia.MarcaDao;
+import com.jp.persistencia.ProprietarioDao;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 
 public class ProprietarioControle implements IProprietarioControle{
 
-    IProprietarioDao ProprietarioPersistencia = null;
 
+        IProprietarioDao ProprietarioPersistencia = null;
 
     public ProprietarioControle(){
-        this.ProprietarioPersistencia = new ProprietarioDao();
+        try{
+            this.ProprietarioPersistencia = new ProprietarioDao();
+        }catch (Exception erro){
+        }
+
     }
     @Override
     public void incluir(Proprietario objeto) throws Exception {

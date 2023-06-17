@@ -80,9 +80,11 @@ public class MarcaDao implements IMarcaDao{
             Statement statement = conexao.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             Marca marca = new Marca();
-            marca.setId(rs.getInt("id"));
-            marca.setNome(rs.getString("nome"));
-            marca.setUrl(rs.getString("url"));
+            if(rs.next()){
+                marca.setId(rs.getInt("id"));
+                marca.setNome(rs.getString("nome"));
+                marca.setUrl(rs.getString("url"));
+            }
             return marca;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -93,15 +95,16 @@ public class MarcaDao implements IMarcaDao{
 
     @Override
     public Marca buscar(int id) throws Exception {
-        ArrayList<Marca> listaMarcas = new ArrayList<Marca>();
         try {
             String sql = "select * from Marca where id = '"+id+"'";
             Statement statement = conexao.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             Marca marca = new Marca();
-            marca.setId(rs.getInt("id"));
-            marca.setNome(rs.getString("nome"));
-            marca.setUrl(rs.getString("url"));
+            if(rs.next()){
+                marca.setId(rs.getInt("id"));
+                marca.setNome(rs.getString("nome"));
+                marca.setUrl(rs.getString("url"));
+            }
             return marca;
         } catch (SQLException e) {
             e.printStackTrace();

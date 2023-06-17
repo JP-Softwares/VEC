@@ -4,6 +4,8 @@ import com.jp.modelos.Gastos;
 import com.jp.modelos.Proprietario;
 import com.jp.modelos.TipoDeGastos;
 import com.jp.modelos.Veiculo;
+import com.jp.persistencia.GastosDao;
+import com.jp.persistencia.IGastosDao;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -11,7 +13,12 @@ import java.util.InputMismatchException;
 public class GastosControle implements IGastosControle{
 
     public GastosControle(){
-        this.GastosPersistencia = new GastosDao();
+        try{
+            this.GastosPersistencia = new GastosDao();
+        }catch (Exception erro){
+
+        }
+
     }
     IGastosDao GastosPersistencia = null;
     @Override

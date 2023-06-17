@@ -1,17 +1,19 @@
 package com.jp.controle;
 
 import com.jp.modelos.Veiculo;
+import com.jp.persistencia.IVeiculoDao;
+import com.jp.persistencia.VeiculoDao;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 
 public class VeiculoControle implements IVeiculoControle{
 
-    IVeiculoDao VeiculoPersistencia = null;
+    IVeiculoDao veiculoPersistencia = null;
 
 
-    public VeiculoControle(){
-        this.VeiculoPersistencia = new VeiculoDao();
+    public VeiculoControle() throws Exception {
+        this.veiculoPersistencia = new VeiculoDao();
     }
     @Override
     public void incluir(Veiculo objeto) throws Exception {

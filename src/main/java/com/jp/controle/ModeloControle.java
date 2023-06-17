@@ -113,14 +113,14 @@ public class ModeloControle implements IModeloControle{
     @Override
     public ArrayList<Modelo> listar() throws Exception{
         try{
-            ArrayList<Modelo> modelos = modeloPersistencia.listar();
+            /*ArrayList<Modelo> modelos = modeloPersistencia.listar();
             Iterator<Modelo> array = modelos.iterator();
             Marca marca = new Marca();
 
             while(array.hasNext()){
                 Modelo modelo = array.next();
                 marca.buscar(modelo.getMarca  ().getId());
-            }
+            }*/
             return modeloPersistencia.listar();
         }catch(Exception erro){
             return new ArrayList<Modelo>();

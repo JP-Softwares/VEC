@@ -11,7 +11,7 @@ public class Marca {
     public Marca() {
     }
 
-    public Marca buscar(String descricao) throws Exception{
+    /*public Marca buscar(String descricao) throws Exception{
 
         try {
             IMarcaControle marcaControle = new MarcaControle();
@@ -31,7 +31,7 @@ public class Marca {
         } catch (Exception e) {
             throw e;
         }
-    }
+    }*/
 
     public int getId() {
         return id;

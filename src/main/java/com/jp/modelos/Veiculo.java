@@ -7,7 +7,6 @@ public class Veiculo {
     private int anoModelo = 0;
     private int kilometragem = 0;
     private TipoDoCombustivel combustivel = null;
-    private TipoDoVeiculo carro = null;
     private SituacaoDoVeiculo situacao = null;
     private Modelo modelo = null;
 
@@ -23,14 +22,13 @@ public class Veiculo {
     }
 
 
-    public Veiculo(int id, String placa, int anoFabricacao, int anoModelo, int kilometragem, TipoDoCombustivel combustivel, TipoDoVeiculo carro, SituacaoDoVeiculo situacao, Modelo modelo, Proprietario proprietario) {
+    public Veiculo(int id, String placa, int anoFabricacao, int anoModelo, int kilometragem, TipoDoCombustivel combustivel, SituacaoDoVeiculo situacao, Modelo modelo, Proprietario proprietario) {
         this.id = id;
         this.placa = placa;
         this.anoFabricacao = anoFabricacao;
         this.anoModelo = anoModelo;
         this.kilometragem = kilometragem;
         this.combustivel = combustivel;
-        this.carro = carro;
         this.situacao = situacao;
         this.modelo = modelo;
         this.proprietario = proprietario;
@@ -84,13 +82,6 @@ public class Veiculo {
         this.combustivel = combustivel;
     }
 
-    public TipoDoVeiculo getCarro() {
-        return carro;
-    }
-
-    public void setCarro(TipoDoVeiculo carro) {
-        this.carro = carro;
-    }
 
     public SituacaoDoVeiculo getSituacao() {
         return situacao;

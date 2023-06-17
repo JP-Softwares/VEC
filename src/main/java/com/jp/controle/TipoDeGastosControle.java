@@ -2,6 +2,8 @@ package com.jp.controle;
 
 import com.jp.modelos.Gastos;
 import com.jp.modelos.TipoDeGastos;
+import com.jp.persistencia.ITipoDeGastosDao;
+import com.jp.persistencia.TipoDeGastosDao;
 
 import java.util.ArrayList;
 
@@ -9,7 +11,12 @@ public class TipoDeGastosControle implements ITipoDeGastosControle {
 
 
     public TipoDeGastosControle() {
-        this.TipoDeGastosPersistencia = new TipoDeGastosDao();
+        try {
+            this.TipoDeGastosPersistencia = new TipoDeGastosDao();
+        }catch (Exception erro){
+
+        }
+
     }
 
     ITipoDeGastosDao TipoDeGastosPersistencia = null;
