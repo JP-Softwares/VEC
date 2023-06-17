@@ -166,7 +166,7 @@ public class TelaVeiculos implements Initializable {
                         ((Label) itemMarca.lookup("#title")).setText(marca.getNome() + "");
                         ((Label) itemMarca.lookup("#description")).setText("");
                         ((Label) itemMarca.lookup("#id")).setText(marca.getId() + "");
-                        //((ImageView) itemMarca.lookup("ImageView")).setImage(new Image(getClass().getResourceAsStream(marca.getUrl())));
+                        //((ImageView) itemMarca.lookup("#imagem")).setImage(new Image(getClass().getResourceAsStream(marca.getUrl())));
                         addItem(marcasItems, PanefundoMarcas, itemMarca, tipoDoVeiculo);
                     });
                 } catch (Exception e) {
@@ -176,13 +176,13 @@ public class TelaVeiculos implements Initializable {
             case MODELO:
                 try {
                     ArrayList<Modelo> modelos = Run.modeloControle.listar();
-                    modelos.forEach(modelos -> {
-                        AnchorPane itemMarca = (AnchorPane) getScene("Item.fxml");
-                        ((Label) itemMarca.lookup("#title")).setText(marca.getNome() + "");
-                        ((Label) itemMarca.lookup("#description")).setText("");
-                        ((Label) itemMarca.lookup("#id")).setText(marca.getId() + "");
-                        //((ImageView) itemMarca.lookup("ImageView")).setImage(new Image(getClass().getResourceAsStream(marca.getUrl())));
-                        addItem(marcasItems, PanefundoMarcas, itemMarca, tipoDoVeiculo);
+                    modelos.forEach(modelo -> {
+                        AnchorPane itemModelo = (AnchorPane) getScene("Item.fxml");
+                        ((Label) itemModelo.lookup("#title")).setText(modelo.getNome() + " - " + modelo.getMarca().getNome());
+                        ((Label) itemModelo.lookup("#description")).setText(modelo.getTipo().toString());
+                        ((Label) itemModelo.lookup("#id")).setText(modelo.getId() + "");
+                        //((ImageView) itemModelo.lookup("#imagem")).setImage(new Image(getClass().getResourceAsStream(modelo.getUrl())));
+                        addItem(modelosItems, PanefundoMarcas, itemModelo, tipoDoVeiculo);
                     });
                 } catch (Exception e) {
                     throw new RuntimeException(e);
