@@ -9,7 +9,6 @@ public class Veiculo {
     private TipoDoCombustivel combustivel = null;
     private SituacaoDoVeiculo situacao = null;
     private Modelo modelo = null;
-
     private Proprietario proprietario = null;
 
 

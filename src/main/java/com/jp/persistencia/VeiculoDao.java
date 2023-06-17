@@ -78,7 +78,7 @@ public class VeiculoDao implements IVeiculoDao{
                 Veiculo veiculo = new Veiculo();
                 veiculo.setId(rs.getInt("id"));
                 veiculo.setAnoFabricacao(Integer.parseInt(rs.getString("anoFabricacao")));
-                veiculo.setAnoModelo(Integer.parseInt(rs.getString("url")));
+                veiculo.setAnoModelo(Integer.parseInt(rs.getString("anoModelo")));
                 veiculo.setKilometragem(rs.getInt("quilometragemAtual"));
                 veiculo.setCombustivel(TipoDoCombustivel.valueOf(rs.getString("tipoDoCombustivel")));
                 veiculo.setPlaca(rs.getString("placa"));
@@ -103,7 +103,7 @@ public class VeiculoDao implements IVeiculoDao{
             if(rs.next()) {
                 veiculo.setId(rs.getInt("id"));
                 veiculo.setAnoFabricacao(Integer.parseInt(rs.getString("anoFabricacao")));
-                veiculo.setAnoModelo(Integer.parseInt(rs.getString("url")));
+                veiculo.setAnoModelo(Integer.parseInt(rs.getString("anoModelo")));
                 veiculo.setKilometragem(rs.getInt("quilometragemAtual"));
                 veiculo.setCombustivel(TipoDoCombustivel.valueOf(rs.getString("tipoDoCombustivel")));
                 veiculo.setPlaca(rs.getString("placa"));
