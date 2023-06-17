@@ -62,16 +62,25 @@ public class TesteBancoDeDados {
         tipoDeGastosteste.setIcone("Ai pai para");
         tipoDeGastosteste.setNome("IPVA");
         //tipoDeGastosControle.incluir(tipoDeGastosteste);
+        /*while(lista.hasNext()){
+            Modelo aux = lista.next();
+            System.out.println(aux.getNome());
+        }*/
 
 
 
         GastosControle gastosControle = new GastosControle();
         Gastos gastosteste = new Gastos();
-        gastosteste.setData(Date.valueOf("2023-09-13"));
-        gastosteste.setDescricao("Apareço no fim?");
+        gastosteste.setData(Date.valueOf("2023-01-27"));
+        gastosteste.setDescricao("Onde está meu amor");
         gastosteste.setVeiculo(veiculoControle.buscar(1));
         gastosteste.setValor(13.45);
         gastosteste.setTipoDeGastos(tipoDeGastosControle.buscar(1));
+        /*Iterator<Gastos> listagasto = gastosControle.listar().iterator();
+        while(listagasto.hasNext()){
+            Gastos aux = listagasto.next();
+            System.out.println(aux.getData().toLocalDate().getDayOfMonth()+ "");
+        }*/
         //gastosControle.incluir(gastosteste);
 
         ArrayList<Gastos> Janeiro = new ArrayList<>();

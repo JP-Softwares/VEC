@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3627a75b-168e-4c6c-a924-a9d103931eae" name="Changes" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_06_2023_11_24__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_06_2023_11_24__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/controle/GastosControle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/controle/GastosControle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/controle/IGastosControle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/controle/IGastosControle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/modelos/Gastos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/modelos/Gastos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/modelos/SituacaoDoVeiculo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/modelos/SituacaoDoVeiculo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VEC.jar" beforeDir="false" afterPath="$PROJECT_DIR$/VEC.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/GastosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/GastosDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/IGastosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/IGastosDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/TipoDeGastosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/TipoDeGastosDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/VeiculoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/VeiculoDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/teste/TesteBancoDeDados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/teste/TesteBancoDeDados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/tools/ConexaoBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/tools/ConexaoBD.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +136,7 @@
       <workItem from="1686951762885" duration="10149000" />
       <workItem from="1687020359826" duration="308000" />
       <workItem from="1687020687501" duration="3375000" />
-      <workItem from="1687024366128" duration="10021000" />
+      <workItem from="1687024366128" duration="14593000" />
     </task>
     <task id="LOCAL-00001" summary="testing in intellij">
       <created>1685770058727</created>

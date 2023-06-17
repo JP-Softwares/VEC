@@ -228,7 +228,7 @@ public class GastosDao implements IGastosDao{
                     break;
             }
         }
-        return hm;
+        return sort(hm);
     }
 
     @Override
@@ -302,12 +302,19 @@ public class GastosDao implements IGastosDao{
         return null;
     }
 
-    private void sort(HashMap<Integer, ArrayList> hm){
+    private HashMap<Integer, ArrayList> sort(HashMap<Integer, ArrayList> hm){
         int key = 1;
         ArrayList<Gastos> organizar = new ArrayList<>();
         while (key < 13){
-            organizar = hm.get(key);
-            //organizar.sort((o1, o2) -> );
+            if(hm.get(key) != null){
+                organizar = hm.get(key);
+                organizar.sort((o1, o2) -> {
+                    return Integer.compare(o1.getData().toLocalDate().getDayOfMonth()-1, o2.getData().toLocalDate().getDayOfMonth()-1);
+                });
+                hm.put(key, organizar);
+            }
+            key++;
         }
+        return hm;
     }
 }

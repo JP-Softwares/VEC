@@ -28,6 +28,7 @@ public class ConexaoBD {
                 //String user = "postgres";
                 //String password = "aluno";
                 Class.forName(driver);
+                DriverManager.setLoginTimeout(10);
                 conexao = DriverManager.getConnection(url, user, password);
             }               
         }
