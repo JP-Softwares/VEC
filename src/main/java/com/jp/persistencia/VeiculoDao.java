@@ -58,6 +58,7 @@ public class VeiculoDao implements IVeiculoDao{
             preparedStatement.setString(6, objeto.getSituacao().toString());
             preparedStatement.setInt(7, objeto.getModelo().getId());
             preparedStatement.setInt(8, objeto.getProprietario().getId());
+            preparedStatement.setInt(9, objeto.getId());
             preparedStatement.executeUpdate();
         } catch (SQLException erro) {
             throw new Exception("SQL Erro: "+ erro.getMessage());
