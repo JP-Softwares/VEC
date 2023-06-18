@@ -9,6 +9,8 @@ public class Proprietario {
     private String CNH = "";
     private CategoriaCNH  categoria = null;
 
+    private int numeroDeCarros = 0;
+
     public Proprietario() {
     }
 
@@ -76,5 +78,13 @@ public class Proprietario {
 
     public void setTelefone(Telefone telefone) {
         this.telefone = telefone;
+    }
+
+    public int getNumeroDeCarros() {
+        return numeroDeCarros;
+    }
+
+    public void setNumeroDeCarros(int numeroDeCarros) {
+        this.numeroDeCarros = numeroDeCarros;
     }
 }

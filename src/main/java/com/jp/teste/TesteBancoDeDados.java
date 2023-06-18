@@ -56,14 +56,14 @@ public class TesteBancoDeDados {
         VeiculoControle veiculoControle = new VeiculoControle();
         Veiculo veiculoteste = new Veiculo();
         veiculoteste.setCombustivel(TipoDoCombustivel.ELETRICO);
-        //veiculoteste.setModelo(modeloControle.buscar(1));
+        veiculoteste.setModelo(modeloControle.buscar(1));
         veiculoteste.setKilometragem(50);
-        veiculoteste.setPlaca("ABC0765");
-        //veiculoteste.setProprietario(proprietarioControle.buscar(1));
+        veiculoteste.setPlaca("fgr3456");
+        veiculoteste.setProprietario(proprietarioControle.buscar(1));
         veiculoteste.setSituacao(SituacaoDoVeiculo.DISPONIVEL);
         veiculoteste.setAnoFabricacao(2009);
         veiculoteste.setAnoModelo(2007);
-        //veiculoControle.incluir(veiculoteste);
+        veiculoControle.incluir(veiculoteste);
 
         TipoDeGastosControle tipoDeGastosControle = new TipoDeGastosControle();
         TipoDeGastos tipoDeGastosteste = new TipoDeGastos();
@@ -102,7 +102,7 @@ public class TesteBancoDeDados {
 
         GerarPDF gerarPDF = new GerarPDF();
         //gerarPDF.gerarPDFTipo(caminho, veiculoControle.buscar(1), 2023);
-        bomDia();
+        //System.out.println(bomDia());
 
     }
 }

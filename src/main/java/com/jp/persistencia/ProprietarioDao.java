@@ -19,7 +19,7 @@ public class ProprietarioDao implements IProprietarioDao{
     @Override
     public void incluir(Proprietario objeto) throws Exception {
         try {
-            String sql = "insert into Proprietario(CPF, nome, telefone_DDI, telefone_DDD, telefone_numero, email, numeroDaCNH, categoriaDaCNH) values (?, ?, ? , ? , ? , ?, ?, ?)";
+            String sql = "insert into Proprietario(CPF, nome, telefone_DDI, telefone_DDD, telefone_numero, email, numeroDaCNH, categoriaDaCNH, numeroDeCarros) values (?, ?, ? , ? , ? , ?, ?, ?, ?)";
             PreparedStatement preparedStatement = conexao.prepareStatement(sql);
             // Parameters iniciar os elementos
             preparedStatement.setString(1, objeto.getCPF());
@@ -30,7 +30,9 @@ public class ProprietarioDao implements IProprietarioDao{
             preparedStatement.setString(6, objeto.getEmail());
             preparedStatement.setString(7, objeto.getCNH());
             preparedStatement.setString(8, objeto.getCategoria().toString());
+            preparedStatement.setInt(9, 0);
             preparedStatement.executeUpdate();
+
         } catch (SQLException erro) {
             throw new Exception("SQL Erro: "+ erro.getMessage());
         } catch(Exception erro){
@@ -42,7 +44,7 @@ public class ProprietarioDao implements IProprietarioDao{
     @Override
     public void alterar(Proprietario objeto) throws Exception {
         try {
-            String sql = "update Proprietario set CPF = ?, nome = ?, telefone_DDI = ?, telefone_DDD = ?, telefone_numero = ?, email = ?, numeroDaCNH = ?, categoriaDaCNH = ?  where (id = ?)";
+            String sql = "update Proprietario set CPF = ?, nome = ?, telefone_DDI = ?, telefone_DDD = ?, telefone_numero = ?, email = ?, numeroDaCNH = ?, categoriaDaCNH = ?, numeroDeCarros = ?  where (id = ?)";
             PreparedStatement preparedStatement = conexao.prepareStatement(sql);
             // Parameters iniciar os elementos
             preparedStatement.setString(1, objeto.getCPF());
@@ -53,7 +55,8 @@ public class ProprietarioDao implements IProprietarioDao{
             preparedStatement.setString(6, objeto.getEmail());
             preparedStatement.setString(7, objeto.getCNH());
             preparedStatement.setString(8, objeto.getCategoria().toString());
-            preparedStatement.setString(9, objeto.getId() + "");
+            preparedStatement.setInt(9, objeto.getNumeroDeCarros());
+            preparedStatement.setInt(10, objeto.getId());
             preparedStatement.executeUpdate();
         } catch (SQLException erro) {
             throw new Exception("SQL Erro: "+ erro.getMessage());

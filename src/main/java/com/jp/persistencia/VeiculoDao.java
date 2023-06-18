@@ -42,7 +42,8 @@ public class VeiculoDao implements IVeiculoDao{
         } catch(Exception erro){
             throw erro;
         }
-
+        objeto.getProprietario().setNumeroDeCarros(objeto.getProprietario().getNumeroDeCarros()+1);
+        proprietarioControle.alterar(objeto.getProprietario());
     }
 
     @Override
