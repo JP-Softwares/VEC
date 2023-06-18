@@ -14,6 +14,7 @@ import java.util.Collections;
 import java.util.Iterator;
 
 import com.jp.tools.ConexaoBD;
+import org.apache.commons.compress.compressors.zstandard.ZstdCompressorOutputStream;
 
 public class MarcaDao implements IMarcaDao{
 
@@ -121,7 +122,7 @@ public class MarcaDao implements IMarcaDao{
     public ArrayList<Marca> filtrarMarcas(Collection<Marca> marcas, String nome) throws Exception {
         ArrayList<Marca> ar = new ArrayList<>();
         marcas.forEach(marca -> {
-            if(marca.getNome().contains(nome)) ar.add(marca);
+            if(marca.getNome().toLowerCase().contains(nome.toLowerCase())) ar.add(marca);
         });
         return ar;
     }

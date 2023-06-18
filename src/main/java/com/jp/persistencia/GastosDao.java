@@ -431,10 +431,11 @@ public class GastosDao implements IGastosDao{
 
     @Override
     public ArrayList<Gastos> filtrarGastos(Collection<Gastos> gastos, String filtro) throws Exception {
+        ArrayList<Gastos> GA = new ArrayList<>();
         gastos.forEach(gasto -> {
-            if(!gasto.getTipoDeGastos().getNome().contains(filtro)) gastos.remove(gasto);
+            if(gasto.getTipoDeGastos().getNome().toLowerCase().contains(filtro.toLowerCase())) GA.add(gasto);
         });
-        return new ArrayList<Gastos>(gastos);
+        return GA;
     }
 
     private HashMap<Integer, ArrayList> sort(HashMap<Integer, ArrayList> hm){

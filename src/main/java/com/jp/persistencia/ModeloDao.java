@@ -129,9 +129,10 @@ public class ModeloDao  implements IModeloDao {
 
     @Override
     public ArrayList<Modelo> filtrarModelo(Collection<Modelo> modelo, String nome) throws Exception {
+        ArrayList<Modelo> m = new ArrayList<>();
         modelo.forEach(modelos -> {
-            if(!modelos.getNome().contains(nome)) modelo.remove(modelos);
+            if(modelos.getNome().toLowerCase().contains(nome.toLowerCase())) m.add(modelos);
         });
-        return new ArrayList<Modelo>(modelo);
+        return m;
     }
 }
