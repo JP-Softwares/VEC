@@ -3,6 +3,7 @@ import com.jp.modelos.Marca;
 import com.jp.persistencia.IMarcaDao;
 import com.jp.persistencia.MarcaDao;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 
 public class MarcaControle implements IMarcaControle{
@@ -40,6 +41,11 @@ public class MarcaControle implements IMarcaControle{
     @Override
     public Marca buscar(int id) throws Exception{
         return marcaPersistencia.buscar(id);
+    }
+
+    @Override
+    public ArrayList<Marca> filtrarMarca(Collection marcas, String nome) throws Exception {
+        return marcaPersistencia.filtrarMarcas(marcas, nome);
     }
 
     private boolean buscarMarca(String descricao) throws Exception{

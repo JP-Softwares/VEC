@@ -1,8 +1,10 @@
 package com.jp.persistencia;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 
 import com.jp.modelos.Gastos;
+import com.jp.modelos.Modelo;
 import com.jp.modelos.TipoDeGastos;
 import com.jp.modelos.Veiculo;
 
@@ -18,4 +20,6 @@ public interface IGastosDao {
     Gastos buscar(int id) throws Exception;
 
     Gastos buscar(TipoDeGastos tipoDeGastos)throws Exception;
+
+    ArrayList<Gastos> filtrarGastos(Collection<Gastos> gastos, String filtro)throws Exception;
 }

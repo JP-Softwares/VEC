@@ -1,10 +1,12 @@
 package com.jp.controle;
 
+import com.jp.modelos.Proprietario;
 import com.jp.modelos.Veiculo;
 import com.jp.persistencia.IVeiculoDao;
 import com.jp.persistencia.VeiculoDao;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 
 public class VeiculoControle implements IVeiculoControle{
@@ -45,6 +47,11 @@ public class VeiculoControle implements IVeiculoControle{
     @Override
     public Veiculo buscar(String placa) throws Exception {
         return veiculoPersistencia.buscar(placa);
+    }
+
+    @Override
+    public ArrayList<Veiculo> filtrarVeiculo(Collection<Veiculo> veiculo, String filtro) throws Exception {
+        return veiculoPersistencia.filtrarVeiculo(veiculo, filtro);
     }
 
     private boolean buscarPlacaVeiculo(Veiculo objeto) throws Exception{

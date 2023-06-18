@@ -1,6 +1,7 @@
 package com.jp.controle;
 import com.jp.modelos.Proprietario;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import com.jp.modelos.Modelo;
 import java.util.Date;
@@ -15,6 +16,7 @@ public interface IProprietarioControle {
     Proprietario buscar(int id) throws Exception;
     Proprietario buscar(String cpf) throws Exception;
     Proprietario buscar(String nome, boolean pessoa) throws Exception;
-    boolean validarCPF (String CPF);
 
+    ArrayList<Proprietario> filtrarProprietario(Collection<Proprietario> proprietario , String filtro)throws Exception;
+    boolean validarCPF (String CPF);
 }

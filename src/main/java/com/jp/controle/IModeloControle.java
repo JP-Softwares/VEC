@@ -1,6 +1,7 @@
 package com.jp.controle;
 import com.jp.modelos.Modelo;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import com.jp.modelos.Marca;
 
@@ -14,4 +15,6 @@ public interface IModeloControle {
     Modelo buscar(String descricao) throws Exception;
 
     Modelo buscar(int id) throws Exception;
+
+    ArrayList<Modelo> filtrarModelo(Collection modelo, String nome)throws Exception;
 }

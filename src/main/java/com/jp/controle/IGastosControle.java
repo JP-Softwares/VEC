@@ -1,11 +1,7 @@
 package com.jp.controle;
 import com.jp.modelos.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-
-import java.util.Date;
+import java.util.*;
 
 public interface IGastosControle {
     void incluir(Gastos objeto) throws Exception;
@@ -19,4 +15,6 @@ public interface IGastosControle {
 
     Gastos buscar(int id) throws Exception;
     Gastos buscar(TipoDeGastos TipoDeGastos) throws Exception;
+
+    ArrayList<Gastos> filtrarGastos(Collection gastos, String filtro)throws Exception;
 }

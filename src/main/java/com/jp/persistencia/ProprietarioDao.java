@@ -2,14 +2,12 @@ package com.jp.persistencia;
 
 import com.jp.controle.TipoDeGastosControle;
 import com.jp.controle.VeiculoControle;
-import com.jp.modelos.CategoriaCNH;
-import com.jp.modelos.Gastos;
-import com.jp.modelos.Proprietario;
-import com.jp.modelos.Telefone;
+import com.jp.modelos.*;
 import com.jp.tools.ConexaoBD;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class ProprietarioDao implements IProprietarioDao{
 
@@ -169,5 +167,10 @@ public class ProprietarioDao implements IProprietarioDao{
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public ArrayList<Proprietario> filtrarProprietario(Collection<Proprietario> proprietario, String nome) throws Exception {
+        return new ArrayList<Proprietario>((Collection<? extends Proprietario>) proprietario.stream().filter(o -> o.getNome().contains(nome) || o.getCPF().contains(nome) || o.getEmail().contains(nome)));
     }
 }

@@ -10,6 +10,7 @@ import com.jp.controle.MarcaControle;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class ModeloDao  implements IModeloDao {
 
@@ -124,5 +125,10 @@ public class ModeloDao  implements IModeloDao {
         }
 
         return null;
+    }
+
+    @Override
+    public ArrayList<Modelo> filtrarModelo(Collection<Modelo> modelo, String nome) throws Exception {
+        return new ArrayList<Modelo>((Collection<? extends Modelo>) modelo.stream().filter(o -> o.getNome().contains(nome)));
     }
 }

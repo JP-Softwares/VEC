@@ -6,6 +6,7 @@ import com.jp.persistencia.ITipoDeGastosDao;
 import com.jp.persistencia.TipoDeGastosDao;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class TipoDeGastosControle implements ITipoDeGastosControle {
 
@@ -51,6 +52,11 @@ public class TipoDeGastosControle implements ITipoDeGastosControle {
     @Override
     public TipoDeGastos buscar(int id) throws Exception {
         return TipoDeGastosPersistencia.buscar(id);
+    }
+
+    @Override
+    public ArrayList<TipoDeGastos> filtrarTipoDeGastos(Collection<TipoDeGastos> tipoDeGastos, String filtro) throws Exception {
+        return TipoDeGastosPersistencia.filtrarTipoDeGastos(tipoDeGastos,filtro);
     }
 
     private boolean verificarCampos(TipoDeGastos objeto) throws Exception {

@@ -1,5 +1,6 @@
 package com.jp.controle;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import com.jp.persistencia.IModeloDao;
 import com.jp.persistencia.ModeloDao;
@@ -92,5 +93,10 @@ public class ModeloControle implements IModeloControle{
     @Override
     public Modelo buscar(int id) throws Exception {
         return modeloPersistencia.buscar(id);
+    }
+
+    @Override
+    public ArrayList<Modelo> filtrarModelo(Collection modelo, String nome) throws Exception {
+        return modeloPersistencia.filtrarModelo(modelo, nome);
     }
 }

@@ -2,6 +2,7 @@ package com.jp.controle;
 import com.jp.modelos.*;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 
 import com.jp.modelos.TipoDeGastos;
@@ -17,4 +18,6 @@ public interface ITipoDeGastosControle {
     TipoDeGastos buscar(String nome) throws Exception;
 
     TipoDeGastos buscar(int id) throws Exception;
+
+    ArrayList<TipoDeGastos> filtrarTipoDeGastos(Collection<TipoDeGastos> tipoDeGastos , String filtro)throws Exception;
 }

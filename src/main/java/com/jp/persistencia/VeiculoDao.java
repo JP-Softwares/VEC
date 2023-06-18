@@ -9,6 +9,7 @@ import com.jp.tools.ConexaoBD;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class VeiculoDao implements IVeiculoDao{
 
@@ -158,5 +159,11 @@ public class VeiculoDao implements IVeiculoDao{
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public ArrayList<Veiculo> filtrarVeiculo(Collection<Veiculo> veiculo, String filtro) throws Exception {
+        return new ArrayList<Veiculo>((Collection<? extends Veiculo>) veiculo.stream().filter(o -> o.getModelo().getNome().contains(filtro) || o.getPlaca().contains(filtro) || o.getModelo().getMarca().getNome().contains(filtro) || o.getProprietario().getNome().equals(filtro)));
+
     }
 }

@@ -1,13 +1,11 @@
 package com.jp.controle;
 
-import com.jp.modelos.Gastos;
-import com.jp.modelos.Proprietario;
-import com.jp.modelos.TipoDeGastos;
-import com.jp.modelos.Veiculo;
+import com.jp.modelos.*;
 import com.jp.persistencia.GastosDao;
 import com.jp.persistencia.IGastosDao;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.InputMismatchException;
 
@@ -60,6 +58,11 @@ public class GastosControle implements IGastosControle{
     @Override
     public Gastos buscar(TipoDeGastos TipoDeGastos) throws Exception {
         return GastosPersistencia.buscar(TipoDeGastos);
+    }
+
+    @Override
+    public ArrayList<Gastos> filtrarGastos(Collection gastos, String filtro) throws Exception {
+        return GastosPersistencia.filtrarGastos(gastos,filtro);
     }
 
     private boolean verificarCampos(Gastos objeto) throws Exception{

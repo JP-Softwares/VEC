@@ -9,6 +9,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+
 import com.jp.tools.ConexaoBD;
 
 public class MarcaDao implements IMarcaDao{
@@ -111,5 +115,10 @@ public class MarcaDao implements IMarcaDao{
         }
 
         return null;
+    }
+
+    @Override
+    public ArrayList<Marca> filtrarMarcas(Collection<Marca> marcas, String nome) throws Exception {
+        return new ArrayList<Marca>((Collection<? extends Marca>) marcas.stream().filter(o -> o.getNome().contains(nome)));
     }
 }

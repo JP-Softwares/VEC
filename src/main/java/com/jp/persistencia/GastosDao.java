@@ -6,6 +6,7 @@ import com.jp.tools.ConexaoBD;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -426,6 +427,11 @@ public class GastosDao implements IGastosDao{
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public ArrayList<Gastos> filtrarGastos(Collection<Gastos> gastos, String filtro) throws Exception {
+        return new ArrayList<Gastos>((Collection<? extends Gastos>) gastos.stream().filter(o -> o.getTipoDeGastos().getNome().equals(filtro)));
     }
 
     private HashMap<Integer, ArrayList> sort(HashMap<Integer, ArrayList> hm){

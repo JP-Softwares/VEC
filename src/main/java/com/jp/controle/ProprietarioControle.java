@@ -6,6 +6,7 @@ import com.jp.persistencia.MarcaDao;
 import com.jp.persistencia.ProprietarioDao;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.InputMismatchException;
 
 public class ProprietarioControle implements IProprietarioControle{
@@ -50,6 +51,11 @@ public class ProprietarioControle implements IProprietarioControle{
 
     public Proprietario buscar(String nome, boolean pessoa) throws Exception {
         return ProprietarioPersistencia.buscar(nome, pessoa);
+    }
+
+    @Override
+    public ArrayList<Proprietario> filtrarProprietario(Collection<Proprietario> proprietario, String filtro) throws Exception {
+        return ProprietarioPersistencia.filtrarProprietario(proprietario, filtro);
     }
 
     @Override
