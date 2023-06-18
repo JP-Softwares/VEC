@@ -8,6 +8,7 @@ import java.util.*;
 import java.text.DecimalFormat;
 import com.itextpdf.text.*;
 import com.itextpdf.text.Image;
+import com.itextpdf.text.Rectangle;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.jp.controle.GastosControle;
 import com.jp.controle.TipoDeGastosControle;
@@ -23,7 +24,9 @@ public class GerarPDF {
     public void gerarPDFMes(String caminho, Veiculo objeto, int ano){
         GastosControle gastosControle = new GastosControle();
         // criação do documento
-        Document document = new Document();
+        Rectangle pageSize = new Rectangle(595, 842);
+        pageSize.setBackgroundColor(new BaseColor(0xFF, 0xFF, 0xDE));
+        Document document = new Document(pageSize);
         try {
             int cont = 1;
             int LimitePagina = 27;

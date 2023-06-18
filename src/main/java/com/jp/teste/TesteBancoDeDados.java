@@ -7,6 +7,9 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Iterator;
 import com.jp.tools.GerarPDF;
+
+import javax.swing.*;
+
 public class TesteBancoDeDados {
 
     public static void main(String[] args) throws Exception {
@@ -96,7 +99,7 @@ public class TesteBancoDeDados {
         }*/
 
         GerarPDF gerarPDF = new GerarPDF();
-        gerarPDF.gerarPDFTipo(caminho, veiculoControle.buscar(1), 2023);
+        gerarPDF.gerarPDFMes(caminho, veiculoControle.buscar(1), 2023);
 
     }
 }
