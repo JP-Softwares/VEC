@@ -3,6 +3,7 @@ package com.jp.visao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.DirectoryChooser;
@@ -16,11 +17,11 @@ import java.util.ResourceBundle;
 
 public class MarcasEdit implements Initializable {
 
-
-    public String url = "";
+    @FXML
+    public ImageView imagem;
 
     @FXML
-    private ImageView imagem;
+    public TextField textFieldNome;
 
     @FXML
     void abrirImagem(ActionEvent event) {

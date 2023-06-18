@@ -279,7 +279,7 @@ public class TelaPrincipal implements Initializable{
         alignTabPaneHeader();
     }
 
-    private void alignTabPaneHeader(){
+    public void alignTabPaneHeader(){
         if(telaAtual == TelaAtual.TELAVEICULOS){
             TabPane tabPane = ((TabPane)((AnchorPane) centerPane.getChildren().get(0)).getChildren().get(0));
             tabPane.setTabMinWidth((Run.app.stage.getWidth() - Run.app.stage.getWidth() * 5/100) / tabPane.getTabs().size() - 40);

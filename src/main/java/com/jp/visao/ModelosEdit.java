@@ -3,6 +3,8 @@ package com.jp.visao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
@@ -13,11 +15,17 @@ import java.util.ResourceBundle;
 
 public class ModelosEdit implements Initializable {
 
-
-    public String url = "";
+    @FXML
+    public ComboBox<?> comboBoxMarca;
 
     @FXML
-    private ImageView imagem;
+    public ComboBox<?> comboBoxTipoDoVeiculo;
+
+    @FXML
+    public ImageView imagem;
+
+    @FXML
+    public TextField textFieldNome;
 
     @FXML
     void abrirImagem(ActionEvent event) {

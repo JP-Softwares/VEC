@@ -33,7 +33,7 @@ ComboBox{
     -fx-border-size: 0;
     /*-fx-border-radius: 20;*/
     /*-fx-border-color: #00ff00;*/
-    -fx-text-fill: #000;
+    /*-fx-text-fill: #000;*/
     -fx-highlight-fill: #b5c0cc;
     -fx-highlight-text-fill: #000;
     -fx-border-color: rgba(0, 0, 0, 0.25);
@@ -42,11 +42,28 @@ ComboBox{
     -fx-border-radius: 3px;
 }
 
-ComboBox .list-view{
+ComboBox .list-view { /* Pane da lista */
     -fx-background-color: #fff;
+    /*-fx-background-color: #e6e6e6;*/
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
     -fx-border-width: 0;
     -fx-background-radius: 0 0 5 5;
+}
+
+ComboBox .cell:selected{ /* Celula selecionada na combobox, dentro e fora da lista */
+    -fx-background-color: #fff;
+    /*-fx-background-color: #cccccc;*/
+}
+
+ComboBox .list-cell{ /* Outras Celulas na combobox dentro da lista */
+    -fx-text-fill: #000;
+    -fx-background-color: #fff;
+    -fx-background-radius: 0;
+    /*-fx-background-color: #e6e6e6;*/
+}
+
+ComboBox .list-view .list-cell:filled:selected{
+    -fx-background-color: #d7d7d7;
 }
 
 .text-field{
@@ -68,6 +85,10 @@ ComboBox .list-view{
 
 #comboBoxVeiculo .list-view{
     -fx-background-radius: 10;
+}
+
+#comboBoxVeiculo  .list-cell{
+    -fx-background-radius: 20;
 }
 
 #paneLeft{
