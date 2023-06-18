@@ -310,6 +310,7 @@ public class TelaVeiculos implements Initializable {
     public void alterarMarca(){
         try {
             Marca marca = new Marca();
+            marca.setId(Run.marcaControle.buscar(Run.marcasEdit.textFieldNome.getText()).getId());
             marca.setNome(Run.marcasEdit.textFieldNome.getText());
             String urlImagemPessoal = Run.marcasEdit.imagem.getImage().getUrl().replaceFirst("file:", "");
             String pontos[] = urlImagemPessoal.split("\\.");
@@ -331,6 +332,7 @@ public class TelaVeiculos implements Initializable {
     public void alterarModelo(){
         try {
             Modelo modelo = new Modelo();
+            modelo.setId(Run.modeloControle.buscar(Run.modelosEdit.textFieldNome.getText()).getId());
             modelo.setNome(Run.modelosEdit.textFieldNome.getText());
             String urlImagemPessoal = Run.modelosEdit.imagem.getImage().getUrl().replaceFirst("file:", "");
             String pontos[] = urlImagemPessoal.split("\\.");
@@ -355,8 +357,9 @@ public class TelaVeiculos implements Initializable {
 
     public void alterarVeiculo(){
         try {
-            Veiculo veiculo = new Veiculo();
             VeiculosEdit veiculosEdit = Run.veiculosEdit;
+            Veiculo veiculo = new Veiculo();
+            veiculo.setId(Run.veiculoControle.buscar(Run.veiculosEdit.textFieldPlaca.getText()).getId());
             veiculo.setModelo(Run.modeloControle.buscar(veiculosEdit.comboBoxModelo.getValue() + ""));
             veiculo.setProprietario(Run.proprietarioControle.buscar(veiculosEdit.comboBoxproprietario.getValue() + "", true));
             veiculo.setPlaca(veiculosEdit.textFieldPlaca.getText());

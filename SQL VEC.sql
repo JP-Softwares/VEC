@@ -1,3 +1,10 @@
+DROP TABLE IF EXISTS Gastos;
+DROP TABLE IF EXISTS TipoDeGasto;
+DROP TABLE IF EXISTS Veiculo;
+DROP TABLE IF EXISTS Modelo;
+DROP TABLE IF EXISTS Marca;
+DROP TABLE IF EXISTS Proprietario;
+
 create table Proprietario(
 	id serial primary key,
 	CPF char(11) unique not null,
