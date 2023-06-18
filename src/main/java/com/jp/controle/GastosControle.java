@@ -34,17 +34,17 @@ public class GastosControle implements IGastosControle{
     }
 
     @Override
-    public ArrayList<Gastos> listar() throws Exception {
+    public ArrayList<Gastos> listar(Veiculo objeto) throws Exception {
         try{
-            return GastosPersistencia.listar();
+            return GastosPersistencia.listar(objeto);
         }catch(Exception erro){
             return new ArrayList<Gastos>();
         }
     }
 
     @Override
-    public HashMap<Integer, ArrayList> listarPorMes() throws Exception {
-        return GastosPersistencia.listarPorMes();
+    public HashMap<Integer, ArrayList> listarPorMes(Veiculo objeto) throws Exception {
+        return GastosPersistencia.listarPorMes(objeto);
     }
 
     @Override

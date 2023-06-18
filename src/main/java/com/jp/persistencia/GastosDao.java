@@ -1,10 +1,7 @@
 package com.jp.persistencia;
 
 import com.jp.controle.*;
-import com.jp.modelos.Gastos;
-import com.jp.modelos.Modelo;
-import com.jp.modelos.TipoDeGastos;
-import com.jp.modelos.TipoDoVeiculo;
+import com.jp.modelos.*;
 import com.jp.tools.ConexaoBD;
 
 import java.sql.*;
@@ -60,7 +57,7 @@ public class GastosDao implements IGastosDao{
     }
 
     @Override
-    public ArrayList<Gastos> listar() throws Exception {
+    public ArrayList<Gastos> listar(Veiculo objeto) throws Exception {
         ArrayList<Gastos> listaGastos = new ArrayList<Gastos>();
         String sql = "select * from Gastos";
         VeiculoControle veiculoControle = new VeiculoControle();
@@ -69,14 +66,16 @@ public class GastosDao implements IGastosDao{
             Statement statement = conexao.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
-                Gastos gastos = new Gastos();
-                gastos.setId(rs.getInt("id"));
-                gastos.setDescricao(rs.getString("descricao"));
-                gastos.setValor(rs.getDouble("valor"));
-                gastos.setData(rs.getDate("data"));
-                gastos.setVeiculo(veiculoControle.buscar(rs.getInt("idVeiculo")));
-                gastos.setTipoDeGastos(tipoDeGastosControle.buscar(rs.getInt("idTipoDeGasto")));
-                listaGastos.add(gastos);
+                if(rs.getInt("idVeiculo") == objeto.getId()){
+                    Gastos gastos = new Gastos();
+                    gastos.setId(rs.getInt("id"));
+                    gastos.setDescricao(rs.getString("descricao"));
+                    gastos.setValor(rs.getDouble("valor"));
+                    gastos.setData(rs.getDate("data"));
+                    gastos.setVeiculo(veiculoControle.buscar(rs.getInt("idVeiculo")));
+                    gastos.setTipoDeGastos(tipoDeGastosControle.buscar(rs.getInt("idTipoDeGasto")));
+                    listaGastos.add(gastos);
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -84,22 +83,11 @@ public class GastosDao implements IGastosDao{
         return listaGastos;
     }
 
-    public HashMap<Integer, ArrayList> listarPorMes() throws Exception {
+
+    public HashMap<Integer, ArrayList> listarPorMes(Veiculo objeto) throws Exception {
         GastosControle gastosControle = new GastosControle();
         HashMap<Integer, ArrayList> hm = new HashMap<Integer, ArrayList>();
-        Iterator<Gastos> lista = gastosControle.listar().iterator();
-        /*ArrayList<Gastos> gastosJaneiro = new ArrayList<Gastos>();
-        ArrayList<Gastos> gastosFevereiro = new ArrayList<Gastos>();
-        ArrayList<Gastos> gastosMarco = new ArrayList<Gastos>();
-        ArrayList<Gastos> gastosAbril = new ArrayList<Gastos>();
-        ArrayList<Gastos> gastosMaio = new ArrayList<Gastos>();
-        ArrayList<Gastos> gastosJunho = new ArrayList<Gastos>();
-        ArrayList<Gastos> gastosJulho = new ArrayList<Gastos>();
-        ArrayList<Gastos> gastosAgosto = new ArrayList<Gastos>();
-        ArrayList<Gastos> gastosSetembro = new ArrayList<Gastos>();
-        ArrayList<Gastos> gastosOutubro = new ArrayList<Gastos>();
-        ArrayList<Gastos> gastosNovembro = new ArrayList<Gastos>();
-        ArrayList<Gastos> gastosDezembro = new ArrayList<Gastos>();*/
+        Iterator<Gastos> lista = gastosControle.listar(objeto).iterator();
         while(lista.hasNext()){
             ArrayList<Gastos> gastos = new ArrayList<Gastos>();
             Gastos aux = lista.next();

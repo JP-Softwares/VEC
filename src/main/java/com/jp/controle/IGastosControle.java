@@ -1,11 +1,9 @@
 package com.jp.controle;
-import com.jp.modelos.Gastos;
+import com.jp.modelos.*;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import com.jp.modelos.Modelo;
-import com.jp.modelos.Proprietario;
-import com.jp.modelos.TipoDeGastos;
 
 import java.util.Date;
 
@@ -14,8 +12,8 @@ public interface IGastosControle {
 
     void alterar(Gastos objeto) throws Exception;
 
-    ArrayList<Gastos> listar() throws Exception;
-    HashMap<Integer, ArrayList> listarPorMes() throws Exception;
+    ArrayList<Gastos> listar(Veiculo objeto) throws Exception;
+    HashMap<Integer, ArrayList> listarPorMes(Veiculo objeto) throws Exception;
 
     Gastos buscar(int id) throws Exception;
     Gastos buscar(TipoDeGastos TipoDeGastos) throws Exception;
