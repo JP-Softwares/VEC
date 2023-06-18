@@ -7,5 +7,7 @@ public interface IProprietarioDao {
     void alterar(Proprietario objeto) throws Exception;
     ArrayList<Proprietario> listar() throws Exception;
     Proprietario buscar(String cpf) throws Exception;
+
+    Proprietario buscar(String cpf, boolean pessoa) throws Exception;
     Proprietario buscar(int id) throws Exception;
 }
