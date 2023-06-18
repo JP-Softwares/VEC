@@ -1,6 +1,7 @@
 package com.jp.persistencia;
 
 import com.jp.modelos.Modelo;
+import com.jp.modelos.Proprietario;
 import com.jp.modelos.TipoDeGastos;
 import com.jp.tools.ConexaoBD;
 import java.sql.*;
@@ -110,6 +111,9 @@ public class TipoDeGastosDao implements ITipoDeGastosDao{
 
     @Override
     public ArrayList<TipoDeGastos> filtrarTipoDeGastos(Collection<TipoDeGastos> tipoDeGastos, String filtro) throws Exception {
-        return new ArrayList<TipoDeGastos>((Collection<? extends TipoDeGastos>) tipoDeGastos.stream().filter(o -> o.getNome().contains(filtro)));
+        tipoDeGastos.forEach(t -> {
+            if(!t.getNome().contains(filtro)) tipoDeGastos.remove(t);
+        });
+        return new ArrayList<TipoDeGastos>(tipoDeGastos);
     }
 }

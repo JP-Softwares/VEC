@@ -171,6 +171,9 @@ public class ProprietarioDao implements IProprietarioDao{
 
     @Override
     public ArrayList<Proprietario> filtrarProprietario(Collection<Proprietario> proprietario, String nome) throws Exception {
-        return new ArrayList<Proprietario>((Collection<? extends Proprietario>) proprietario.stream().filter(o -> o.getNome().contains(nome) || o.getCPF().contains(nome) || o.getEmail().contains(nome)));
+        proprietario.forEach(p -> {
+            if(!p.getNome().contains(nome) || !p.getCPF().contains(nome) || !p.getEmail().contains(nome)) proprietario.remove(p);
+        });
+        return new ArrayList<Proprietario>(proprietario);
     }
 }

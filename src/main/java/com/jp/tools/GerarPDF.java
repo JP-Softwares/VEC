@@ -38,14 +38,14 @@ public class GerarPDF {
             hm = gastosControle.listarPorMes(objeto, ano);
             // adicionando um parágrafo no documento
             document.add(new Paragraph("Relatorio de Gastos - "+objeto.getModelo().getNome(), FontFactory.getFont(FontFactory.TIMES_BOLD, 26)));
-            document.add(new Paragraph("Placa: "+objeto.getPlaca() +" | Ano de Fabricação: "+objeto.getAnoFabricacao()+ " | Ano do Modelo: "+objeto.getAnoModelo(), FontFactory.getFont(FontFactory.TIMES, 11)));
+            document.add(new Paragraph("Placa: "+objeto.getPlaca() +" | Ano de Fabricação: "+objeto.getAnoFabricacao()+ " | Ano do Modelo: "+objeto.getAnoModelo() + " | Marca: "+objeto.getModelo().getMarca().getNome(), FontFactory.getFont(FontFactory.TIMES, 11)));
             document.add(new Paragraph("\n \nJaneiro", FontFactory.getFont( FontFactory.TIMES_BOLD, 15)));
             document.add(new Paragraph("______________________________________________________________________________"));
             if(hm.get(1) != null){
                 Iterator<Gastos> listaJaneiro = hm.get(1).iterator();
                 while(listaJaneiro.hasNext()){
                     if(cont > LimitePagina){
-                        document.newPage();
+                        //document.newPage();
                         cont = 0;
                     }
                     Gastos aux1 = listaJaneiro.next();
@@ -64,7 +64,7 @@ public class GerarPDF {
             soma = 0.0;
 
             if(cont > LimitePagina){
-                document.newPage();
+                //document.newPage();
                 cont = 0;
             }
             document.add(new Paragraph("\n \nFevereiro", FontFactory.getFont( FontFactory.TIMES_BOLD, 15)));
@@ -74,7 +74,7 @@ public class GerarPDF {
                 Iterator<Gastos> listaFevereiro = hm.get(2).iterator();
                 while(listaFevereiro.hasNext()){
                     if(cont > LimitePagina){
-                        document.newPage();
+                        //document.newPage();
                         cont = 0;
                     }
                     Gastos aux1 = listaFevereiro.next();
@@ -133,7 +133,7 @@ public class GerarPDF {
                 Iterator<Gastos> listaAbril = hm.get(4).iterator();
                 while(listaAbril.hasNext()){
                     if(cont > LimitePagina){
-                        document.newPage();
+                        //document.newPage();
                         cont = 0;
                     }
                     Gastos aux1 = listaAbril.next();
@@ -153,7 +153,7 @@ public class GerarPDF {
 
 
             if(cont > LimitePagina){
-                document.newPage();
+                //document.newPage();
                 cont = 0;
             }
 
@@ -165,7 +165,7 @@ public class GerarPDF {
                 Iterator<Gastos> listaMaio = hm.get(5).iterator();
                 while(listaMaio.hasNext()){
                     if(cont > LimitePagina){
-                        document.newPage();
+                        //document.newPage();
                         cont = 0;
                     }
                     Gastos aux1 = listaMaio.next();
@@ -185,7 +185,7 @@ public class GerarPDF {
 
 
             if(cont > LimitePagina){
-                document.newPage();
+                //document.newPage();
                 cont = 0;
             }
 
@@ -197,7 +197,7 @@ public class GerarPDF {
                 Iterator<Gastos> listaJunho = hm.get(6).iterator();
                 while(listaJunho.hasNext()){
                     if(cont > LimitePagina){
-                        document.newPage();
+                        //document.newPage();
                         cont = 0;
                     }
                     Gastos aux1 = listaJunho.next();
@@ -217,7 +217,7 @@ public class GerarPDF {
 
 
             if(cont > LimitePagina){
-                document.newPage();
+                //document.newPage();
                 cont = 0;
             }
 
@@ -228,7 +228,8 @@ public class GerarPDF {
                 Iterator<Gastos> listaJulho = hm.get(7).iterator();
                 while(listaJulho.hasNext()){
                     if(cont > LimitePagina){
-                        document.newPage();
+                        //document.newPage();
+                        System.out.println(cont + "");
                         cont = 0;
                     }
                     Gastos aux1 = listaJulho.next();
@@ -248,7 +249,9 @@ public class GerarPDF {
 
 
             if(cont > LimitePagina){
-                document.newPage();
+                //document.newPage();
+
+                System.out.println(cont + " aquiznho");
                 cont = 0;
             }
 
@@ -259,7 +262,7 @@ public class GerarPDF {
                 Iterator<Gastos> listaAgosto = hm.get(8).iterator();
                 while(listaAgosto.hasNext()){
                     if(cont > LimitePagina){
-                        document.newPage();
+                        //document.newPage();
                         cont = 0;
                     }
                     Gastos aux1 = listaAgosto.next();
@@ -278,7 +281,8 @@ public class GerarPDF {
             soma = 0.0;
 
             if(cont > LimitePagina){
-                document.newPage();
+                //document.newPage();
+                System.out.println(cont + "aqui");
                 cont = 0;
             }
 
@@ -289,7 +293,7 @@ public class GerarPDF {
                 Iterator<Gastos> listaSetembro = hm.get(9).iterator();
                 while(listaSetembro.hasNext()){
                     if(cont > LimitePagina){
-                        document.newPage();
+                        //document.newPage();
                         cont = 0;
                     }
                     Gastos aux1 = listaSetembro.next();
@@ -309,7 +313,7 @@ public class GerarPDF {
 
 
             if(cont > LimitePagina){
-                document.newPage();
+                //document.newPage();
                 cont = 0;
             }
 
@@ -320,7 +324,7 @@ public class GerarPDF {
                 Iterator<Gastos> listaOutubro = hm.get(10).iterator();
                 while(listaOutubro.hasNext()){
                     if(cont > LimitePagina){
-                        document.newPage();
+                        //document.newPage();
                         cont = 0;
                     }
                     Gastos aux1 = listaOutubro.next();
@@ -339,7 +343,7 @@ public class GerarPDF {
             soma = 0.0;
 
             if(cont > LimitePagina){
-                document.newPage();
+                //document.newPage();
                 cont = 0;
             }
 
@@ -350,7 +354,7 @@ public class GerarPDF {
                 Iterator<Gastos> listaNovembro = hm.get(11).iterator();
                 while(listaNovembro.hasNext()){
                     if(cont > LimitePagina){
-                        document.newPage();
+                        //document.newPage();
                         cont = 0;
                     }
                     Gastos aux1 = listaNovembro.next();
@@ -369,7 +373,7 @@ public class GerarPDF {
             soma = 0.0;
 
             if(cont > LimitePagina){
-                document.newPage();
+                //document.newPage();
                 cont = 0;
             }
 
@@ -380,7 +384,7 @@ public class GerarPDF {
                 Iterator<Gastos> listaDezembro = hm.get(12).iterator();
                 while(listaDezembro.hasNext()){
                     if(cont > LimitePagina){
-                        document.newPage();
+                        //document.newPage();
                         cont = 0;
                     }
                     Gastos aux1 = listaDezembro.next();
@@ -399,16 +403,15 @@ public class GerarPDF {
             soma = 0.0;
 
             if(cont > LimitePagina){
-                document.newPage();
+                //document.newPage();
                 cont = 0;
             }
             Calendar c = Calendar.getInstance();
             String TotalAnual = new DecimalFormat("0.00").format(TotalDoAno);
-            document.add(new Paragraph("\n\n\n" + ano, FontFactory.getFont( FontFactory.TIMES_BOLD, 20)));
+            document.add(new Paragraph("\n\n\n" + ano + "\n", FontFactory.getFont( FontFactory.TIMES_BOLD, 20)));
             document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
             document.add(new Paragraph("TOTAL:           | R$ "+TotalAnual + "   " +
                     "                                                              Gerado em: " + c.getTime().toLocaleString().substring(0,18), FontFactory.getFont( FontFactory.TIMES_BOLD)));
-
         }
         catch(DocumentException de) {
             System.err.println(de.getMessage());

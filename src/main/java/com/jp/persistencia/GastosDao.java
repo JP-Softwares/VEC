@@ -431,7 +431,10 @@ public class GastosDao implements IGastosDao{
 
     @Override
     public ArrayList<Gastos> filtrarGastos(Collection<Gastos> gastos, String filtro) throws Exception {
-        return new ArrayList<Gastos>((Collection<? extends Gastos>) gastos.stream().filter(o -> o.getTipoDeGastos().getNome().equals(filtro)));
+        gastos.forEach(gasto -> {
+            if(!gasto.getTipoDeGastos().getNome().contains(filtro)) gastos.remove(gasto);
+        });
+        return new ArrayList<Gastos>(gastos);
     }
 
     private HashMap<Integer, ArrayList> sort(HashMap<Integer, ArrayList> hm){

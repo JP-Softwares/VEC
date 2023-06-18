@@ -129,6 +129,9 @@ public class ModeloDao  implements IModeloDao {
 
     @Override
     public ArrayList<Modelo> filtrarModelo(Collection<Modelo> modelo, String nome) throws Exception {
-        return new ArrayList<Modelo>((Collection<? extends Modelo>) modelo.stream().filter(o -> o.getNome().contains(nome)));
+        modelo.forEach(modelos -> {
+            if(!modelos.getNome().contains(nome)) modelo.remove(modelos);
+        });
+        return new ArrayList<Modelo>(modelo);
     }
 }

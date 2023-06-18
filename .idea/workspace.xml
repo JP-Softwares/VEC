@@ -4,53 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< Updated upstream
-    <list default="true" id="cf4472ec-5fc2-497d-ba79-1b94f95fd7e4" name="Changes" comment="">
+    <list default="true" id="57341413-cd13-44ba-aa29-fa68173f3b4f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/teste/TesteBancoDeDados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/teste/TesteBancoDeDados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/GastosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/GastosDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/MarcaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/MarcaDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/ModeloDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/ModeloDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/ProprietarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/ProprietarioDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/TipoDeGastosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/TipoDeGastosDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/VeiculoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/VeiculoDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/tools/GerarPDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/tools/GerarPDF.java" afterDir="false" />
-=======
-    <list default="true" id="c2567c7e-a21c-4486-a14d-6425298679c0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jp/tools/Numero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jp/tools/Texto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL VEC.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL VEC.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VEC.jar" beforeDir="false" afterPath="$PROJECT_DIR$/VEC.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/visao/Run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/visao/Run.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaVeiculos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaVeiculos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/imagens/Marcas/Fiat.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/imagens/Marcas/Toyot.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/Item.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/Item.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/MarcasEdit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/MarcasEdit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/ModelosEdit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/ModelosEdit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaHome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaHome.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaHomeStylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaHomeStylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaPrincipal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaPrincipalStylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaPrincipalStylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaProprietarios.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaProprietarios.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaTipoDeGasto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaTipoDeGasto.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaVeiculos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaVeiculos.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaVeiculosStylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaVeiculosStylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/VeiculosEdit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/VeiculosEdit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/imagens/Marcas/Fiat.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/imagens/Marcas/Toyot.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/visao/Item.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jp/visao/Item.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/visao/MarcasEdit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jp/visao/MarcasEdit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/visao/ModelosEdit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jp/visao/ModelosEdit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaHome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaHome.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaHomeStylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaHomeStylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaPrincipal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaPrincipal.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaPrincipalStylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaPrincipalStylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaProprietarios.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaProprietarios.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaTipoDeGasto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaTipoDeGasto.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaVeiculos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaVeiculos.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaVeiculosStylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaVeiculosStylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/visao/VeiculosEdit.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jp/visao/VeiculosEdit.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
->>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,53 +22,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-<<<<<<< Updated upstream
-  <component name="ProjectId" id="2RNiHPPNkqehE3quTWCPVjWbGkP" />
-=======
-  <component name="ProjectId" id="2RNdIivkGhWt4yfWTc3sSxTxSe2" />
->>>>>>> Stashed changes
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-<<<<<<< Updated upstream
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/andre/OneDrive/Documentos/GitHub/JP-Rent-A-Car",
-=======
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Woly/Desktop/VEC/src/main/java/com/jp/tools",
->>>>>>> Stashed changes
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+    "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
-<<<<<<< Updated upstream
   <component name="RunManager" selected="Application.TesteBancoDeDados">
-=======
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Woly\Desktop\VEC\src\main\java\com\jp\tools" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Woly\Desktop\VEC\src\main\resources\com\jp\imagens\Marcas" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.VEC">
->>>>>>> Stashed changes
     <configuration name="TesteBancoDeDados" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.jp.teste.TesteBancoDeDados" />
       <module name="VEC" />
@@ -126,28 +50,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-<<<<<<< Updated upstream
-      <changelist id="cf4472ec-5fc2-497d-ba79-1b94f95fd7e4" name="Changes" comment="" />
-      <created>1687096857383</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1687096857383</updated>
-      <workItem from="1687096858501" duration="7098000" />
-=======
-      <changelist id="c2567c7e-a21c-4486-a14d-6425298679c0" name="Changes" comment="" />
-      <created>1687094395870</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1687094395870</updated>
-      <workItem from="1687094399556" duration="10862000" />
->>>>>>> Stashed changes
-    </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
 </project>

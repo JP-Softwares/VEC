@@ -163,7 +163,9 @@ public class VeiculoDao implements IVeiculoDao{
 
     @Override
     public ArrayList<Veiculo> filtrarVeiculo(Collection<Veiculo> veiculo, String filtro) throws Exception {
-        return new ArrayList<Veiculo>((Collection<? extends Veiculo>) veiculo.stream().filter(o -> o.getModelo().getNome().contains(filtro) || o.getPlaca().contains(filtro) || o.getModelo().getMarca().getNome().contains(filtro) || o.getProprietario().getNome().equals(filtro)));
-
+        veiculo.forEach(v -> {
+            if(!v.getModelo().getNome().contains(filtro) || !v.getPlaca().contains(filtro) || v.getModelo().getMarca().getNome().contains(filtro) || !v.getProprietario().getNome().contains(filtro)) veiculo.remove(v);
+        });
+        return new ArrayList<Veiculo>(veiculo);
     }
 }
