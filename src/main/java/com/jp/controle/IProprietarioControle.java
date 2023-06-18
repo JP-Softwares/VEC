@@ -14,6 +14,7 @@ public interface IProprietarioControle {
 
     Proprietario buscar(int id) throws Exception;
     Proprietario buscar(String cpf) throws Exception;
+    Proprietario buscar(String nome, boolean pessoa) throws Exception;
     boolean validarCPF (String CPF);
 
 }

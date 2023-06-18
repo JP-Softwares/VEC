@@ -48,6 +48,10 @@ public class ProprietarioControle implements IProprietarioControle{
         return ProprietarioPersistencia.buscar(id);
     }
 
+    public Proprietario buscar(String nome, boolean pessoa) throws Exception {
+        return ProprietarioPersistencia.buscar(nome, pessoa);
+    }
+
     @Override
     public Proprietario buscar(String cpf) throws Exception {
         try {
