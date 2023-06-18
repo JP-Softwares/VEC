@@ -16,7 +16,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import org.apache.commons.io.FileUtils;
 
+import javax.imageio.ImageIO;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -60,6 +62,8 @@ public class TelaVeiculos implements Initializable {
     HashMap<Integer, Modelo> modeloHashMap = null;
     HashMap<Integer, Veiculo> veiculoHashMap = null;
 
+    int idAtual = 0;
+
     public enum TipoDoVeiculo {
         MARCA, MODELO, VEICULO
     }
@@ -95,6 +99,7 @@ public class TelaVeiculos implements Initializable {
     public void editItemMarca(int id){
         AnchorPane editMarca = (AnchorPane) getScene("MarcasEdit.fxml");
         Marca marca = marcaHashMap.get(id);
+        idAtual = id;
         //AnchorPane itemMarca = (AnchorPane) marcasItems.getChildren().filtered(node -> Integer.parseInt(((Label)node.lookup("#id")).getText()) == id).get(0);
         ((TextField) editMarca.lookup("#textFieldNome")).setText(marca.getNome());
         ((ImageView) editMarca.lookup("#imagem")).setImage(new Image(getClass().getResource(marca.getUrl()).toString()));
@@ -106,6 +111,7 @@ public class TelaVeiculos implements Initializable {
         AnchorPane editModelo = (AnchorPane) getScene("ModelosEdit.fxml");
 
         Modelo modelo = modeloHashMap.get(id);
+        idAtual = id;
 
         ((TextField) editModelo.lookup("#textFieldNome")).setText(modelo.getNome());
         ((ImageView) editModelo.lookup("#imagem")).setImage(new Image(getClass().getResource(modelo.getUrlModelo()).toString()));
@@ -130,6 +136,7 @@ public class TelaVeiculos implements Initializable {
         AnchorPane editVeiculo = (AnchorPane) getScene("VeiculosEdit.fxml");
 
         Veiculo veiculo = veiculoHashMap.get(id);
+        idAtual = id;
 
         ComboBox comboBoxmodelo = (ComboBox) editVeiculo.lookup("#modelo");
         Collection<Modelo> modelos = modeloHashMap.values();
@@ -310,7 +317,7 @@ public class TelaVeiculos implements Initializable {
     public void alterarMarca(){
         try {
             Marca marca = new Marca();
-            marca.setId(Run.marcaControle.buscar(Run.marcasEdit.textFieldNome.getText()).getId());
+            marca.setId(idAtual);
             marca.setNome(Run.marcasEdit.textFieldNome.getText());
             String urlImagemPessoal = Run.marcasEdit.imagem.getImage().getUrl().replaceFirst("file:", "");
             String pontos[] = urlImagemPessoal.split("\\.");
@@ -318,9 +325,26 @@ public class TelaVeiculos implements Initializable {
             String url = "src/main/resources/com/jp/imagens/Marcas/" + marca.getNome() + "." + extensao;
             File imagemNoProjeto = new File(url);
             marca.setUrl("../imagens/Marcas/" + marca.getNome() + "." + extensao);
+
+            String nomeAnterior = Run.marcaControle.buscar(idAtual).getNome();
+
             Run.marcaControle.alterar(marca);
 
+            try{
+                File arquivoAntigo = Arrays.stream(new File("src/main/resources/com/jp/imagens/Marcas/").listFiles()).filter(file -> {
+                    return file.getName().contains(nomeAnterior);
+                }).findFirst().get();
+
+                if(arquivoAntigo != null) arquivoAntigo.delete();
+
+            }catch (Exception e){e.printStackTrace();}
+
             File imagemPessoal = new File(urlImagemPessoal);
+
+            //BufferedImage image = ImageIO.read(imagemPessoal);
+
+            //ImageIO.write(image, extensao, imagemNoProjeto);
+
             FileUtils.copyFile(imagemPessoal, imagemNoProjeto, StandardCopyOption.REPLACE_EXISTING);
 
             listar(TipoDoVeiculo.MARCA);
@@ -332,9 +356,9 @@ public class TelaVeiculos implements Initializable {
     public void alterarModelo(){
         try {
             Modelo modelo = new Modelo();
-            modelo.setId(Run.modeloControle.buscar(Run.modelosEdit.textFieldNome.getText()).getId());
+            modelo.setId(idAtual);
             modelo.setNome(Run.modelosEdit.textFieldNome.getText());
-            String urlImagemPessoal = Run.modelosEdit.imagem.getImage().getUrl().replaceFirst("file:", "");
+            String urlImagemPessoal = Run.modelosEdit.imagem.getImage().getUrl().replaceFirst("file:", "").replace("%20", " ");
             String pontos[] = urlImagemPessoal.split("\\.");
             String extensao = pontos[pontos.length-1];
             String url = "src/main/resources/com/jp/imagens/Modelos/" + modelo.getNome() + "." + extensao;
@@ -343,9 +367,21 @@ public class TelaVeiculos implements Initializable {
             modelo.setTipo(com.jp.modelos.TipoDoVeiculo.valueOf(Run.modelosEdit.comboBoxTipoDoVeiculo.getValue() + ""));
             modelo.setMarca(Run.marcaControle.buscar(Run.modelosEdit.comboBoxMarca.getValue() + ""));
 
+            String nomeAnterior = Run.modeloControle.buscar(idAtual).getNome();
+
             Run.modeloControle.alterar(modelo);
 
+            try{
+                File arquivoAntigo = Arrays.stream(new File("src/main/resources/com/jp/imagens/Modelos/").listFiles()).filter(file -> {
+                    return file.getName().contains(nomeAnterior);
+                }).findFirst().get();
+
+                if(arquivoAntigo != null && !arquivoAntigo.getName().equals(imagemNoProjeto.getName())) arquivoAntigo.delete();
+
+            }catch (Exception e){e.printStackTrace();}
+
             File imagemPessoal = new File(urlImagemPessoal);
+            //Files.copy(imagemPessoal.toPath(), imagemNoProjeto.toPath(), StandardCopyOption.REPLACE_EXISTING);
             FileUtils.copyFile(imagemPessoal, imagemNoProjeto, StandardCopyOption.REPLACE_EXISTING);
 
             listar(TipoDoVeiculo.MODELO);
@@ -359,7 +395,7 @@ public class TelaVeiculos implements Initializable {
         try {
             VeiculosEdit veiculosEdit = Run.veiculosEdit;
             Veiculo veiculo = new Veiculo();
-            veiculo.setId(Run.veiculoControle.buscar(Run.veiculosEdit.textFieldPlaca.getText()).getId());
+            veiculo.setId(idAtual);
             veiculo.setModelo(Run.modeloControle.buscar(veiculosEdit.comboBoxModelo.getValue() + ""));
             veiculo.setProprietario(Run.proprietarioControle.buscar(veiculosEdit.comboBoxproprietario.getValue() + "", true));
             veiculo.setPlaca(veiculosEdit.textFieldPlaca.getText());
@@ -387,20 +423,22 @@ public class TelaVeiculos implements Initializable {
 
                     marcasItems.getChildren().clear();
                     marcas.forEach(marca -> {
-                        Platform.runLater(new Runnable() {
-                            @Override
-                            public void run() {
-                                AnchorPane itemMarca = (AnchorPane) getScene("Item.fxml");
-                                ((Label) itemMarca.lookup("#title")).setText(marca.getNome() + "");
-                                ((Label) itemMarca.lookup("#description")).setText("");
-                                ((Label) itemMarca.lookup("#id")).setText(marca.getId() + "");
 
-                                ((ImageView) itemMarca.lookup("#imagem")).setImage(new Image(getClass().getResource(marca.getUrl()).toString()));
+                        AnchorPane itemMarca = (AnchorPane) getScene("Item.fxml");
+                        ((Label) itemMarca.lookup("#title")).setText(marca.getNome() + "");
+                        ((Label) itemMarca.lookup("#description")).setText("");
+                        ((Label) itemMarca.lookup("#id")).setText(marca.getId() + "");
 
-                                addItem(marcasItems, PanefundoMarcas, itemMarca, tipoDoVeiculo);
-                                marcaHashMap.put(marca.getId(), marca);
-                            }
-                        });
+                        ((ImageView) itemMarca.lookup("#imagem")).setImage(new Image(getClass().getResource(marca.getUrl()).toString()));
+
+                        addItem(marcasItems, PanefundoMarcas, itemMarca, tipoDoVeiculo);
+                        marcaHashMap.put(marca.getId(), marca);
+//
+//                        Platform.runLater(new Runnable() {
+//                            @Override
+//                            public void run() {
+//                            }
+//                        });
                     });
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -414,18 +452,19 @@ public class TelaVeiculos implements Initializable {
                     modelosItems.getChildren().clear();
 
                     modelos.forEach(modelo -> {
-                        Platform.runLater(new Runnable() {
-                            @Override
-                            public void run() {
-                                AnchorPane itemModelo = (AnchorPane) getScene("Item.fxml");
-                                ((Label) itemModelo.lookup("#title")).setText(modelo.getNome() + " - " + modelo.getMarca().getNome());
-                                ((Label) itemModelo.lookup("#description")).setText("Tipo do Veículo: " + modelo.getTipo().toString());
-                                ((Label) itemModelo.lookup("#id")).setText(modelo.getId() + "");
-                                ((ImageView) itemModelo.lookup("#imagem")).setImage(new Image(getClass().getResource(modelo.getUrlModelo()).toString()));
-                                addItem(modelosItems, PanefundoModelos, itemModelo, tipoDoVeiculo);
-                                modeloHashMap.put(modelo.getId(), modelo);
-                            }
-                        });
+
+                        AnchorPane itemModelo = (AnchorPane) getScene("Item.fxml");
+                        ((Label) itemModelo.lookup("#title")).setText(modelo.getNome() + " - " + modelo.getMarca().getNome());
+                        ((Label) itemModelo.lookup("#description")).setText("Tipo do Veículo: " + modelo.getTipo().toString());
+                        ((Label) itemModelo.lookup("#id")).setText(modelo.getId() + "");
+                        ((ImageView) itemModelo.lookup("#imagem")).setImage(new Image(getClass().getResource(modelo.getUrlModelo()).toString()));
+                        addItem(modelosItems, PanefundoModelos, itemModelo, tipoDoVeiculo);
+                        modeloHashMap.put(modelo.getId(), modelo);
+//                        Platform.runLater(new Runnable() {
+//                            @Override
+//                            public void run() {
+//                            }
+//                        });
 
                     });
                 } catch (Exception e) {
@@ -440,19 +479,21 @@ public class TelaVeiculos implements Initializable {
                     veiculoItems.getChildren().clear();
 
                     veiculos.forEach(veiculo -> {
-                        Platform.runLater(new Runnable() {
-                            @Override
-                            public void run() {
-                                AnchorPane itemVeiculo = (AnchorPane) getScene("Item.fxml");
-                                ((Label) itemVeiculo.lookup("#title")).setText(veiculo.getPlaca() + " - " + veiculo.getModelo().getNome());
-                                ((Label) itemVeiculo.lookup("#description")).setText("Marca: "+ veiculo.getModelo().getMarca().getNome()
-                                        +"\nProprietário: " + veiculo.getProprietario().getNome());
-                                ((Label) itemVeiculo.lookup("#id")).setText(veiculo.getId() + "");
-                                ((ImageView) itemVeiculo.lookup("#imagem")).setImage(new Image(getClass().getResource(veiculo.getModelo().getUrlModelo()).toString()));
-                                addItem(veiculoItems, PanefundoVeiculos, itemVeiculo, tipoDoVeiculo);
-                                veiculoHashMap.put(veiculo.getId(), veiculo);
-                            }
-                        });
+
+                        AnchorPane itemVeiculo = (AnchorPane) getScene("Item.fxml");
+                        ((Label) itemVeiculo.lookup("#title")).setText(veiculo.getPlaca() + " - " + veiculo.getModelo().getNome());
+                        ((Label) itemVeiculo.lookup("#description")).setText("Marca: "+ veiculo.getModelo().getMarca().getNome()
+                                +"\nProprietário: " + veiculo.getProprietario().getNome());
+                        ((Label) itemVeiculo.lookup("#id")).setText(veiculo.getId() + "");
+                        ((ImageView) itemVeiculo.lookup("#imagem")).setImage(new Image(getClass().getResource(veiculo.getModelo().getUrlModelo()).toString()));
+                        addItem(veiculoItems, PanefundoVeiculos, itemVeiculo, tipoDoVeiculo);
+                        veiculoHashMap.put(veiculo.getId(), veiculo);
+//                        Platform.runLater(new Runnable() {
+//
+//                            @Override
+//                            public void run() {
+//                            }
+//                        });
                     });
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -469,14 +510,14 @@ public class TelaVeiculos implements Initializable {
         listar(TipoDoVeiculo.MARCA);
         listar(TipoDoVeiculo.MODELO);
         listar(TipoDoVeiculo.VEICULO);
-        for(int i = 0; i < 10; i++){
+        //for(int i = 0; i < 10; i++){
            // AnchorPane item = (AnchorPane) ;
             //item.setId("itemVeiculos");
 
             //addItem(veiculoItems, PanefundoVeiculos, getScene("Item.fxml"), TipoDoVeiculo.VEICULO);
             //addItem(modelosItems, PanefundoModelos, getScene("Item.fxml"), TipoDoVeiculo.MODELO);
             //addItem(marcasItems, PanefundoMarcas, getScene("Item.fxml"), TipoDoVeiculo.MARCA);
-        }
+        //}
         //Run.telaPrincipal.setEditWindow("teste", getScene("MarcasEdit.fxml"), (m) -> System.out.println("teste"));
     }
 }
