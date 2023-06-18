@@ -403,7 +403,7 @@ public class GerarPDF {
             document.add(new Paragraph("\n\n\n" + ano, FontFactory.getFont( FontFactory.TIMES_BOLD, 20)));
             document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
             document.add(new Paragraph("TOTAL:           | R$ "+TotalAnual + "   " +
-                    "                                 Gerado em: " + , FontFactory.getFont( FontFactory.TIMES_BOLD)));
+                    "                                 Gerado em: " , FontFactory.getFont( FontFactory.TIMES_BOLD)));
 
         }
         catch(DocumentException de) {
