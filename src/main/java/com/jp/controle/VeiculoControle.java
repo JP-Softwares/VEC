@@ -17,23 +17,13 @@ public class VeiculoControle implements IVeiculoControle{
     }
     @Override
     public void incluir(Veiculo objeto) throws Exception {
-        try {
-            verificarCampos(objeto);
-            if(buscarPlacaVeiculo(objeto)) throw new Exception("Placa ja cadastrada");
-        } catch (Exception e) {
-            throw e;
-        }
+        verificarCampos(objeto);
         veiculoPersistencia.incluir(objeto);
     }
 
     @Override
     public void alterar(Veiculo objeto) throws Exception {
-        try {
-            verificarCampos(objeto);
-            if(buscarPlacaVeiculo(objeto)) throw new Exception("Placa ja cadastrada");
-        } catch (Exception e) {
-            throw e;
-        }
+        verificarCampos(objeto);
         veiculoPersistencia.alterar(objeto);
     }
 

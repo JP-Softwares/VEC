@@ -47,6 +47,7 @@ public class ModeloDao  implements IModeloDao {
             preparedStatement.setString(2, objeto.getUrlModelo());
             preparedStatement.setString(3, objeto.getTipo().toString());
             preparedStatement.setInt(4, objeto.getMarca().getId());
+            preparedStatement.setInt(5, objeto.getId());
             preparedStatement.executeUpdate();
         } catch (SQLException erro) {
             throw new Exception("SQL Erro: "+ erro.getMessage());

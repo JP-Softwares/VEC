@@ -430,19 +430,35 @@ public class GerarPDF {
             TipoDeGastosControle tipoDeGastosControle = new TipoDeGastosControle();
             document.open();
 
-            HashMap<Integer, ArrayList> hm = new HashMap<>();
-            hm = gastosControle.listarPorMes(objeto, 2023);
+            HashMap<Integer, ArrayList> hm = hm = gastosControle.listarPorMes(objeto, 2023);
+            HashMap<String, ArrayList> tp = new HashMap<>();
             ArrayList<TipoDeGastos> listaDeTipos = tipoDeGastosControle.listar();
-            // adicionando um parágrafo no documento
+            Iterator<TipoDeGastos> itezinho = listaDeTipos.iterator();
+            while(itezinho.hasNext()){
+                TipoDeGastos aux = itezinho.next();
+                tp.put(aux.getNome(), new ArrayList<Gastos>());
+            }
+            for(int i = 1; i < 13; i++){
+                ArrayList<Gastos> lista = hm.get(i);
+                Iterator<Gastos> Iterator = lista.iterator();
+                while(Iterator.hasNext()){
+                    TipoDeGastos aux = Iterator.next().getTipoDeGastos();
+                    Gastos aux2 = Iterator.next();
+                    tp.get(aux.getNome()).add(aux2);
+                }
+            }
             document.add(new Paragraph("Relatorio de Gastos - "+objeto.getModelo().getNome(), FontFactory.getFont(FontFactory.TIMES, 26)));
             document.add(new Paragraph("Placa: "+objeto.getPlaca() +" | Ano de Fabricação: "+objeto.getAnoFabricacao()+ " | Ano do Modelo: "+objeto.getAnoModelo(), FontFactory.getFont(FontFactory.TIMES, 11)));
             Iterator<TipoDeGastos> Tipo = listaDeTipos.iterator();
             while(Tipo.hasNext()){
                 TipoDeGastos aux = Tipo.next();
-                document.add(new Paragraph("\n \n" + aux.getNome(), FontFactory.getFont( FontFactory.TIMES_BOLD, 20)));
-                document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
-
-                document.add(new Paragraph("\n \n"  , FontFactory.getFont( FontFactory.TIMES_BOLD, 15)));
+                System.out.println(aux.getNome());
+                if (!tp.get(Tipo.next().getNome()).isEmpty()){
+                    TipoDeGastos aux2 = Tipo.next();
+                    document.add(new Paragraph("\n \n" + aux2.getNome(), FontFactory.getFont( FontFactory.TIMES_BOLD, 20)));
+                    document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
+                    document.add(new Paragraph("\n \n"  , FontFactory.getFont( FontFactory.TIMES_BOLD, 15)));
+                }
             }
 
         }
