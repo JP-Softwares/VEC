@@ -70,6 +70,15 @@ public class TelaVeiculos implements Initializable {
 
     String caminhoPadrao = "/com/jp/";
 
+    @FXML
+    private TextField searchBarMarcas;
+
+    @FXML
+    private TextField searchBarModelos;
+
+    @FXML
+    private TextField searchBarVeiculos;
+
     public enum TipoDoVeiculo {
         MARCA, MODELO, VEICULO
     }
@@ -515,10 +524,9 @@ public class TelaVeiculos implements Initializable {
 
 
     @FXML
-    void filtrarMarca(KeyEvent event) {
+    void filtrarMarca(ActionEvent event) {
         try {
-            ArrayList<Marca> marcas = Run.marcaControle.listar(); // Filtrar
-            marcaHashMap = new HashMap<>();
+            ArrayList<Marca> marcas = Run.marcaControle.filtrarMarca(marcaHashMap.values(), searchBarMarcas.getText());
 
             marcasItems.getChildren().clear();
             marcas.forEach(marca -> {
@@ -531,7 +539,6 @@ public class TelaVeiculos implements Initializable {
                 ((ImageView) itemMarca.lookup("#imagem")).setImage(new Image(getClass().getResource(marca.getUrl()).toString()));
 
                 addItem(marcasItems, PanefundoMarcas, itemMarca, TipoDoVeiculo.MARCA);
-                marcaHashMap.put(marca.getId(), marca);
 //
 //                        Platform.runLater(new Runnable() {
 //                            @Override
@@ -546,10 +553,9 @@ public class TelaVeiculos implements Initializable {
     }
 
     @FXML
-    void filtrarModelo(KeyEvent event) {
+    void filtrarModelo(ActionEvent event) {
         try {
-            ArrayList<Modelo> modelos = Run.modeloControle.listar(); // Filtrar
-            modeloHashMap = new HashMap<>();
+            ArrayList<Modelo> modelos = Run.modeloControle.filtrarModelo(modeloHashMap.values(), searchBarModelos.getText());
 
             modelosItems.getChildren().clear();
 
@@ -561,7 +567,6 @@ public class TelaVeiculos implements Initializable {
                 ((Label) itemModelo.lookup("#id")).setText(modelo.getId() + "");
                 ((ImageView) itemModelo.lookup("#imagem")).setImage(new Image(getClass().getResource(modelo.getUrlModelo()).toString()));
                 addItem(modelosItems, PanefundoModelos, itemModelo, TipoDoVeiculo.MODELO);
-                modeloHashMap.put(modelo.getId(), modelo);
 //                        Platform.runLater(new Runnable() {
 //                            @Override
 //                            public void run() {
@@ -576,10 +581,9 @@ public class TelaVeiculos implements Initializable {
     }
 
     @FXML
-    void filtrarVeiculo(KeyEvent event) {
+    void filtrarVeiculo(ActionEvent event) {
         try {
-            ArrayList<Veiculo> veiculos = Run.veiculoControle.listar(); // Filtrar
-            veiculoHashMap = new HashMap<>();
+            ArrayList<Veiculo> veiculos = Run.veiculoControle.filtrarVeiculo(veiculoHashMap.values(), searchBarVeiculos.getText());
 
             veiculoItems.getChildren().clear();
 
@@ -592,7 +596,6 @@ public class TelaVeiculos implements Initializable {
                 ((Label) itemVeiculo.lookup("#id")).setText(veiculo.getId() + "");
                 ((ImageView) itemVeiculo.lookup("#imagem")).setImage(new Image(getClass().getResource(veiculo.getModelo().getUrlModelo()).toString()));
                 addItem(veiculoItems, PanefundoVeiculos, itemVeiculo, TipoDoVeiculo.VEICULO);
-                veiculoHashMap.put(veiculo.getId(), veiculo);
 //                        Platform.runLater(new Runnable() {
 //
 //                            @Override

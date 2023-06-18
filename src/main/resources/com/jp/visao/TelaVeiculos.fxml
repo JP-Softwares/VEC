@@ -24,7 +24,7 @@
                           <content>
                             <AnchorPane fx:id="PanefundoVeiculos" minHeight="0.0" minWidth="0.0" styleClass="fundo">
                                  <children>
-                                    <TextField layoutX="208.0" layoutY="46.0" onKeyTyped="#filtrarVeiculo" prefHeight="38.0" prefWidth="951.0" styleClass="searchBar" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="46.0">
+                                    <TextField fx:id="searchBarVeiculos" layoutX="208.0" layoutY="46.0" prefHeight="38.0" prefWidth="951.0" styleClass="searchBar" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="46.0">
                                        <effect>
                                           <DropShadow height="30.0" radius="14.5" width="30.0" />
                                        </effect></TextField>
@@ -33,7 +33,7 @@
                                           <Insets bottom="20.0" />
                                        </padding>
                                     </VBox>
-                                    <Button minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="searchButton" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="46.0">
+                                    <Button minWidth="30.0" mnemonicParsing="false" onAction="#filtrarVeiculo" prefHeight="30.0" prefWidth="30.0" styleClass="searchButton" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="46.0">
                                        <graphic>
                                           <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -59,7 +59,7 @@
                            <content>
                               <AnchorPane fx:id="PanefundoModelos" minHeight="0.0" minWidth="0.0" styleClass="fundo">
                                  <children>
-                                    <TextField layoutX="208.0" layoutY="46.0" onKeyTyped="#filtrarModelo" prefHeight="38.0" prefWidth="1080.0" styleClass="searchBar" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="46.0">
+                                    <TextField fx:id="searchBarModelos" layoutX="208.0" layoutY="46.0" prefHeight="38.0" prefWidth="1080.0" styleClass="searchBar" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="46.0">
                                        <effect>
                                           <DropShadow height="30.0" radius="14.5" width="30.0" />
                                        </effect>
@@ -69,7 +69,7 @@
                                           <Insets bottom="20.0" />
                                        </padding>
                                     </VBox>
-                                    <Button minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="searchButton" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="46.0">
+                                    <Button minWidth="30.0" mnemonicParsing="false" onAction="#filtrarModelo" prefHeight="30.0" prefWidth="30.0" styleClass="searchButton" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="46.0">
                                        <graphic>
                                           <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
@@ -94,7 +94,7 @@
                            <content>
                               <AnchorPane fx:id="PanefundoMarcas" minHeight="0.0" minWidth="0.0" styleClass="fundo">
                                  <children>
-                                    <TextField layoutX="208.0" layoutY="46.0" onKeyTyped="#filtrarMarca" prefHeight="38.0" prefWidth="1080.0" styleClass="searchBar" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="46.0">
+                                    <TextField fx:id="searchBarMarcas" layoutX="208.0" layoutY="46.0" prefHeight="38.0" prefWidth="1080.0" styleClass="searchBar" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="46.0">
                                        <effect>
                                           <DropShadow height="30.0" radius="14.5" width="30.0" />
                                        </effect>
@@ -104,7 +104,7 @@
                                           <Insets bottom="20.0" />
                                        </padding>
                                     </VBox>
-                                    <Button minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="searchButton" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="46.0">
+                                    <Button minWidth="30.0" mnemonicParsing="false" onAction="#filtrarMarca" prefHeight="30.0" prefWidth="30.0" styleClass="searchButton" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="46.0">
                                        <graphic>
                                           <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
