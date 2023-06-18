@@ -31,6 +31,7 @@ public class MarcasEdit implements Initializable {
         File arquivo = fc.showOpenDialog(Run.app.stage.getScene().getWindow());
 
         imagem.setImage(new Image(arquivo.toURI().toString()));
+        System.out.println(imagem.getImage().getUrl());
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

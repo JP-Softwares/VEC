@@ -5,11 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f82c917e-753c-4ed8-af4b-aff6230d6602" name="Changes" comment="">
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/controle/GastosControle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/controle/GastosControle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/controle/IGastosControle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/controle/IGastosControle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/GastosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/GastosDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/IGastosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/IGastosDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/tools/GerarPDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/tools/GerarPDF.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/visao/MarcasEdit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/visao/MarcasEdit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaVeiculos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaVeiculos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/imagens/Marcas/Fiat.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/imagens/Marcas/Fiat.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/imagens/Marcas/Fiat.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jp/imagens/Marcas/Fiat.jpg" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,17 +38,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.TesteBancoDeDados">
+}</component>
+  <component name="RunManager" selected="Application.VEC">
     <configuration name="GerarPDF" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.jp.tools.GerarPDF" />
       <module name="VEC" />
