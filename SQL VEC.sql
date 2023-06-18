@@ -14,7 +14,8 @@ create table Proprietario(
 	telefone_numero varchar(9),
 	email varchar(70) unique not null,
 	numeroDaCNH char(9) not null,
-	categoriaDaCNH varchar(20) not null
+	categoriaDaCNH varchar(20) not null,
+	numeroDeCarros integer not null
 );
 
 create table Marca(

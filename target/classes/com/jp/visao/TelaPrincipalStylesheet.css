@@ -11,13 +11,9 @@
 .root{
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.0, 2.0, 2.0);
     -fx-background-insets: 20;
-}
-
-*{
     /*-grayColor: #2a2727;*/
     -titlebarColor: #2B2D30;
     -lateralColor: #1c1a1a;
-    -backgroundColor: #1E1F22;
 }
 
 /*  Padrões de Tela */
@@ -139,6 +135,10 @@ ComboBox .list-view .list-cell:filled:selected{
 #editPane{
     -fx-background-color: #e6e6e6;
     -fx-background-radius: 20px;
+}
+
+#editPane > .scroll-bar{
+    -fx-background-color: #e6e6e6;
 }
 
 #closeButtonEdit{

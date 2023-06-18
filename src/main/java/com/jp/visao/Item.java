@@ -40,6 +40,12 @@ public class Item implements Initializable {
             case "itemVeiculo":
                 Run.telaVeiculos.editItemVeiculo(Integer.parseInt(id.getText()));
                 break;
+            case "itemProprietario":
+                Run.telaProprietarios.editItemProprietario(Integer.parseInt(id.getText()));
+                break;
+            case "itemTipoDeGasto":
+                Run.telaTipoDeGasto.editItemTipoDeGasto(Integer.parseInt(id.getText()));
+                break;
         }
     }
 

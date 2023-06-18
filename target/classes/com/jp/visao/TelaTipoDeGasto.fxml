@@ -1,11 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-
-<AnchorPane prefHeight="690.0" prefWidth="1340.0" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jp.visao.TelaTipoDeGasto">
+<AnchorPane prefHeight="690.0" prefWidth="1340.0" stylesheets="@TelaCRUDStylesheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jp.visao.TelaTipoDeGasto">
    <children>
-      <Button layoutX="142.0" layoutY="96.0" mnemonicParsing="false" text="Button" />
+      <ScrollPane fx:id="scrollPaneTipoDeGasto" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" pannable="true" styleClass="scrollPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <AnchorPane fx:id="PanefundoTipoDeGasto" minHeight="0.0" minWidth="0.0" styleClass="fundo">
+               <children>
+                  <TextField fx:id="searchBarTipoDeGasto" layoutX="208.0" layoutY="46.0" prefHeight="38.0" prefWidth="951.0" styleClass="searchBar" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="46.0">
+                     <effect>
+                        <DropShadow height="30.0" radius="14.5" width="30.0" />
+                     </effect></TextField>
+                  <VBox fx:id="TipoDeGastoItems" layoutX="38.0" layoutY="127.0" prefHeight="490.0" prefWidth="1279.0" spacing="15.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="127.0">
+                     <padding>
+                        <Insets bottom="20.0" />
+                     </padding>
+                  </VBox>
+                  <Button minWidth="30.0" mnemonicParsing="false" onAction="#filtrarTipoDeGasto" prefHeight="30.0" prefWidth="30.0" styleClass="searchButton" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="46.0">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icones/lupa_black.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#newItemTipoDeGasto" prefHeight="38.0" prefWidth="107.0" styleClass="buttonNovo" text="Novo" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="45.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>

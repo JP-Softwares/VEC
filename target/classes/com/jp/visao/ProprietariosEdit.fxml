@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="487.0" prefWidth="460.0" stylesheets="@EditStylesheet.css" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jp.visao.ProprietariosEdit">
+   <children>
+      <TextField id="textFieldNome" fx:id="textFieldNome" layoutX="14.0" layoutY="40.0" prefHeight="36.0" prefWidth="227.0" AnchorPane.topAnchor="40.0" />
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="416.0" text="Nome" />
+      <Label layoutX="74.0" layoutY="15.0" styleClass="labelObrigatorio" text="*" />
+      <TextField id="textFieldCPF" fx:id="textFieldCPF" layoutX="14.0" layoutY="110.0" prefHeight="36.0" prefWidth="416.0" />
+      <Label layoutX="14.0" layoutY="84.0" prefHeight="26.0" prefWidth="416.0" text="CPF" />
+      <Label layoutX="62.0" layoutY="85.0" styleClass="labelObrigatorio" text="*" />
+      <TextField id="textFieldDDI" fx:id="textFieldDDI" layoutX="19.0" layoutY="216.0" prefHeight="36.0" prefWidth="60.0" />
+      <Label layoutX="14.0" layoutY="150.0" prefHeight="26.0" prefWidth="416.0" text="Telefone" />
+      <Label layoutX="95.0" layoutY="151.0" styleClass="labelObrigatorio" text="*" />
+      <TextField id="textFieldEmail" fx:id="textFieldEmail" layoutX="14.0" layoutY="285.0" prefHeight="36.0" prefWidth="416.0" />
+      <Label layoutX="14.0" layoutY="259.0" prefHeight="26.0" prefWidth="416.0" text="E-mail" />
+      <Label layoutX="85.0" layoutY="260.0" styleClass="labelObrigatorio" text="*" />
+      <Label layoutX="14.0" layoutY="401.0" prefHeight="26.0" prefWidth="416.0" text="Categoria da CNH" />
+      <Label layoutX="166.0" layoutY="402.0" styleClass="labelObrigatorio" text="*" />
+      <ComboBox id="comboBoxCategoriaCNH" fx:id="comboBoxCategoriaCNH" layoutX="14.0" layoutY="427.0" prefHeight="36.0" prefWidth="416.0" />
+      <Label alignment="CENTER" layoutX="17.0" layoutY="184.0" prefHeight="26.0" prefWidth="60.0" text="DDI" />
+      <TextField id="textFieldDDD" fx:id="textFieldDDD" layoutX="91.0" layoutY="216.0" prefHeight="36.0" prefWidth="60.0" />
+      <Label alignment="CENTER" layoutX="89.0" layoutY="184.0" prefHeight="26.0" prefWidth="60.0" text="DDD" />
+      <TextField id="textFieldNumero" fx:id="textFieldNumero" layoutX="164.0" layoutY="216.0" prefHeight="36.0" prefWidth="269.0" />
+      <Label alignment="CENTER" layoutX="162.0" layoutY="184.0" prefHeight="26.0" prefWidth="269.0" text="Número" />
+      <TextField id="textFieldNumeroCNH" fx:id="textFieldNumeroCNH" layoutX="14.0" layoutY="355.0" prefHeight="36.0" prefWidth="294.0" />
+      <Label layoutX="14.0" layoutY="329.0" prefHeight="26.0" prefWidth="416.0" text="Número da CNH" />
+      <Label layoutX="158.0" layoutY="330.0" styleClass="labelObrigatorio" text="*" />
+   </children>
+</AnchorPane>

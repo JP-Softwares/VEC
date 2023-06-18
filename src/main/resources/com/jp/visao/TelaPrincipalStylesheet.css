@@ -137,6 +137,10 @@ ComboBox .list-view .list-cell:filled:selected{
     -fx-background-radius: 20px;
 }
 
+#editPane > .scroll-bar{
+    -fx-background-color: #e6e6e6;
+}
+
 #closeButtonEdit{
     -fx-background-color: rgba(0, 0, 0, 0);
     -fx-text-fill: #000;

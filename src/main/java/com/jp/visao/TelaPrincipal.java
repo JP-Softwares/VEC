@@ -160,6 +160,7 @@ public class TelaPrincipal implements Initializable{
     void lateralMenu(ActionEvent event) {
         double width = paneLeft.getWidth();
         int aumento = 3;
+        blurPane.setViewOrder(0);
         if(transicao.getStatus() != Animation.Status.RUNNING){
             if(!lateralMenuOpen){
 

@@ -30,24 +30,27 @@ public class Run {
 
     public static VeiculosEdit veiculosEdit;
 
+    public static ProprietariosEdit proprietariosEdit;
+
+    public static TipoDeGastosEdit tipoDeGastosEdit;
+
 
     public static IMarcaControle marcaControle;
     public static IModeloControle modeloControle;
     public static IVeiculoControle veiculoControle;
-
     public static IProprietarioControle proprietarioControle;
+    public static ITipoDeGastosControle tipoDeGastosControle;
 
     public static void main(String[] args){
-        new Thread(() -> {
-            try {
-                marcaControle = new MarcaControle();
-                modeloControle = new ModeloControle();
-                veiculoControle = new VeiculoControle();
-                proprietarioControle = new ProprietarioControle();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }).start();
+        try {
+            marcaControle = new MarcaControle();
+            modeloControle = new ModeloControle();
+            veiculoControle = new VeiculoControle();
+            proprietarioControle = new ProprietarioControle();
+            tipoDeGastosControle = new TipoDeGastosControle();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         App.main(args);
     }

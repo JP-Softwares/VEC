@@ -4,59 +4,52 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57341413-cd13-44ba-aa29-fa68173f3b4f" name="Changes" comment="">
+    <list default="true" id="9ab3238a-88fc-4f81-b713-f7db5f56d607" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jp/visao/ProprietariosEdit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jp/visao/TipoDeGastosEdit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/ProprietariosEdit.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaCRUDStylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TipoDeGastosEdit.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/jp/visao/ProprietariosEdit.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaCRUDStylesheet.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/controle/IProprietarioControle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/controle/IProprietarioControle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/controle/ProprietarioControle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/controle/ProprietarioControle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/modelos/Proprietario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/modelos/Proprietario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/ProprietarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/ProprietarioDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/VeiculoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/VeiculoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/teste/TesteBancoDeDados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/teste/TesteBancoDeDados.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaHome.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaHome.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SQL VEC.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL VEC.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/visao/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/visao/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/visao/Run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/visao/Run.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaProprietarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaProprietarios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaTipoDeGasto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaTipoDeGasto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaVeiculos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaVeiculos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaPrincipalStylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaPrincipalStylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaProprietarios.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaProprietarios.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaTipoDeGasto.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaTipoDeGasto.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaVeiculosStylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/jp/visao/TelaVeiculosStylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaPrincipalStylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaPrincipalStylesheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaProprietarios.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaProprietarios.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaVeiculosStylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaVeiculosStylesheet.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "last_opened_file_path": "C:/Users/andre/OneDrive/Documentos/GitHub/JP-Rent-A-Car",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Woly/Desktop/VEC/src/main/resources/com/jp/visao",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.TesteBancoDeDados">
-    <configuration name="TesteBancoDeDados" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.jp.teste.TesteBancoDeDados" />
-      <module name="VEC" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.jp.teste.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.TesteBancoDeDados" />
-      </list>
-    </recent_temporary>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Woly\Desktop\VEC\src\main\resources\com\jp\visao" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.jp.visao" />
+    </key>
   </component>
   <component name="TaskManager">
     <servers />

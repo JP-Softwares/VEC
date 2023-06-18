@@ -11,6 +11,7 @@
     -fx-background-color: -backgroundColor;
 }
 
+
 .searchButton:hover{
     -fx-cursor: hand;
 }
@@ -47,4 +48,3 @@
     -fx-highlight-fill: rgba(40, 38, 38, 0.4);
     -fx-highlight-text-fill: #000;
 }
-
