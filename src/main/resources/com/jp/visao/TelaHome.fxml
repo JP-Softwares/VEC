@@ -12,7 +12,7 @@
    <children>
       <ImageView fx:id="imagem" fitHeight="690.0" fitWidth="1340.0" pickOnBounds="true">
          <image>
-            <Image url="@../icones/caminhão%20rebaixado.jpg" />
+            <Image url="@../icones/Tela3.jpg" />
          </image>
          <effect>
             <Bloom threshold="0.0" />
