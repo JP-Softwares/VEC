@@ -102,6 +102,10 @@ public class ProprietarioControle implements IProprietarioControle{
             return(false);
         }
     }
+    public String imprimeCPF(String CPF) {
+        return(CPF.substring(0, 3) + "." + CPF.substring(3, 6) + "." +
+                CPF.substring(6, 9) + "-" + CPF.substring(9, 11));
+    }
 
     private boolean verificarCampos(Proprietario objeto) throws Exception{
         if(!validarCPF(objeto.getCPF()))throw new Exception("O CPF informado é inválido!!");
