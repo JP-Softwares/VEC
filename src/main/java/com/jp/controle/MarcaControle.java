@@ -101,18 +101,12 @@ public class MarcaControle implements IMarcaControle{
     public void incluir(Marca objeto) throws Exception{
         objeto.setNome(verificarDescricao(objeto.getNome()));
         if(!verificarVazio(objeto).equals("")) throw new Exception(verificarVazio(objeto));
-        if(buscarMarca(objeto)){
-            throw new Exception("Marca já cadastrada");
-        }
         marcaPersistencia.incluir(objeto);
     }
 
     public void alterar(Marca objeto) throws Exception{
         objeto.setNome(verificarDescricao(objeto.getNome()));
         if(!verificarVazio(objeto).equals("")) throw new Exception(verificarVazio(objeto));
-        if(buscarMarca(objeto)){
-            throw new Exception("Marca já cadastrada");
-        }
         marcaPersistencia.alterar(objeto);
     }
 

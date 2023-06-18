@@ -9,7 +9,9 @@ import com.itextpdf.text.*;
 import com.itextpdf.text.Image;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.jp.controle.GastosControle;
+import com.jp.controle.TipoDeGastosControle;
 import com.jp.modelos.Gastos;
+import com.jp.modelos.TipoDeGastos;
 import com.jp.modelos.Veiculo;
 import javafx.print.PageLayout;
 
@@ -416,7 +418,7 @@ public class GerarPDF {
         document.close();
     }
 
-    public void gerarPDFTipo(String caminho, Veiculo objeto){
+    public void gerarPDFTipo(String caminho, Veiculo objeto, int ano){
         GastosControle gastosControle = new GastosControle();
         // criação do documento
         Document document = new Document();
@@ -425,12 +427,20 @@ public class GerarPDF {
             int LimitePagina = 23;
             double soma = 0.0;
             PdfWriter.getInstance(document, new FileOutputStream(caminho));
+            TipoDeGastosControle tipoDeGastosControle = new TipoDeGastosControle();
             document.open();
 
             HashMap<Integer, ArrayList> hm = new HashMap<>();
             hm = gastosControle.listarPorMes(objeto);
+            ArrayList<TipoDeGastos> listaDeTipos = tipoDeGastosControle.listar();
             // adicionando um parágrafo no documento
             document.add(new Paragraph("Relatorio de Gastos - "+objeto.getModelo().getNome(), FontFactory.getFont(FontFactory.TIMES, 26)));
+            document.add(new Paragraph("Placa: "+objeto.getPlaca() +" | Ano de Fabricação: "+objeto.getAnoFabricacao()+ " | Ano do Modelo: "+objeto.getAnoModelo(), FontFactory.getFont(FontFactory.TIMES, 11)));
+            Iterator<TipoDeGastos> Tipo = listaDeTipos.iterator();
+            while(Tipo.hasNext()){
+                TipoDeGastos aux = Tipo.next();
+                document.add(new Paragraph("\n \n" + aux.getNome(), FontFactory.getFont( FontFactory.TIMES_BOLD, 15)));
+            }
 
         }
         catch(DocumentException de) {
