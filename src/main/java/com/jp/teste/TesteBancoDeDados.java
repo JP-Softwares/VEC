@@ -99,7 +99,7 @@ public class TesteBancoDeDados {
         }*/
 
         GerarPDF gerarPDF = new GerarPDF();
-        gerarPDF.gerarPDFMes(caminho, veiculoControle.buscar(1), 2023);
+        gerarPDF.gerarPDFTipo(caminho, veiculoControle.buscar(1), 2023);
 
     }
 }

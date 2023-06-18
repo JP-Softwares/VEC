@@ -427,7 +427,9 @@ public class GerarPDF {
 
     public void gerarPDFTipo(String caminho, Veiculo objeto, int ano){
         GastosControle gastosControle = new GastosControle();
-        Document document = new Document();
+        Rectangle pageSize = new Rectangle(595, 842);
+        pageSize.setBackgroundColor(new BaseColor(0xFF, 0xFF, 0xDE));
+        Document document = new Document(pageSize);
         try {
             int cont = 1;
             int LimitePagina = 36;
@@ -473,23 +475,24 @@ public class GerarPDF {
             }
             //Neste ponto eu tenho um HashMap com os tipos de gasto como chave e uma ArrayList de Gastos relacionados a ele;
             document.add(new Paragraph("Relatorio de Gastos - "+objeto.getModelo().getNome(), FontFactory.getFont(FontFactory.TIMES, 26)));
-            document.add(new Paragraph("Placa: "+objeto.getPlaca() +" | Ano de Fabricação: "+objeto.getAnoFabricacao()+ " | Ano do Modelo: "+objeto.getAnoModelo(), FontFactory.getFont(FontFactory.TIMES, 11)));
+            document.add(new Paragraph("Placa: "+objeto.getPlaca() +" | Ano de Fabricação: "+objeto.getAnoFabricacao()+ " | Ano do Modelo: "+objeto.getAnoModelo()+ " | Marca: "+objeto.getModelo().getMarca().getNome(), FontFactory.getFont(FontFactory.TIMES, 11)));
             Iterator<TipoDeGastos> Tipo = listaDeTipos.iterator();
             while(Tipo.hasNext()){
                 TipoDeGastos aux = Tipo.next();
                 if (tp.get(aux.getNome()) != null){
                     if(cont > LimitePagina){
-                        document.newPage();
+                        //document.newPage();
                         cont = 0;
                     }
                     Iterator<Gastos> GR = tp.get(aux.getNome()).iterator();
                     soma = 0;
                     document.add(new Paragraph("\n \n" + aux.getNome(), FontFactory.getFont( FontFactory.TIMES_BOLD, 20)));
                     document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
+                    MesAtual = "";
                     while (GR.hasNext()){
                         Gastos gts = GR.next();
                         if(cont > LimitePagina){
-                            document.newPage();
+                            //document.newPage();
                             cont = 0;
                         }
                         if(gts.getData().toLocalDate().getMonth().toString().equals(MesAtual)){

@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="57341413-cd13-44ba-aa29-fa68173f3b4f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/GastosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/GastosDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/MarcaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/MarcaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/ModeloDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/ModeloDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/ProprietarioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/ProprietarioDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/TipoDeGastosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/TipoDeGastosDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/VeiculoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/VeiculoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/teste/TesteBancoDeDados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/teste/TesteBancoDeDados.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/tools/GerarPDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/tools/GerarPDF.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
