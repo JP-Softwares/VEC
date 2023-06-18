@@ -424,42 +424,91 @@ public class GerarPDF {
         Document document = new Document();
         try {
             int cont = 1;
-            int LimitePagina = 23;
+            int LimitePagina = 36;
             double soma = 0.0;
+            String MesAtual = "";
             PdfWriter.getInstance(document, new FileOutputStream(caminho));
             TipoDeGastosControle tipoDeGastosControle = new TipoDeGastosControle();
             document.open();
 
-            HashMap<Integer, ArrayList> hm = hm = gastosControle.listarPorMes(objeto, 2023);
+            HashMap<Integer, ArrayList> hm = gastosControle.listarPorMes(objeto, 2023);
             HashMap<String, ArrayList> tp = new HashMap<>();
+            //coloco os tipos de gasto em uma lista de depois preencho um hashmap usando eles de key;
             ArrayList<TipoDeGastos> listaDeTipos = tipoDeGastosControle.listar();
             Iterator<TipoDeGastos> itezinho = listaDeTipos.iterator();
             while(itezinho.hasNext()){
                 TipoDeGastos aux = itezinho.next();
-                tp.put(aux.getNome(), new ArrayList<Gastos>());
+                tp.put(aux.getNome(), null);
             }
+            //Passando pelos gastos dos 12 meses usando o HashMap HM
             for(int i = 1; i < 13; i++){
                 ArrayList<Gastos> lista = hm.get(i);
-                Iterator<Gastos> Iterator = lista.iterator();
-                while(Iterator.hasNext()){
-                    TipoDeGastos aux = Iterator.next().getTipoDeGastos();
-                    Gastos aux2 = Iterator.next();
-                    tp.get(aux.getNome()).add(aux2);
-                    System.out.println("teste1");
+                //se existir um Array de Gastos relacionado com aquele Mes eu entro no IF
+                if(lista != null){
+                    Iterator<Gastos> indice = lista.iterator();
+                    //Para cada Gasto nesse Mes eu executo esse While
+                    while(indice.hasNext()){
+                        Gastos atual = indice.next();
+                        TipoDeGastos aux = atual.getTipoDeGastos();
+                        //Usando o Tipo de Gasto como Key eu consigo checar se ja existe uma Arraylist de gastos Relacionada a ele ou não
+                        if(tp.get(aux.getNome()) == null){
+                            //se não existir eu crio uma vazia, coloco o gasto atual nela e guardo no HashMap
+                            ArrayList<Gastos> Comgastos = new ArrayList<>();
+                            Comgastos.add(atual);
+                            tp.put(aux.getNome(),Comgastos);
+                        }else{
+                            //se ja existir eu adiciono o Gasto na Arraylist
+                            tp.get(aux.getNome()).add(atual);
+                        }
+                    }
                 }
+
             }
+            //Neste ponto eu tenho um HashMap com os tipos de gasto como chave e uma ArrayList de Gastos relacionados a ele;
             document.add(new Paragraph("Relatorio de Gastos - "+objeto.getModelo().getNome(), FontFactory.getFont(FontFactory.TIMES, 26)));
             document.add(new Paragraph("Placa: "+objeto.getPlaca() +" | Ano de Fabricação: "+objeto.getAnoFabricacao()+ " | Ano do Modelo: "+objeto.getAnoModelo(), FontFactory.getFont(FontFactory.TIMES, 11)));
             Iterator<TipoDeGastos> Tipo = listaDeTipos.iterator();
-            System.out.println("Teste2");
             while(Tipo.hasNext()){
                 TipoDeGastos aux = Tipo.next();
-                System.out.println("teste3");
-                if (!tp.get(Tipo.next().getNome()).isEmpty()){
-                    TipoDeGastos aux2 = Tipo.next();
-                    document.add(new Paragraph("\n \n" + aux2.getNome(), FontFactory.getFont( FontFactory.TIMES_BOLD, 20)));
+                if (tp.get(aux.getNome()) != null){
+                    if(cont > LimitePagina){
+                        document.newPage();
+                        cont = 0;
+                    }
+                    Iterator<Gastos> GR = tp.get(aux.getNome()).iterator();
+                    document.add(new Paragraph("\n \n" + aux.getNome(), FontFactory.getFont( FontFactory.TIMES_BOLD, 20)));
                     document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
-                    document.add(new Paragraph("\n \n"  , FontFactory.getFont( FontFactory.TIMES_BOLD, 15)));
+                    while (GR.hasNext()){
+                        Gastos gts = GR.next();
+                        if(cont > LimitePagina){
+                            document.newPage();
+                            cont = 0;
+                        }
+                        if(gts.getData().toLocalDate().getMonth().toString().equals(MesAtual)){
+                            document.add(new Paragraph("Tipo de Gasto: | " + gts.getTipoDeGastos().getNome(), FontFactory.getFont(FontFactory.TIMES, 9)));
+                            document.add(new Paragraph("Descrição:       | " + gts.getDescricao(), FontFactory.getFont(FontFactory.TIMES, 9)));
+                            document.add(new Paragraph("Valor:               | R$"+gts.getValor(), FontFactory.getFont(FontFactory.TIMES, 9)));
+                            document.add(new Paragraph("Data:               | "+gts.getData(), FontFactory.getFont(FontFactory.TIMES, 9)));
+                            document.add(new Paragraph("______________________________________________________________________________", FontFactory.getFont(FontFactory.TIMES, 10)));
+                            cont = cont+5;
+                        }else{
+                            document.add(new Paragraph(""+ traduzir(gts.getData().toLocalDate().getMonth().toString()) , FontFactory.getFont( FontFactory.TIMES_BOLD, 15)));
+                            document.add(new Paragraph("______________________________________________________________________________", FontFactory.getFont(FontFactory.TIMES, 10)));
+                            document.add(new Paragraph("Tipo de Gasto: | " + gts.getTipoDeGastos().getNome(), FontFactory.getFont(FontFactory.TIMES, 9)));
+                            document.add(new Paragraph("Descrição:       | " + gts.getDescricao(), FontFactory.getFont(FontFactory.TIMES, 9)));
+                            document.add(new Paragraph("Valor:               | R$"+gts.getValor(), FontFactory.getFont(FontFactory.TIMES, 9)));
+                            document.add(new Paragraph("Data:               | "+gts.getData(), FontFactory.getFont(FontFactory.TIMES, 9)));
+                            document.add(new Paragraph("______________________________________________________________________________", FontFactory.getFont(FontFactory.TIMES, 10)));
+                            cont = cont+8;
+                        }
+                        soma = soma + gts.getValor();
+
+                        MesAtual = gts.getData().toLocalDate().getMonth().toString();
+                    }
+                    document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
+                    String totalParcial = new DecimalFormat("0.00").format(soma);
+                    document.add(new Paragraph("TOTAL "+aux.getNome()+": R$ "+totalParcial+ "\n", FontFactory.getFont( FontFactory.TIMES_BOLD)));
+                    cont = cont+ 3;
                 }
             }
 
@@ -471,11 +520,44 @@ public class GerarPDF {
             System.err.println(ioe.getMessage());
         }
         catch (Exception erro){
+            erro.printStackTrace();
         }
         document.close();
+    }
+    private String traduzir(String mes){
+        switch (mes){
+            case "JANUARY":
+                return "Janeiro";
+            case "FEBRUARY":
+                return "Fevereiro";
+            case "MARCH":
+                return "Março";
+            case "APRIL":
+                return "Abril";
+            case "MAY":
+                return "Maio";
+            case "JUNE":
+                return "Junho";
+            case "JULY":
+                return "Julho";
+            case "AUGUST":
+                return "Agosto";
+            case "SEPTEMBER":
+                return "Setembro";
+            case "OCTOBER":
+                return "Outubro";
+            case "NOVEMBER":
+                return "Novembro";
+            case "December":
+                return "Dezembro";
+            default:
+                break;
+        }
+        return null;
     }
 
     private static Element Paragraph(String texto) {
         return null;
     }
+
 }

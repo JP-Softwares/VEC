@@ -49,8 +49,8 @@ public class VeiculoDao implements IVeiculoDao{
         try {
             System.out.println(objeto.getId()+ "");
             String sql = "update Veiculo set  placa = '"+objeto.getPlaca()+"', anoFabricacao = '"+objeto.getAnoFabricacao()+"', anoModelo = '"+objeto.getAnoModelo()+"', tipoDoCombustivel = '"+objeto.getCombustivel().toString()+"', quilometragemAtual = '"+objeto.getKilometragem()+"', situacaoDoVeiculo = '" +objeto.getSituacao().toString() +"', idModelo = '"+objeto.getModelo().getId()+"', idProprietario = '"+objeto.getProprietario().getId()+"' where id = '"+objeto.getId()+"'";
-            Statement statement = conexao.createStatement();
-            ResultSet rs = statement.executeQuery(sql);
+            PreparedStatement preparedStatement = conexao.prepareStatement(sql);
+            preparedStatement.executeUpdate();
         } catch (SQLException erro) {
             throw new Exception("SQL Erro: "+ erro.getMessage());
         } catch(Exception erro){

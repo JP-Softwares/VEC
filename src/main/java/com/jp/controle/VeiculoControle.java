@@ -64,7 +64,7 @@ public class VeiculoControle implements IVeiculoControle{
     }
 
     private boolean verificarCampos(Veiculo objeto) throws Exception{
-        if((objeto.getPlaca()).length() < 7) throw new Exception("A placa informada é invalida, por favor digite uma placa com 7 digitos");
+        if((objeto.getPlaca()).length() < 7 || objeto.getPlaca().length() > 7) throw new Exception("A placa informada é invalida, por favor digite uma placa com 7 digitos");
         if(objeto.getKilometragem() < 0) throw new Exception("Por favor digite uma quilometragem válida");
         return true;
     }

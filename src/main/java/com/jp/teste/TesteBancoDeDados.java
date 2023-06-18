@@ -85,14 +85,16 @@ public class TesteBancoDeDados {
             System.out.println(aux.getData().toLocalDate().getDayOfMonth()+ "");
         }*/
         //gastosControle.incluir(gastosteste);
-
-        /*ArrayList<Gastos> Janeiro = new ArrayList<>();
-        Janeiro = gastosControle.listarPorMes(veiculoControle.buscar(1)).get(1);
-        Iterator<Gastos> listaGastos = Janeiro.iterator();
-        while(listaGastos.hasNext()){
-            Gastos aux1 = listaGastos.next();
-            System.out.println(aux1.getDescricao());
+        /*for(int i = 1; i < 13; i++){
+            ArrayList<Gastos> Janeiro = new ArrayList<>();
+            Janeiro = gastosControle.listarPorMes(veiculoControle.buscar(1), 2023).get(i);
+            Iterator<Gastos> listaGastos = Janeiro.iterator();
+            while(listaGastos.hasNext()){
+                Gastos aux1 = listaGastos.next();
+                System.out.println(aux1.getDescricao());
+            }
         }*/
+
         GerarPDF gerarPDF = new GerarPDF();
         gerarPDF.gerarPDFTipo(caminho, veiculoControle.buscar(1), 2023);
 
