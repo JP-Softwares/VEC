@@ -1,5 +1,5 @@
 package com.jp.teste;
-
+import com.jp.tools.PegarHora;
 import com.jp.controle.*;
 import com.jp.modelos.*;
 
@@ -9,6 +9,8 @@ import java.util.Iterator;
 import com.jp.tools.GerarPDF;
 
 import javax.swing.*;
+
+import static com.jp.tools.PegarHora.bomDia;
 
 public class TesteBancoDeDados {
 
@@ -99,7 +101,8 @@ public class TesteBancoDeDados {
         }*/
 
         GerarPDF gerarPDF = new GerarPDF();
-        gerarPDF.gerarPDFTipo(caminho, veiculoControle.buscar(1), 2023);
+        //gerarPDF.gerarPDFTipo(caminho, veiculoControle.buscar(1), 2023);
+        bomDia();
 
     }
 }

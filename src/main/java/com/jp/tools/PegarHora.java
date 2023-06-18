@@ -6,6 +6,15 @@ public class PegarHora {
 
     public static String bomDia(){
         Calendar c = Calendar.getInstance();
-        return null;
+        int h = c.getTime().getHours();
+        if(h >=0 && h < 12){
+            return "Bom Dia!";
+        }else{
+            if(h < 18){
+                return "Boa Tarde!";
+            }else{
+                return "Boa Noite!";
+            }
+        }
     }
 }
