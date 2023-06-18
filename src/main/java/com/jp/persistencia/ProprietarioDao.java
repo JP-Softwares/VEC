@@ -120,8 +120,32 @@ public class ProprietarioDao implements IProprietarioDao{
         return null;
     }
 
-    @Override
-    public Proprietario buscar(int id) throws Exception {
+    public Proprietario buscar(String nome, boolean Pessoa) throws Exception {
+        try {
+            String sql = "select * from Proprietario where nome = '" + Pessoa + "'";
+            Statement statement = conexao.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            Proprietario proprietario = new Proprietario();
+            if (rs.next()) {
+                proprietario.setId(rs.getInt("id"));
+                proprietario.setNome(rs.getString("nome"));
+                proprietario.setCPF(rs.getString("CPF"));
+                Telefone telefone = new Telefone();
+                telefone.setDDI(rs.getInt("telefone_DDI"));
+                telefone.setDDD(rs.getInt("telefone_DDD"));
+                telefone.setNumero(rs.getInt("telefone_numero"));
+                proprietario.setTelefone(telefone);
+                proprietario.setEmail(rs.getString("email"));
+                proprietario.setCNH(rs.getString("numeroDaCNH"));
+                proprietario.setCategoria(CategoriaCNH.valueOf(rs.getString("categoriaDaCNH")));
+            }
+            return proprietario;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+        public Proprietario buscar(int id) throws Exception {
         try {
             String sql = "select * from Proprietario where id = '"+id+"'";
             Statement statement = conexao.createStatement();
