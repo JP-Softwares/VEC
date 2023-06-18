@@ -47,7 +47,7 @@ public class VeiculoDao implements IVeiculoDao{
     @Override
     public void alterar(Veiculo objeto) throws Exception {
         try {
-            String sql = "update Veiculo set placa = ?, anoFabricacao = ?, anoModelo = ?, tipoDoCombustivel = ?, quilometragemAtual = ?, situacaoDoVeiculo = ?, idModelo = ?, idProprietario = ?  where (id = ?)";
+            String sql = "update Veiculo set (placa , anoFabricacao , anoModelo , tipoDoCombustivel , quilometragemAtual , situacaoDoVeiculo , idModelo , idProprietario)   where (id) values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement preparedStatement = conexao.prepareStatement(sql);
             // Parameters iniciar os elementos
             preparedStatement.setString(1, objeto.getPlaca());

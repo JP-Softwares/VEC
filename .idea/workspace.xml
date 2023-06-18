@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2567c7e-a21c-4486-a14d-6425298679c0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SQL VEC.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SQL VEC.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaVeiculos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaVeiculos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/VeiculoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/VeiculoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/tools/GerarPDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/tools/GerarPDF.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +18,6 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "main",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
