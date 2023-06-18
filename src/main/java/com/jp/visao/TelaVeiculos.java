@@ -2,6 +2,8 @@ package com.jp.visao;
 
 import com.jp.controle.*;
 import com.jp.modelos.*;
+import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -382,18 +384,23 @@ public class TelaVeiculos implements Initializable {
 
                     marcasItems.getChildren().clear();
                     marcas.forEach(marca -> {
-                        AnchorPane itemMarca = (AnchorPane) getScene("Item.fxml");
-                        ((Label) itemMarca.lookup("#title")).setText(marca.getNome() + "");
-                        ((Label) itemMarca.lookup("#description")).setText("");
-                        ((Label) itemMarca.lookup("#id")).setText(marca.getId() + "");
+                        Platform.runLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                AnchorPane itemMarca = (AnchorPane) getScene("Item.fxml");
+                                ((Label) itemMarca.lookup("#title")).setText(marca.getNome() + "");
+                                ((Label) itemMarca.lookup("#description")).setText("");
+                                ((Label) itemMarca.lookup("#id")).setText(marca.getId() + "");
 
-                        ((ImageView) itemMarca.lookup("#imagem")).setImage(new Image(getClass().getResource(marca.getUrl()).toString()));
+                                ((ImageView) itemMarca.lookup("#imagem")).setImage(new Image(getClass().getResource(marca.getUrl()).toString()));
 
-                        addItem(marcasItems, PanefundoMarcas, itemMarca, tipoDoVeiculo);
-                        marcaHashMap.put(marca.getId(), marca);
+                                addItem(marcasItems, PanefundoMarcas, itemMarca, tipoDoVeiculo);
+                                marcaHashMap.put(marca.getId(), marca);
+                            }
+                        });
                     });
                 } catch (Exception e) {
-                    throw new RuntimeException(e);
+                    e.printStackTrace();
                 }
                 break;
             case MODELO:
@@ -404,16 +411,22 @@ public class TelaVeiculos implements Initializable {
                     modelosItems.getChildren().clear();
 
                     modelos.forEach(modelo -> {
-                        AnchorPane itemModelo = (AnchorPane) getScene("Item.fxml");
-                        ((Label) itemModelo.lookup("#title")).setText(modelo.getNome() + " - " + modelo.getMarca().getNome());
-                        ((Label) itemModelo.lookup("#description")).setText("Tipo do Veículo: " + modelo.getTipo().toString());
-                        ((Label) itemModelo.lookup("#id")).setText(modelo.getId() + "");
-                        ((ImageView) itemModelo.lookup("#imagem")).setImage(new Image(getClass().getResource(modelo.getUrlModelo()).toString()));
-                        addItem(modelosItems, PanefundoModelos, itemModelo, tipoDoVeiculo);
-                        modeloHashMap.put(modelo.getId(), modelo);
+                        Platform.runLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                AnchorPane itemModelo = (AnchorPane) getScene("Item.fxml");
+                                ((Label) itemModelo.lookup("#title")).setText(modelo.getNome() + " - " + modelo.getMarca().getNome());
+                                ((Label) itemModelo.lookup("#description")).setText("Tipo do Veículo: " + modelo.getTipo().toString());
+                                ((Label) itemModelo.lookup("#id")).setText(modelo.getId() + "");
+                                ((ImageView) itemModelo.lookup("#imagem")).setImage(new Image(getClass().getResource(modelo.getUrlModelo()).toString()));
+                                addItem(modelosItems, PanefundoModelos, itemModelo, tipoDoVeiculo);
+                                modeloHashMap.put(modelo.getId(), modelo);
+                            }
+                        });
+
                     });
                 } catch (Exception e) {
-                    throw new RuntimeException(e);
+                    e.printStackTrace();
                 }
                 break;
             case VEICULO:
@@ -424,17 +437,22 @@ public class TelaVeiculos implements Initializable {
                     veiculoItems.getChildren().clear();
 
                     veiculos.forEach(veiculo -> {
-                        AnchorPane itemVeiculo = (AnchorPane) getScene("Item.fxml");
-                        ((Label) itemVeiculo.lookup("#title")).setText(veiculo.getPlaca() + " - " + veiculo.getModelo().getNome());
-                        ((Label) itemVeiculo.lookup("#description")).setText("Marca: "+ veiculo.getModelo().getMarca().getNome()
-                                                                                +"\nProprietário: " + veiculo.getProprietario().getNome());
-                        ((Label) itemVeiculo.lookup("#id")).setText(veiculo.getId() + "");
-                        ((ImageView) itemVeiculo.lookup("#imagem")).setImage(new Image(getClass().getResource(veiculo.getModelo().getUrlModelo()).toString()));
-                        addItem(veiculoItems, PanefundoVeiculos, itemVeiculo, tipoDoVeiculo);
-                        veiculoHashMap.put(veiculo.getId(), veiculo);
+                        Platform.runLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                AnchorPane itemVeiculo = (AnchorPane) getScene("Item.fxml");
+                                ((Label) itemVeiculo.lookup("#title")).setText(veiculo.getPlaca() + " - " + veiculo.getModelo().getNome());
+                                ((Label) itemVeiculo.lookup("#description")).setText("Marca: "+ veiculo.getModelo().getMarca().getNome()
+                                        +"\nProprietário: " + veiculo.getProprietario().getNome());
+                                ((Label) itemVeiculo.lookup("#id")).setText(veiculo.getId() + "");
+                                ((ImageView) itemVeiculo.lookup("#imagem")).setImage(new Image(getClass().getResource(veiculo.getModelo().getUrlModelo()).toString()));
+                                addItem(veiculoItems, PanefundoVeiculos, itemVeiculo, tipoDoVeiculo);
+                                veiculoHashMap.put(veiculo.getId(), veiculo);
+                            }
+                        });
                     });
                 } catch (Exception e) {
-                    throw new RuntimeException(e);
+                    e.printStackTrace();
                 }
 
                 break;

@@ -26,6 +26,7 @@ import javafx.util.Duration;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.net.URL;
+import java.security.spec.ECField;
 import java.util.ResourceBundle;
 
 public class TelaPrincipal implements Initializable{
@@ -280,9 +281,13 @@ public class TelaPrincipal implements Initializable{
     }
 
     public void alignTabPaneHeader(){
-        if(telaAtual == TelaAtual.TELAVEICULOS){
-            TabPane tabPane = ((TabPane)((AnchorPane) centerPane.getChildren().get(0)).getChildren().get(0));
-            tabPane.setTabMinWidth((Run.app.stage.getWidth() - Run.app.stage.getWidth() * 5/100) / tabPane.getTabs().size() - 40);
+        try {
+            if(telaAtual == TelaAtual.TELAVEICULOS){
+                TabPane tabPane = ((TabPane)((AnchorPane) centerPane.getChildren().get(0)).getChildren().get(0));
+                tabPane.setTabMinWidth((Run.app.stage.getWidth() - Run.app.stage.getWidth() * 5/100) / tabPane.getTabs().size() - 40);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 
