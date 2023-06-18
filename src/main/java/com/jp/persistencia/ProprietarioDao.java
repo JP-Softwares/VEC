@@ -180,7 +180,7 @@ public class ProprietarioDao implements IProprietarioDao{
     public ArrayList<Proprietario> filtrarProprietario(Collection<Proprietario> proprietario, String nome) throws Exception {
         ArrayList<Proprietario> PA = new ArrayList<>();
         proprietario.forEach(p -> {
-            if(p.getNome().contains(nome) || p.getCPF().contains(nome) || p.getEmail().contains(nome)) PA.add(p);
+            if(p.getNome().toLowerCase().contains(nome.toLowerCase()) || p.getCPF().toLowerCase().contains(nome.toLowerCase()) || p.getEmail().toLowerCase().contains(nome.toLowerCase())) PA.add(p);
         });
         return PA;
     }
