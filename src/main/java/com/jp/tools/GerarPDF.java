@@ -399,12 +399,11 @@ public class GerarPDF {
                 document.newPage();
                 cont = 0;
             }
-
             String TotalAnual = new DecimalFormat("0.00").format(TotalDoAno);
             document.add(new Paragraph("\n\n\n" + ano, FontFactory.getFont( FontFactory.TIMES_BOLD, 20)));
             document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
             document.add(new Paragraph("TOTAL:           | R$ "+TotalAnual + "   " +
-                    "                                 Gerado em: "Dat, FontFactory.getFont( FontFactory.TIMES_BOLD)));
+                    "                                 Gerado em: " + , FontFactory.getFont( FontFactory.TIMES_BOLD)));
 
         }
         catch(DocumentException de) {
