@@ -14,7 +14,7 @@ public class Proprietario {
     public Proprietario() {
     }
 
-    public Proprietario(int id, String CPF, String nome, Telefone telefone, String email, String CNH, CategoriaCNH categoria) {
+    public Proprietario(int id, String CPF, String nome, Telefone telefone, String email, String CNH, CategoriaCNH categoria, int numeroDeCarros) {
         this.id = id;
         this.CPF = CPF;
         this.nome = nome;
@@ -22,6 +22,7 @@ public class Proprietario {
         this.email = email;
         this.CNH = CNH;
         this.categoria = categoria;
+        this.numeroDeCarros = numeroDeCarros;
     }
 
     public int getId() {

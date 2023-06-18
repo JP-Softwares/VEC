@@ -86,6 +86,7 @@ public class ProprietarioDao implements IProprietarioDao{
                 proprietario.setEmail(rs.getString("email"));
                 proprietario.setCNH(rs.getString("numeroDaCNH"));
                 proprietario.setCategoria(CategoriaCNH.valueOf(rs.getString("categoriaDaCNH")));
+                proprietario.setNumeroDeCarros(rs.getInt("numeroDeCarros"));
                 listaProprietario.add(proprietario);
             }
         } catch (SQLException e) {
@@ -113,6 +114,7 @@ public class ProprietarioDao implements IProprietarioDao{
                 proprietario.setEmail(rs.getString("email"));
                 proprietario.setCNH(rs.getString("numeroDaCNH"));
                 proprietario.setCategoria(CategoriaCNH.valueOf(rs.getString("categoriaDaCNH")));
+                proprietario.setNumeroDeCarros(rs.getInt("numeroDeCarros"));
             }
             return proprietario;
         } catch (SQLException e) {
@@ -139,6 +141,7 @@ public class ProprietarioDao implements IProprietarioDao{
                 proprietario.setEmail(rs.getString("email"));
                 proprietario.setCNH(rs.getString("numeroDaCNH"));
                 proprietario.setCategoria(CategoriaCNH.valueOf(rs.getString("categoriaDaCNH")));
+                proprietario.setNumeroDeCarros(rs.getInt("numeroDeCarros"));
             }
             return proprietario;
         } catch (SQLException e) {
@@ -164,6 +167,7 @@ public class ProprietarioDao implements IProprietarioDao{
                 proprietario.setEmail(rs.getString("email"));
                 proprietario.setCNH(rs.getString("numeroDaCNH"));
                 proprietario.setCategoria(CategoriaCNH.valueOf(rs.getString("categoriaDaCNH")));
+                proprietario.setNumeroDeCarros(rs.getInt("numeroDeCarros"));
             }
             return proprietario;
         } catch (SQLException e) {
