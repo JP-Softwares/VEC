@@ -29,36 +29,6 @@ public class ModeloControle implements IModeloControle{
         return descricao;
     }
 
-    private boolean buscarModelo(String descricao) throws Exception{
-        try {
-            ArrayList<Modelo> listagem = listar();
-            Iterator<Modelo> lista = listagem.iterator();
-            while(lista.hasNext()){
-                Modelo aux = lista.next();
-                if(aux.getNome().equalsIgnoreCase(descricao)){
-                    return true;
-                }
-            }
-            return false;
-        } catch (Exception erro) {
-            throw erro;
-        }
-    }
-    private boolean buscarModelo(Modelo objeto) throws Exception{
-        try {
-            ArrayList<Modelo> listagem = listar();
-            Iterator<Modelo> lista = listagem.iterator();
-            while(lista.hasNext()){
-                Modelo aux = lista.next();
-                if(aux.getNome().equalsIgnoreCase(objeto.getNome()) && aux.getId() != objeto.getId()){
-                    return true;
-                }
-            }
-            return false;
-        } catch (Exception erro) {
-            throw erro;
-        }
-    }
 
 
 
@@ -89,25 +59,12 @@ public class ModeloControle implements IModeloControle{
     public void incluir(Modelo objeto) throws Exception{
         objeto.setNome(verificarDescricao(objeto.getNome()));
         if(!verificarVazio(objeto).equals("")) throw new Exception(verificarVazio(objeto));
-        try{
-            if(buscarModelo(objeto.getNome())){
-                throw new Exception("Modelo já cadastrado");
-            }
-        }catch(Exception erro){
-            if(erro.getMessage().contains("arquivo especificado")){
-            }else{
-                throw erro;
-            }
-        }
         modeloPersistencia.incluir(objeto);
     }
     @Override
     public void alterar(Modelo objeto) throws Exception{
         objeto.setNome(verificarDescricao(objeto.getNome()));
         if(!verificarVazio(objeto).equals("")) throw new Exception(verificarVazio(objeto));
-        if(buscarModelo(objeto)){
-            throw new Exception("Modelo já cadastrado");
-        }
         modeloPersistencia.alterar(objeto);
     }
     @Override

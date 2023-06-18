@@ -94,7 +94,7 @@ public class TesteBancoDeDados {
             System.out.println(aux1.getDescricao());
         }*/
         GerarPDF gerarPDF = new GerarPDF();
-        gerarPDF.gerarPDFMes(caminho, veiculoControle.buscar(1), 2023);
+        gerarPDF.gerarPDFTipo(caminho, veiculoControle.buscar(1), 2023);
 
     }
 }

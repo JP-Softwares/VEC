@@ -220,6 +220,144 @@ public class GastosDao implements IGastosDao{
     }
 
     @Override
+    public HashMap<Integer, ArrayList> listarPorMes(Veiculo objeto, int ano) throws Exception {
+        GastosControle gastosControle = new GastosControle();
+        HashMap<Integer, ArrayList> hm = new HashMap<Integer, ArrayList>();
+        Iterator<Gastos> lista = gastosControle.listar(objeto).iterator();
+        while(lista.hasNext()){
+            ArrayList<Gastos> gastos = new ArrayList<Gastos>();
+            Gastos aux = lista.next();
+            if(aux.getData().toLocalDate().getYear() == ano){
+                switch (aux.getData().getMonth()){
+                    case 0:
+                        if(hm.get(1)== null){
+                            gastos.add(aux);
+                            hm.put(1, gastos);
+                        }else {
+                            gastos = hm.get(1);
+                            gastos.add(aux);
+                            hm.put(1, gastos);
+                        }
+                        break;
+                    case 1:
+                        if(hm.get(2)== null){
+                            gastos.add(aux);
+                            hm.put(2, gastos);
+                        }else {
+                            gastos = hm.get(2);
+                            gastos.add(aux);
+                            hm.put(2, gastos);
+                        }
+                        break;
+                    case 2:
+                        if(hm.get(3)== null){
+                            gastos.add(aux);
+                            hm.put(3, gastos);
+                        }else {
+                            gastos = hm.get(3);
+                            gastos.add(aux);
+                            hm.put(3, gastos);
+                        }
+                        break;
+                    case 3:
+                        if(hm.get(4)== null){
+                            gastos.add(aux);
+                            hm.put(4, gastos);
+                        }else {
+                            gastos = hm.get(4);
+                            gastos.add(aux);
+                            hm.put(4, gastos);
+                        }
+                        break;
+                    case 4:
+                        if(hm.get(5) == null){
+                            gastos.add(aux);
+                            hm.put(5, gastos);
+                        }else {
+                            gastos = hm.get(5);
+                            gastos.add(aux);
+                            hm.put(5, gastos);
+                        }
+                        break;
+                    case 5:
+                        if(hm.get(6) == null){
+                            gastos.add(aux);
+                            hm.put(6, gastos);
+                        }else {
+                            gastos = hm.get(6);
+                            gastos.add(aux);
+                            hm.put(6, gastos);
+                        }
+                        break;
+                    case 6:
+                        if(hm.get(7)== null){
+                            gastos.add(aux);
+                            hm.put(7, gastos);
+                        }else {
+                            gastos = hm.get(7);
+                            gastos.add(aux);
+                            hm.put(7, gastos);
+                        }
+                        break;
+                    case 7:
+                        if(hm.get(8)== null){
+                            gastos.add(aux);
+                            hm.put(8, gastos);
+                        }else {
+                            gastos = hm.get(8);
+                            gastos.add(aux);
+                            hm.put(8, gastos);
+                        }
+                        break;
+                    case 8:
+                        if(hm.get(9)== null){
+                            gastos.add(aux);
+                            hm.put(9, gastos);
+                        }else {
+                            gastos = hm.get(9);
+                            gastos.add(aux);
+                            hm.put(9, gastos);
+                        }
+                        break;
+                    case 9:
+                        if(hm.get(10)== null){
+                            gastos.add(aux);
+                            hm.put(10, gastos);
+                        }else {
+                            gastos = hm.get(10);
+                            gastos.add(aux);
+                            hm.put(10, gastos);
+                        }
+                        break;
+                    case 10:
+                        if(hm.get(11)== null){
+                            gastos.add(aux);
+                            hm.put(11, gastos);
+                        }else {
+                            gastos = hm.get(11);
+                            gastos.add(aux);
+                            hm.put(11, gastos);
+                        }
+                        break;
+                    case 11:
+                        if(hm.get(12)== null){
+                            gastos.add(aux);
+                            hm.put(12, gastos);
+                        }else {
+                            gastos = hm.get(12);
+                            gastos.add(aux);
+                            hm.put(12, gastos);
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+        return sort(hm);
+    }
+
+    @Override
     public Gastos buscar(String descricao) throws Exception {
         VeiculoControle veiculoControle = new VeiculoControle();
         TipoDeGastosControle tipoDeGastosControle = new TipoDeGastosControle();

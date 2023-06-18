@@ -48,6 +48,11 @@ public class GastosControle implements IGastosControle{
     }
 
     @Override
+    public HashMap<Integer, ArrayList> listarPorMes(Veiculo objeto,int ano) throws Exception {
+        return GastosPersistencia.listarPorMes(objeto, ano);
+    }
+
+    @Override
     public Gastos buscar(int id) throws Exception {
         return GastosPersistencia.buscar(id);
     }

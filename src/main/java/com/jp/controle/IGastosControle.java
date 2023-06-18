@@ -15,6 +15,8 @@ public interface IGastosControle {
     ArrayList<Gastos> listar(Veiculo objeto) throws Exception;
     HashMap<Integer, ArrayList> listarPorMes(Veiculo objeto) throws Exception;
 
+    HashMap<Integer, ArrayList> listarPorMes(Veiculo objeto, int ano) throws Exception;
+
     Gastos buscar(int id) throws Exception;
     Gastos buscar(TipoDeGastos TipoDeGastos) throws Exception;
 }

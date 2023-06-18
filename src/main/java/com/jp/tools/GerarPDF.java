@@ -31,7 +31,7 @@ public class GerarPDF {
             PdfWriter.getInstance(document, new FileOutputStream(caminho));
             document.open();
             HashMap<Integer, ArrayList> hm = new HashMap<>();
-            hm = gastosControle.listarPorMes(objeto);
+            hm = gastosControle.listarPorMes(objeto, ano);
             // adicionando um parágrafo no documento
             document.add(new Paragraph("Relatorio de Gastos - "+objeto.getModelo().getNome(), FontFactory.getFont(FontFactory.TIMES_BOLD, 26)));
             document.add(new Paragraph("Placa: "+objeto.getPlaca() +" | Ano de Fabricação: "+objeto.getAnoFabricacao()+ " | Ano do Modelo: "+objeto.getAnoModelo(), FontFactory.getFont(FontFactory.TIMES, 11)));
@@ -431,7 +431,7 @@ public class GerarPDF {
             document.open();
 
             HashMap<Integer, ArrayList> hm = new HashMap<>();
-            hm = gastosControle.listarPorMes(objeto);
+            hm = gastosControle.listarPorMes(objeto, 2023);
             ArrayList<TipoDeGastos> listaDeTipos = tipoDeGastosControle.listar();
             // adicionando um parágrafo no documento
             document.add(new Paragraph("Relatorio de Gastos - "+objeto.getModelo().getNome(), FontFactory.getFont(FontFactory.TIMES, 26)));
@@ -439,7 +439,10 @@ public class GerarPDF {
             Iterator<TipoDeGastos> Tipo = listaDeTipos.iterator();
             while(Tipo.hasNext()){
                 TipoDeGastos aux = Tipo.next();
-                document.add(new Paragraph("\n \n" + aux.getNome(), FontFactory.getFont( FontFactory.TIMES_BOLD, 15)));
+                document.add(new Paragraph("\n \n" + aux.getNome(), FontFactory.getFont( FontFactory.TIMES_BOLD, 20)));
+                document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
+
+                document.add(new Paragraph("\n \n"  , FontFactory.getFont( FontFactory.TIMES_BOLD, 15)));
             }
 
         }

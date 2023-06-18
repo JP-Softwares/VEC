@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f82c917e-753c-4ed8-af4b-aff6230d6602" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/controle/GastosControle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/controle/GastosControle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/controle/IGastosControle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/controle/IGastosControle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/GastosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/GastosDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/IGastosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/IGastosDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/tools/GerarPDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/tools/GerarPDF.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

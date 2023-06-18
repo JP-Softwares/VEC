@@ -12,6 +12,8 @@ public interface IGastosDao {
     ArrayList<Gastos> listar(Veiculo objeto) throws Exception;
     HashMap<Integer, ArrayList> listarPorMes(Veiculo objeto) throws Exception;
 
+    HashMap<Integer, ArrayList> listarPorMes(Veiculo objeto, int ano) throws Exception;
+
     Gastos buscar(String descricao) throws Exception;
     Gastos buscar(int id) throws Exception;
 
