@@ -445,15 +445,16 @@ public class GerarPDF {
                     TipoDeGastos aux = Iterator.next().getTipoDeGastos();
                     Gastos aux2 = Iterator.next();
                     tp.get(aux.getNome()).add(aux2);
+                    System.out.println("teste1");
                 }
             }
             document.add(new Paragraph("Relatorio de Gastos - "+objeto.getModelo().getNome(), FontFactory.getFont(FontFactory.TIMES, 26)));
             document.add(new Paragraph("Placa: "+objeto.getPlaca() +" | Ano de Fabricação: "+objeto.getAnoFabricacao()+ " | Ano do Modelo: "+objeto.getAnoModelo(), FontFactory.getFont(FontFactory.TIMES, 11)));
             Iterator<TipoDeGastos> Tipo = listaDeTipos.iterator();
-            System.out.println("Teste");
+            System.out.println("Teste2");
             while(Tipo.hasNext()){
                 TipoDeGastos aux = Tipo.next();
-                System.out.println("teste");
+                System.out.println("teste3");
                 if (!tp.get(Tipo.next().getNome()).isEmpty()){
                     TipoDeGastos aux2 = Tipo.next();
                     document.add(new Paragraph("\n \n" + aux2.getNome(), FontFactory.getFont( FontFactory.TIMES_BOLD, 20)));

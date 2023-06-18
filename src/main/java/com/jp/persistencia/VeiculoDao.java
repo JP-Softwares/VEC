@@ -47,19 +47,10 @@ public class VeiculoDao implements IVeiculoDao{
     @Override
     public void alterar(Veiculo objeto) throws Exception {
         try {
-            String sql = "update Veiculo set (placa , anoFabricacao , anoModelo , tipoDoCombustivel , quilometragemAtual , situacaoDoVeiculo , idModelo , idProprietario)   where (id) values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            PreparedStatement preparedStatement = conexao.prepareStatement(sql);
-            // Parameters iniciar os elementos
-            preparedStatement.setString(1, objeto.getPlaca());
-            preparedStatement.setString(2, objeto.getAnoFabricacao() + "");
-            preparedStatement.setString(3, objeto.getAnoModelo() + "");
-            preparedStatement.setString(4, objeto.getCombustivel().toString());
-            preparedStatement.setInt(5, objeto.getKilometragem());
-            preparedStatement.setString(6, objeto.getSituacao().toString());
-            preparedStatement.setInt(7, objeto.getModelo().getId());
-            preparedStatement.setInt(8, objeto.getProprietario().getId());
-            preparedStatement.setInt(9, objeto.getId());
-            preparedStatement.executeUpdate();
+            System.out.println(objeto.getId()+ "");
+            String sql = "update Veiculo set  placa = '"+objeto.getPlaca()+"', anoFabricacao = '"+objeto.getAnoFabricacao()+"', anoModelo = '"+objeto.getAnoModelo()+"', tipoDoCombustivel = '"+objeto.getCombustivel().toString()+"', quilometragemAtual = '"+objeto.getKilometragem()+"', situacaoDoVeiculo = '" +objeto.getSituacao().toString() +"', idModelo = '"+objeto.getModelo().getId()+"', idProprietario = '"+objeto.getProprietario().getId()+"' where id = '"+objeto.getId()+"'";
+            Statement statement = conexao.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
         } catch (SQLException erro) {
             throw new Exception("SQL Erro: "+ erro.getMessage());
         } catch(Exception erro){
