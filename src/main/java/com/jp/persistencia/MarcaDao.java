@@ -119,9 +119,10 @@ public class MarcaDao implements IMarcaDao{
 
     @Override
     public ArrayList<Marca> filtrarMarcas(Collection<Marca> marcas, String nome) throws Exception {
+        ArrayList<Marca> ar = new ArrayList<>();
         marcas.forEach(marca -> {
-            if(!marca.getNome().contains(nome)) marcas.remove(marca);
+            if(marca.getNome().contains(nome)) ar.add(marca);
         });
-        return new ArrayList<Marca>(marcas);
+        return ar;
     }
 }
