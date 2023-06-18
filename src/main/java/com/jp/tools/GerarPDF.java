@@ -3,10 +3,7 @@ import java.awt.*;
 import java.awt.print.PageFormat;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.sql.Date;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.*;
 import java.text.DecimalFormat;
 import com.itextpdf.text.*;
 import com.itextpdf.text.Image;
@@ -399,11 +396,12 @@ public class GerarPDF {
                 document.newPage();
                 cont = 0;
             }
+            Calendar c = Calendar.getInstance();
             String TotalAnual = new DecimalFormat("0.00").format(TotalDoAno);
             document.add(new Paragraph("\n\n\n" + ano, FontFactory.getFont( FontFactory.TIMES_BOLD, 20)));
             document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
             document.add(new Paragraph("TOTAL:           | R$ "+TotalAnual + "   " +
-                    "                                 Gerado em: " , FontFactory.getFont( FontFactory.TIMES_BOLD)));
+                    "                                                              Gerado em: " + c.getTime().toLocaleString().substring(0,18), FontFactory.getFont( FontFactory.TIMES_BOLD)));
 
         }
         catch(DocumentException de) {

@@ -122,7 +122,7 @@ public class ProprietarioDao implements IProprietarioDao{
 
     public Proprietario buscar(String nome, boolean Pessoa) throws Exception {
         try {
-            String sql = "select * from Proprietario where nome = '" + Pessoa + "'";
+            String sql = "select * from Proprietario where nome = '" + nome + "'";
             Statement statement = conexao.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             Proprietario proprietario = new Proprietario();
