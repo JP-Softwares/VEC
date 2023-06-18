@@ -35,12 +35,15 @@ public class Run {
     public static IModeloControle modeloControle = null;
     public static IVeiculoControle veiculoControle = null;
 
+    public static IProprietarioControle proprietarioControle = null;
+
     public static void main(String[] args){
         new Thread(() -> {
             try {
                 marcaControle = new MarcaControle();
                 modeloControle = new ModeloControle();
                 veiculoControle = new VeiculoControle();
+                proprietarioControle = new ProprietarioControle();
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
