@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.print.PageFormat;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.sql.Date;
 import java.util.*;
 import java.text.DecimalFormat;
 import com.itextpdf.text.*;
@@ -48,7 +49,7 @@ public class GerarPDF {
                     document.add(new Paragraph("Tipo de Gasto: | " + aux1.getTipoDeGastos().getNome(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Descrição:       | " + aux1.getDescricao(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Valor:               | R$ "+aux1.getValor(), FontFactory.getFont(FontFactory.TIMES, 9)));
-                    document.add(new Paragraph("Data:               | "+aux1.getData().toLocalDate(), FontFactory.getFont(FontFactory.TIMES, 9)));
+                    document.add(new Paragraph("Data:               | "+ArrumarData(aux1.getData()), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
                     soma = soma + aux1.getValor();
                     cont = cont + 4;
@@ -77,7 +78,7 @@ public class GerarPDF {
                     document.add(new Paragraph("Tipo de Gasto: | " + aux1.getTipoDeGastos().getNome(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Descrição:       | " + aux1.getDescricao(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Valor:               | R$"+aux1.getValor(), FontFactory.getFont(FontFactory.TIMES, 9)));
-                    document.add(new Paragraph("Data:               | "+aux1.getData(), FontFactory.getFont(FontFactory.TIMES, 9)));
+                    document.add(new Paragraph("Data:               | "+ArrumarData(aux1.getData()), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
                     soma = soma + aux1.getValor();
                     cont = cont + 6;
@@ -106,7 +107,7 @@ public class GerarPDF {
                     document.add(new Paragraph("Tipo de Gasto: | " + aux1.getTipoDeGastos().getNome(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Descrição:       | " + aux1.getDescricao(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Valor:               | R$"+aux1.getValor(), FontFactory.getFont(FontFactory.TIMES, 9)));
-                    document.add(new Paragraph("Data:               | "+aux1.getData(), FontFactory.getFont(FontFactory.TIMES, 9)));
+                    document.add(new Paragraph("Data:               | "+ArrumarData(aux1.getData()), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
                     soma = soma + aux1.getValor();
                     cont = cont + 6;
@@ -136,7 +137,7 @@ public class GerarPDF {
                     document.add(new Paragraph("Tipo de Gasto: | " + aux1.getTipoDeGastos().getNome(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Descrição:       | " + aux1.getDescricao(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Valor:               | R$"+aux1.getValor(), FontFactory.getFont(FontFactory.TIMES, 9)));
-                    document.add(new Paragraph("Data:               | "+aux1.getData(), FontFactory.getFont(FontFactory.TIMES, 9)));
+                    document.add(new Paragraph("Data:               | "+ArrumarData(aux1.getData()), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
                     soma = soma + aux1.getValor();
                     cont = cont + 6;
@@ -168,7 +169,7 @@ public class GerarPDF {
                     document.add(new Paragraph("Tipo de Gasto: | " + aux1.getTipoDeGastos().getNome(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Descrição:       | " + aux1.getDescricao(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Valor:               | R$"+aux1.getValor(), FontFactory.getFont(FontFactory.TIMES, 9)));
-                    document.add(new Paragraph("Data:               | "+aux1.getData(), FontFactory.getFont(FontFactory.TIMES, 9)));
+                    document.add(new Paragraph("Data:               | "+ArrumarData(aux1.getData()), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
                     soma = soma + aux1.getValor();
                     cont = cont + 6;
@@ -200,7 +201,7 @@ public class GerarPDF {
                     document.add(new Paragraph("Tipo de Gasto: | " + aux1.getTipoDeGastos().getNome(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Descrição:       | " + aux1.getDescricao(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Valor:               | R$"+aux1.getValor(), FontFactory.getFont(FontFactory.TIMES, 9)));
-                    document.add(new Paragraph("Data:               | "+aux1.getData(), FontFactory.getFont(FontFactory.TIMES, 9)));
+                    document.add(new Paragraph("Data:               | "+ArrumarData(aux1.getData()), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
                     soma = soma + aux1.getValor();
                     cont = cont + 6;
@@ -231,7 +232,7 @@ public class GerarPDF {
                     document.add(new Paragraph("Tipo de Gasto: | " + aux1.getTipoDeGastos().getNome(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Descrição:       | " + aux1.getDescricao(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Valor:               | R$"+aux1.getValor(), FontFactory.getFont(FontFactory.TIMES, 9)));
-                    document.add(new Paragraph("Data:               | "+aux1.getData(), FontFactory.getFont(FontFactory.TIMES, 9)));
+                    document.add(new Paragraph("Data:               | "+ArrumarData(aux1.getData()), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
                     soma = soma + aux1.getValor();
                     cont = cont + 6;
@@ -262,7 +263,7 @@ public class GerarPDF {
                     document.add(new Paragraph("Tipo de Gasto: | " + aux1.getTipoDeGastos().getNome(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Descrição:       | " + aux1.getDescricao(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Valor:               | R$"+aux1.getValor(), FontFactory.getFont(FontFactory.TIMES, 9)));
-                    document.add(new Paragraph("Data:               | "+aux1.getData(), FontFactory.getFont(FontFactory.TIMES, 9)));
+                    document.add(new Paragraph("Data:               | "+ArrumarData(aux1.getData()), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
                     soma = soma + aux1.getValor();
                     cont = cont + 6;
@@ -292,7 +293,7 @@ public class GerarPDF {
                     document.add(new Paragraph("Tipo de Gasto: | " + aux1.getTipoDeGastos().getNome(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Descrição:       | " + aux1.getDescricao(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Valor:               | R$"+aux1.getValor(), FontFactory.getFont(FontFactory.TIMES, 9)));
-                    document.add(new Paragraph("Data:               | "+aux1.getData(), FontFactory.getFont(FontFactory.TIMES, 9)));
+                    document.add(new Paragraph("Data:               | "+ArrumarData(aux1.getData()), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
                     soma = soma + aux1.getValor();
                     cont = cont + 6;
@@ -323,7 +324,7 @@ public class GerarPDF {
                     document.add(new Paragraph("Tipo de Gasto: | " + aux1.getTipoDeGastos().getNome(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Descrição:       | " + aux1.getDescricao(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Valor:               | R$"+aux1.getValor(), FontFactory.getFont(FontFactory.TIMES, 9)));
-                    document.add(new Paragraph("Data:               | "+aux1.getData(), FontFactory.getFont(FontFactory.TIMES, 9)));
+                    document.add(new Paragraph("Data:               | "+ArrumarData(aux1.getData()), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
                     soma = soma + aux1.getValor();
                     cont = cont + 6;
@@ -353,7 +354,7 @@ public class GerarPDF {
                     document.add(new Paragraph("Tipo de Gasto: | " + aux1.getTipoDeGastos().getNome(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Descrição:       | " + aux1.getDescricao(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Valor:               | R$"+aux1.getValor(), FontFactory.getFont(FontFactory.TIMES, 9)));
-                    document.add(new Paragraph("Data:               | "+aux1.getData(), FontFactory.getFont(FontFactory.TIMES, 9)));
+                    document.add(new Paragraph("Data:               | "+ArrumarData(aux1.getData()), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
                     soma = soma + aux1.getValor();
                     cont = cont + 6;
@@ -383,7 +384,7 @@ public class GerarPDF {
                     document.add(new Paragraph("Tipo de Gasto: | " + aux1.getTipoDeGastos().getNome(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Descrição:       | " + aux1.getDescricao(), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("Valor:               | R$"+aux1.getValor(), FontFactory.getFont(FontFactory.TIMES, 9)));
-                    document.add(new Paragraph("Data:               | "+aux1.getData(), FontFactory.getFont(FontFactory.TIMES, 9)));
+                    document.add(new Paragraph("Data:               | "+ArrumarData(aux1.getData()), FontFactory.getFont(FontFactory.TIMES, 9)));
                     document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
                     soma = soma + aux1.getValor();
                     cont = cont + 6;
@@ -420,12 +421,12 @@ public class GerarPDF {
 
     public void gerarPDFTipo(String caminho, Veiculo objeto, int ano){
         GastosControle gastosControle = new GastosControle();
-        // criação do documento
         Document document = new Document();
         try {
             int cont = 1;
             int LimitePagina = 36;
             double soma = 0.0;
+            double valorFinal = 0.0;
             String MesAtual = "";
             PdfWriter.getInstance(document, new FileOutputStream(caminho));
             TipoDeGastosControle tipoDeGastosControle = new TipoDeGastosControle();
@@ -476,6 +477,7 @@ public class GerarPDF {
                         cont = 0;
                     }
                     Iterator<Gastos> GR = tp.get(aux.getNome()).iterator();
+                    soma = 0;
                     document.add(new Paragraph("\n \n" + aux.getNome(), FontFactory.getFont( FontFactory.TIMES_BOLD, 20)));
                     document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
                     while (GR.hasNext()){
@@ -488,7 +490,7 @@ public class GerarPDF {
                             document.add(new Paragraph("Tipo de Gasto: | " + gts.getTipoDeGastos().getNome(), FontFactory.getFont(FontFactory.TIMES, 9)));
                             document.add(new Paragraph("Descrição:       | " + gts.getDescricao(), FontFactory.getFont(FontFactory.TIMES, 9)));
                             document.add(new Paragraph("Valor:               | R$"+gts.getValor(), FontFactory.getFont(FontFactory.TIMES, 9)));
-                            document.add(new Paragraph("Data:               | "+gts.getData(), FontFactory.getFont(FontFactory.TIMES, 9)));
+                            document.add(new Paragraph("Data:               | "+ArrumarData(gts.getData()), FontFactory.getFont(FontFactory.TIMES, 9)));
                             document.add(new Paragraph("______________________________________________________________________________", FontFactory.getFont(FontFactory.TIMES, 10)));
                             cont = cont+5;
                         }else{
@@ -497,7 +499,7 @@ public class GerarPDF {
                             document.add(new Paragraph("Tipo de Gasto: | " + gts.getTipoDeGastos().getNome(), FontFactory.getFont(FontFactory.TIMES, 9)));
                             document.add(new Paragraph("Descrição:       | " + gts.getDescricao(), FontFactory.getFont(FontFactory.TIMES, 9)));
                             document.add(new Paragraph("Valor:               | R$"+gts.getValor(), FontFactory.getFont(FontFactory.TIMES, 9)));
-                            document.add(new Paragraph("Data:               | "+gts.getData(), FontFactory.getFont(FontFactory.TIMES, 9)));
+                            document.add(new Paragraph("Data:               | "+ArrumarData(gts.getData()), FontFactory.getFont(FontFactory.TIMES, 9)));
                             document.add(new Paragraph("______________________________________________________________________________", FontFactory.getFont(FontFactory.TIMES, 10)));
                             cont = cont+8;
                         }
@@ -508,9 +510,16 @@ public class GerarPDF {
                     document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
                     String totalParcial = new DecimalFormat("0.00").format(soma);
                     document.add(new Paragraph("TOTAL "+aux.getNome()+": R$ "+totalParcial+ "\n", FontFactory.getFont( FontFactory.TIMES_BOLD)));
+                    valorFinal = valorFinal + soma;
                     cont = cont+ 3;
                 }
             }
+            Calendar c = Calendar.getInstance();
+            String TotalAnual = new DecimalFormat("0.00").format(valorFinal);
+            document.add(new Paragraph("\n\n\n" + ano, FontFactory.getFont( FontFactory.TIMES_BOLD, 20)));
+            document.add(new Paragraph("_______________________________________________________________________________________", FontFactory.getFont( FontFactory.TIMES)));
+            document.add(new Paragraph("TOTAL:           | R$ "+TotalAnual + "   " +
+                    "                                                              Gerado em: " + c.getTime().toLocaleString().substring(0,18), FontFactory.getFont( FontFactory.TIMES_BOLD)));
 
         }
         catch(DocumentException de) {
@@ -554,6 +563,20 @@ public class GerarPDF {
                 break;
         }
         return null;
+    }
+
+    private String ArrumarData(Date data){
+
+        String dia = data.toLocalDate().getDayOfMonth() + "";
+        if(dia.length() < 2){
+            dia = "0"+dia;
+        }
+        String mes = data.toLocalDate().getMonthValue() + "";
+        if(mes.length() < 2){
+            mes = "0"+mes;
+        }
+        String ano = data.toLocalDate().getYear() + "";
+        return dia+ "/" + mes + "/" + ano;
     }
 
     private static Element Paragraph(String texto) {

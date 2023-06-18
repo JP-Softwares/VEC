@@ -4,24 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2567c7e-a21c-4486-a14d-6425298679c0" name="Changes" comment="">
+    <list default="true" id="cf4472ec-5fc2-497d-ba79-1b94f95fd7e4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< Updated upstream
-      <change beforePath="$PROJECT_DIR$/VEC.jar" beforeDir="false" afterPath="$PROJECT_DIR$/VEC.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaVeiculos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/visao/TelaVeiculos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/imagens/Marcas/Fia.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/imagens/Marcas/Toyota.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/jp/imagens/Modelos/Teste2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/imagens/Marcas/Fia.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/imagens/Marcas/Toyota.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/controle/VeiculoControle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/controle/VeiculoControle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/VeiculoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/VeiculoDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/teste/TesteBancoDeDados.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/teste/TesteBancoDeDados.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/tools/GerarPDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/tools/GerarPDF.java" afterDir="false" />
->>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,11 +19,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "main",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.VEC">
+  <component name="RunManager" selected="Application.TesteBancoDeDados">
     <configuration name="TesteBancoDeDados" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.jp.teste.TesteBancoDeDados" />
       <module name="VEC" />
