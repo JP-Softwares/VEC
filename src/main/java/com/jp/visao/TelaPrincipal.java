@@ -27,6 +27,8 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.net.URL;
 import java.security.spec.ECField;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.ResourceBundle;
 
 public class TelaPrincipal implements Initializable{
@@ -98,6 +100,8 @@ public class TelaPrincipal implements Initializable{
     ActionListener metodoEditExit;
 
     TelaAtual telaAtual = TelaAtual.TELAHOME;
+    
+    String caminhoPadrao = "/com/jp/";
 
 
     public void setEditWindow(String title, Node anchorPane, ActionListener method){
@@ -255,6 +259,7 @@ public class TelaPrincipal implements Initializable{
     private void showHome(ActionEvent event) {
         telaAtual = TelaAtual.TELAHOME;
         setBotaoSelecionadoSideBar();
+
         setScene("TelaHome.fxml");
     }
 
@@ -303,30 +308,30 @@ public class TelaPrincipal implements Initializable{
 
     public void setBotaoSelecionadoSideBar(){
         botaoHome.setId("");
-        ((ImageView) botaoHome.lookup("ImageView")).setImage(new Image(getClass().getResourceAsStream("..\\icones\\home.png")));
+        ((ImageView) botaoHome.lookup("ImageView")).setImage(new Image(getClass().getResource(caminhoPadrao + "icones/home.png").toString()));
         botaoVeiculos.setId("");
-        ((ImageView) botaoVeiculos.lookup("ImageView")).setImage(new Image(getClass().getResourceAsStream("..\\icones\\veiculos.png")));
+        ((ImageView) botaoVeiculos.lookup("ImageView")).setImage(new Image(getClass().getResource(caminhoPadrao + "icones/veiculos.png").toString()));
         botaoProprietarios.setId("");
-        ((ImageView) botaoProprietarios.lookup("ImageView")).setImage(new Image(getClass().getResourceAsStream("..\\icones\\proprietarios.png")));
+        ((ImageView) botaoProprietarios.lookup("ImageView")).setImage(new Image(getClass().getResource(caminhoPadrao + "icones/proprietarios.png").toString()));
         botaoTipoDeGasto.setId("");
-        ((ImageView) botaoTipoDeGasto.lookup("ImageView")).setImage(new Image(getClass().getResourceAsStream("..\\icones\\gastos.png")));
+        ((ImageView) botaoTipoDeGasto.lookup("ImageView")).setImage(new Image(getClass().getResource(caminhoPadrao + "icones/gastos.png").toString()));
 
         switch(telaAtual){
             case TELAHOME:
                 botaoHome.setId("selectedButtonSideBar");
-                ((ImageView) botaoHome.lookup("ImageView")).setImage(new Image(getClass().getResourceAsStream("..\\icones\\home_black.png")));
+                ((ImageView) botaoHome.lookup("ImageView")).setImage(new Image(getClass().getResource(caminhoPadrao + "icones/home_black.png").toString()));
                 break;
             case TELAVEICULOS:
                 botaoVeiculos.setId("selectedButtonSideBar");
-                ((ImageView) botaoVeiculos.lookup("ImageView")).setImage(new Image(getClass().getResourceAsStream("..\\icones\\veiculos_black.png")));
+                ((ImageView) botaoVeiculos.lookup("ImageView")).setImage(new Image(getClass().getResource(caminhoPadrao + "icones/veiculos_black.png").toString()));
                 break;
             case TELAPROPRIETARIOS:
                 botaoProprietarios.setId("selectedButtonSideBar");
-                ((ImageView) botaoProprietarios.lookup("ImageView")).setImage(new Image(getClass().getResourceAsStream("..\\icones\\proprietarios_black.png")));
+                ((ImageView) botaoProprietarios.lookup("ImageView")).setImage(new Image(getClass().getResource(caminhoPadrao + "icones/proprietarios_black.png").toString()));
                 break;
             case TELATIPODEGASTO:
                 botaoTipoDeGasto.setId("selectedButtonSideBar");
-                ((ImageView) botaoTipoDeGasto.lookup("ImageView")).setImage(new Image(getClass().getResourceAsStream("..\\icones\\gastos_black.png")));
+                ((ImageView) botaoTipoDeGasto.lookup("ImageView")).setImage(new Image(getClass().getResource(caminhoPadrao + "icones/gastos_black.png").toString()));
                 break;
         }
     }
@@ -336,7 +341,7 @@ public class TelaPrincipal implements Initializable{
         Run.telaPrincipal = this;
         Run.app.stage.setOnShown(windowEvent -> {
             showHome(null);
-            setScene("TelaHome.fxml");
+            //setScene("TelaHome.fxml");
         });
 
         // Movimentação da barra de título da janela

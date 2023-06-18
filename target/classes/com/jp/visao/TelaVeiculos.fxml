@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -13,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="690.0" prefWidth="1340.0" stylesheets="@TelaVeiculosStylesheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jp.visao.TelaVeiculos">
+<AnchorPane prefHeight="690.0" prefWidth="1340.0" stylesheets="@TelaVeiculosStylesheet.css" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jp.visao.TelaVeiculos">
    <children>
       <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
@@ -25,15 +24,10 @@
                           <content>
                             <AnchorPane fx:id="PanefundoVeiculos" minHeight="0.0" minWidth="0.0" styleClass="fundo">
                                  <children>
-                                    <TextField layoutX="208.0" layoutY="46.0" prefHeight="38.0" prefWidth="951.0" styleClass="searchBar" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="46.0">
+                                    <TextField layoutX="208.0" layoutY="46.0" onKeyTyped="#filtrarVeiculo" prefHeight="38.0" prefWidth="951.0" styleClass="searchBar" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="46.0">
                                        <effect>
                                           <DropShadow height="30.0" radius="14.5" width="30.0" />
                                        </effect></TextField>
-                                    <ComboBox id="comboBoxVeiculo" layoutX="30.0" layoutY="46.0" prefHeight="38.0" prefWidth="181.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="46.0">
-                                       <effect>
-                                          <DropShadow height="30.0" radius="14.5" width="30.0" />
-                                       </effect>
-                                    </ComboBox>
                                     <VBox fx:id="veiculoItems" layoutX="38.0" layoutY="127.0" prefHeight="490.0" prefWidth="1279.0" spacing="15.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="127.0">
                                        <padding>
                                           <Insets bottom="20.0" />
@@ -65,7 +59,7 @@
                            <content>
                               <AnchorPane fx:id="PanefundoModelos" minHeight="0.0" minWidth="0.0" styleClass="fundo">
                                  <children>
-                                    <TextField layoutX="208.0" layoutY="46.0" prefHeight="38.0" prefWidth="1080.0" styleClass="searchBar" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="46.0">
+                                    <TextField layoutX="208.0" layoutY="46.0" onKeyTyped="#filtrarModelo" prefHeight="38.0" prefWidth="1080.0" styleClass="searchBar" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="46.0">
                                        <effect>
                                           <DropShadow height="30.0" radius="14.5" width="30.0" />
                                        </effect>
@@ -100,7 +94,7 @@
                            <content>
                               <AnchorPane fx:id="PanefundoMarcas" minHeight="0.0" minWidth="0.0" styleClass="fundo">
                                  <children>
-                                    <TextField layoutX="208.0" layoutY="46.0" prefHeight="38.0" prefWidth="1080.0" styleClass="searchBar" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="46.0">
+                                    <TextField layoutX="208.0" layoutY="46.0" onKeyTyped="#filtrarMarca" prefHeight="38.0" prefWidth="1080.0" styleClass="searchBar" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="46.0">
                                        <effect>
                                           <DropShadow height="30.0" radius="14.5" width="30.0" />
                                        </effect>

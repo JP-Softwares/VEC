@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 
-<AnchorPane fx:id="Card" prefHeight="100.0" prefWidth="1279.0" stylesheets="@ItemStylesheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jp.visao.Item">
+<AnchorPane fx:id="Card" prefHeight="100.0" prefWidth="1279.0" stylesheets="@ItemStylesheet.css" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jp.visao.Item">
    <effect>
       <DropShadow height="30.0" radius="14.5" width="30.0" />
    </effect>

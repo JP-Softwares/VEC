@@ -79,7 +79,7 @@ ComboBox .list-view .list-cell:filled:selected{
 
 /* Específicos */
 
-#comboBoxVeiculo{
+/*#comboBoxVeiculo{
     -fx-background-radius: 20;
 }
 
@@ -89,7 +89,7 @@ ComboBox .list-view .list-cell:filled:selected{
 
 #comboBoxVeiculo  .list-cell{
     -fx-background-radius: 20;
-}
+}*/
 
 #paneLeft{
     -fx-background-color: -lateralColor;

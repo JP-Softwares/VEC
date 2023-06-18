@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="690.0" prefWidth="1340.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jp.visao.TelaProprietarios">
+<AnchorPane prefHeight="690.0" prefWidth="1340.0" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jp.visao.TelaProprietarios">
    <children>
       <Button layoutX="1049.0" layoutY="327.0" mnemonicParsing="false" text="Button" />
    </children>

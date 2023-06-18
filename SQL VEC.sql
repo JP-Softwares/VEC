@@ -57,7 +57,7 @@ create table TipoDeGasto(
 
 create table Gastos(
 	id serial primary key,
-	descricao varchar(240) unique not null,
+	descricao varchar(240) not null,
 	valor real not null,
 	data date not null,
 	idVeiculo integer not null,
@@ -67,4 +67,3 @@ create table Gastos(
 	Foreign Key(idTipoDeGasto)
 	References TipoDeGasto(id)
 );
-

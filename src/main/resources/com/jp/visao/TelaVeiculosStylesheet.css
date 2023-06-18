@@ -1,5 +1,5 @@
 .fundo{
-    -fx-background-color: -backgroundColor;
+    -fx-background-color: var(-backgroundColor);
 }
 
 .root{

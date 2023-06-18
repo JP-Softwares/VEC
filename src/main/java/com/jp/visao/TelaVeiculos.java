@@ -12,6 +12,8 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.InputMethodEvent;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import org.apache.commons.io.FileUtils;
@@ -23,6 +25,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.*;
 
@@ -63,6 +67,8 @@ public class TelaVeiculos implements Initializable {
     HashMap<Integer, Veiculo> veiculoHashMap = null;
 
     int idAtual = 0;
+
+    String caminhoPadrao = "/com/jp/";
 
     public enum TipoDoVeiculo {
         MARCA, MODELO, VEICULO
@@ -202,7 +208,6 @@ public class TelaVeiculos implements Initializable {
 
         ComboBox comboBoxtipoDoVeiculo = (ComboBox) editModelo.lookup("#tipoDoVeiculo");
         comboBoxtipoDoVeiculo.getItems().addAll(com.jp.modelos.TipoDoVeiculo.values());
-
         showNewItem("Novo Modelo", editModelo, (m) -> inserirModelo() /* Comando do banco de dados */);
     }
 
@@ -322,30 +327,31 @@ public class TelaVeiculos implements Initializable {
             String urlImagemPessoal = Run.marcasEdit.imagem.getImage().getUrl().replaceFirst("file:", "");
             String pontos[] = urlImagemPessoal.split("\\.");
             String extensao = pontos[pontos.length-1];
-            String url = "src/main/resources/com/jp/imagens/Marcas/" + marca.getNome() + "." + extensao;
-            File imagemNoProjeto = new File(url);
-            marca.setUrl("../imagens/Marcas/" + marca.getNome() + "." + extensao);
+            String url = caminhoPadrao + "imagens/Marcas/" + marca.getNome() + "." + extensao;
+            File imagemNoProjeto = new File("src/main/resources" + url);
+            marca.setUrl(url);
 
-            String nomeAnterior = Run.marcaControle.buscar(idAtual).getNome();
+            String marcaAnterior = Run.marcaControle.buscar(idAtual).getUrl();
 
             Run.marcaControle.alterar(marca);
 
-            try{
-                File arquivoAntigo = Arrays.stream(new File("src/main/resources/com/jp/imagens/Marcas/").listFiles()).filter(file -> {
-                    return file.getName().contains(nomeAnterior);
-                }).findFirst().get();
+            if(!marcaAnterior.equals(url)) imagemNoProjeto.createNewFile();
 
-                if(arquivoAntigo != null) arquivoAntigo.delete();
-
-            }catch (Exception e){e.printStackTrace();}
 
             File imagemPessoal = new File(urlImagemPessoal);
 
             //BufferedImage image = ImageIO.read(imagemPessoal);
 
             //ImageIO.write(image, extensao, imagemNoProjeto);
-
             FileUtils.copyFile(imagemPessoal, imagemNoProjeto, StandardCopyOption.REPLACE_EXISTING);
+            if(!marcaAnterior.equals(url)){
+                try{
+                    File arquivoAntigo = new File("src/main/resources" + marcaAnterior);
+
+                    if(arquivoAntigo.exists()) FileUtils.delete(arquivoAntigo);
+
+                }catch (Exception e){e.printStackTrace();}
+            }
 
             listar(TipoDoVeiculo.MARCA);
         } catch (Exception e) {
@@ -361,28 +367,32 @@ public class TelaVeiculos implements Initializable {
             String urlImagemPessoal = Run.modelosEdit.imagem.getImage().getUrl().replaceFirst("file:", "").replace("%20", " ");
             String pontos[] = urlImagemPessoal.split("\\.");
             String extensao = pontos[pontos.length-1];
-            String url = "src/main/resources/com/jp/imagens/Modelos/" + modelo.getNome() + "." + extensao;
+            String url = caminhoPadrao + "imagens/Modelos/" + modelo.getNome() + "." + extensao;
             File imagemNoProjeto = new File(url);
-            modelo.setUrlModelo("../imagens/Modelos/" + modelo.getNome() + "." + extensao);
+            modelo.setUrlModelo(url);
             modelo.setTipo(com.jp.modelos.TipoDoVeiculo.valueOf(Run.modelosEdit.comboBoxTipoDoVeiculo.getValue() + ""));
             modelo.setMarca(Run.marcaControle.buscar(Run.modelosEdit.comboBoxMarca.getValue() + ""));
 
-            String nomeAnterior = Run.modeloControle.buscar(idAtual).getNome();
+            String modeloAnterior = Run.modeloControle.buscar(idAtual).getUrlModelo();
 
             Run.modeloControle.alterar(modelo);
 
-            try{
-                File arquivoAntigo = Arrays.stream(new File("src/main/resources/com/jp/imagens/Modelos/").listFiles()).filter(file -> {
-                    return file.getName().contains(nomeAnterior);
-                }).findFirst().get();
-
-                if(arquivoAntigo != null && !arquivoAntigo.getName().equals(imagemNoProjeto.getName())) arquivoAntigo.delete();
-
-            }catch (Exception e){e.printStackTrace();}
+            if(!modeloAnterior.equals(url)) imagemNoProjeto.createNewFile();
 
             File imagemPessoal = new File(urlImagemPessoal);
-            //Files.copy(imagemPessoal.toPath(), imagemNoProjeto.toPath(), StandardCopyOption.REPLACE_EXISTING);
+
+            //BufferedImage image = ImageIO.read(imagemPessoal);
+
+            //ImageIO.write(image, extensao, imagemNoProjeto);
             FileUtils.copyFile(imagemPessoal, imagemNoProjeto, StandardCopyOption.REPLACE_EXISTING);
+            if(!modeloAnterior.equals(url)){
+                try{
+                    File arquivoAntigo = new File("src/main/resources" + modeloAnterior);
+
+                    if(arquivoAntigo.exists()) FileUtils.delete(arquivoAntigo);
+
+                }catch (Exception e){e.printStackTrace();}
+            }
 
             listar(TipoDoVeiculo.MODELO);
         } catch (Exception e) {
@@ -501,6 +511,99 @@ public class TelaVeiculos implements Initializable {
 
                 break;
         }
+    }
+
+
+    @FXML
+    void filtrarMarca(KeyEvent event) {
+        try {
+            ArrayList<Marca> marcas = Run.marcaControle.listar(); // Filtrar
+            marcaHashMap = new HashMap<>();
+
+            marcasItems.getChildren().clear();
+            marcas.forEach(marca -> {
+
+                AnchorPane itemMarca = (AnchorPane) getScene("Item.fxml");
+                ((Label) itemMarca.lookup("#title")).setText(marca.getNome() + "");
+                ((Label) itemMarca.lookup("#description")).setText("");
+                ((Label) itemMarca.lookup("#id")).setText(marca.getId() + "");
+
+                ((ImageView) itemMarca.lookup("#imagem")).setImage(new Image(getClass().getResource(marca.getUrl()).toString()));
+
+                addItem(marcasItems, PanefundoMarcas, itemMarca, TipoDoVeiculo.MARCA);
+                marcaHashMap.put(marca.getId(), marca);
+//
+//                        Platform.runLater(new Runnable() {
+//                            @Override
+//                            public void run() {
+//                            }
+//                        });
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @FXML
+    void filtrarModelo(KeyEvent event) {
+        try {
+            ArrayList<Modelo> modelos = Run.modeloControle.listar(); // Filtrar
+            modeloHashMap = new HashMap<>();
+
+            modelosItems.getChildren().clear();
+
+            modelos.forEach(modelo -> {
+
+                AnchorPane itemModelo = (AnchorPane) getScene("Item.fxml");
+                ((Label) itemModelo.lookup("#title")).setText(modelo.getNome() + " - " + modelo.getMarca().getNome());
+                ((Label) itemModelo.lookup("#description")).setText("Tipo do Veículo: " + modelo.getTipo().toString());
+                ((Label) itemModelo.lookup("#id")).setText(modelo.getId() + "");
+                ((ImageView) itemModelo.lookup("#imagem")).setImage(new Image(getClass().getResource(modelo.getUrlModelo()).toString()));
+                addItem(modelosItems, PanefundoModelos, itemModelo, TipoDoVeiculo.MODELO);
+                modeloHashMap.put(modelo.getId(), modelo);
+//                        Platform.runLater(new Runnable() {
+//                            @Override
+//                            public void run() {
+//                            }
+//                        });
+
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @FXML
+    void filtrarVeiculo(KeyEvent event) {
+        try {
+            ArrayList<Veiculo> veiculos = Run.veiculoControle.listar(); // Filtrar
+            veiculoHashMap = new HashMap<>();
+
+            veiculoItems.getChildren().clear();
+
+            veiculos.forEach(veiculo -> {
+
+                AnchorPane itemVeiculo = (AnchorPane) getScene("Item.fxml");
+                ((Label) itemVeiculo.lookup("#title")).setText(veiculo.getPlaca() + " - " + veiculo.getModelo().getNome());
+                ((Label) itemVeiculo.lookup("#description")).setText("Marca: "+ veiculo.getModelo().getMarca().getNome()
+                        +"\nProprietário: " + veiculo.getProprietario().getNome());
+                ((Label) itemVeiculo.lookup("#id")).setText(veiculo.getId() + "");
+                ((ImageView) itemVeiculo.lookup("#imagem")).setImage(new Image(getClass().getResource(veiculo.getModelo().getUrlModelo()).toString()));
+                addItem(veiculoItems, PanefundoVeiculos, itemVeiculo, TipoDoVeiculo.VEICULO);
+                veiculoHashMap.put(veiculo.getId(), veiculo);
+//                        Platform.runLater(new Runnable() {
+//
+//                            @Override
+//                            public void run() {
+//                            }
+//                        });
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     @Override

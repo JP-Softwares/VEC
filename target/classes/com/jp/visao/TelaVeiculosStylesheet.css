@@ -1,15 +1,14 @@
-.fundo{
-    -fx-background-color: -backgroundColor;
-}
-
-.root{
-    -backgroundColor: #1E1F22;
-}
-
-
 .searchButton{
     -fx-background-color: rgba(0, 0, 0, 0);
     -fx-border-width: 0;
+}
+
+*{
+    -backgroundColor: #1E1F22;
+}
+
+.fundo{
+    -fx-background-color: -backgroundColor;
 }
 
 

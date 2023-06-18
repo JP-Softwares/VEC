@@ -12,6 +12,7 @@ C:\Users\Woly\Desktop\VEC\src\main\java\com\jp\visao\TelaProprietarios.java
 C:\Users\Woly\Desktop\VEC\src\main\java\com\jp\modelos\Modelo.java
 C:\Users\Woly\Desktop\VEC\src\main\java\com\jp\visao\TelaTipoDeGasto.java
 C:\Users\Woly\Desktop\VEC\src\main\java\com\jp\persistencia\IModeloDao.java
+C:\Users\Woly\Desktop\VEC\src\main\java\com\jp\tools\Texto.java
 C:\Users\Woly\Desktop\VEC\src\main\java\com\jp\persistencia\IGastosDao.java
 C:\Users\Woly\Desktop\VEC\src\main\java\com\jp\modelos\Marca.java
 C:\Users\Woly\Desktop\VEC\src\main\java\com\jp\persistencia\TipoDeGastosDao.java
@@ -28,6 +29,7 @@ C:\Users\Woly\Desktop\VEC\src\main\java\com\jp\persistencia\IMarcaDao.java
 C:\Users\Woly\Desktop\VEC\src\main\java\com\jp\visao\VeiculosEdit.java
 C:\Users\Woly\Desktop\VEC\src\main\java\com\jp\visao\TelaPrincipal.java
 C:\Users\Woly\Desktop\VEC\src\main\java\com\jp\controle\IModeloControle.java
+C:\Users\Woly\Desktop\VEC\src\main\java\com\jp\tools\Numero.java
 C:\Users\Woly\Desktop\VEC\src\main\java\com\jp\visao\Run.java
 C:\Users\Woly\Desktop\VEC\src\main\java\com\jp\modelos\TipoDeGastos.java
 C:\Users\Woly\Desktop\VEC\src\main\java\com\jp\persistencia\VeiculoDao.java

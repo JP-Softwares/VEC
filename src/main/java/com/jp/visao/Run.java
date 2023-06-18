@@ -31,11 +31,11 @@ public class Run {
     public static VeiculosEdit veiculosEdit;
 
 
-    public static IMarcaControle marcaControle = null;
-    public static IModeloControle modeloControle = null;
-    public static IVeiculoControle veiculoControle = null;
+    public static IMarcaControle marcaControle;
+    public static IModeloControle modeloControle;
+    public static IVeiculoControle veiculoControle;
 
-    public static IProprietarioControle proprietarioControle = null;
+    public static IProprietarioControle proprietarioControle;
 
     public static void main(String[] args){
         new Thread(() -> {
@@ -45,7 +45,7 @@ public class Run {
                 veiculoControle = new VeiculoControle();
                 proprietarioControle = new ProprietarioControle();
             } catch (Exception e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
         }).start();
 
