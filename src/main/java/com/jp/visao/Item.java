@@ -46,6 +46,9 @@ public class Item implements Initializable {
             case "itemTipoDeGasto":
                 Run.telaTipoDeGasto.editItemTipoDeGasto(Integer.parseInt(id.getText()));
                 break;
+            case "itemGasto":
+                Run.telaGastos.editItemGasto(Integer.parseInt(id.getText()));
+                break;
         }
     }
 

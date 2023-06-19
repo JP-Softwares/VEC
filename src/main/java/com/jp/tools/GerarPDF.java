@@ -21,7 +21,7 @@ import javax.swing.*;
 
 public class GerarPDF {
 
-    public void gerarPDFMes(String caminho, Veiculo objeto, int ano){
+    public static void gerarPDFMes(String caminho, Veiculo objeto, int ano){
         GastosControle gastosControle = new GastosControle();
         // criação do documento
         Rectangle pageSize = new Rectangle(595, 842);
@@ -421,7 +421,7 @@ public class GerarPDF {
         document.close();
     }
 
-    public void gerarPDFTipo(String caminho, Veiculo objeto, int ano){
+    public static void gerarPDFTipo(String caminho, Veiculo objeto, int ano){
         GastosControle gastosControle = new GastosControle();
         Rectangle pageSize = new Rectangle(595, 842);
         pageSize.setBackgroundColor(new BaseColor(0xFF, 0xFF, 0xDE));
@@ -538,7 +538,7 @@ public class GerarPDF {
         }
         document.close();
     }
-    private String traduzir(String mes){
+    private static String traduzir(String mes){
         switch (mes){
             case "JANUARY":
                 return "Janeiro";
@@ -570,7 +570,7 @@ public class GerarPDF {
         return null;
     }
 
-    public String ArrumarData(Date data){
+    public static String ArrumarData(Date data){
 
         String dia = data.toLocalDate().getDayOfMonth() + "";
         if(dia.length() < 2){

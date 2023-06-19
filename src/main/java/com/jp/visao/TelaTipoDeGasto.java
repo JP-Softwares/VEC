@@ -1,9 +1,6 @@
 package com.jp.visao;
 
-import com.jp.modelos.CategoriaCNH;
-import com.jp.modelos.Proprietario;
-import com.jp.modelos.Telefone;
-import com.jp.modelos.TipoDeGastos;
+import com.jp.modelos.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,10 +14,13 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import org.apache.commons.io.FileUtils;
 
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.ResourceBundle;
@@ -44,6 +44,8 @@ public class TelaTipoDeGasto implements Initializable {
 
     HashMap<Integer, TipoDeGastos> tipoDeGastosHashMap = null;
 
+    String caminhoPadrao = "/com/jp/";
+
     public void addItem(Node item){
         try{
             //if(veiculoItems.getChildren().size() > 0) veiculoItems.getChildren().remove(0);
@@ -59,31 +61,18 @@ public class TelaTipoDeGasto implements Initializable {
     }
 
     public void editItemTipoDeGasto(int id){
-
-        try {
-            AnchorPane editProprietario = (AnchorPane) getScene("ProprietariosEdit.fxml");
-
-            idAtual = id;
-
-            Proprietario proprietario = Run.proprietarioControle.buscar(id);
-
-            ComboBox comboBoxProprietario = (ComboBox) editProprietario.lookup("#comboBoxCategoriaCNH");
-
-            comboBoxProprietario.getItems().addAll(CategoriaCNH.values());
-            comboBoxProprietario.setValue(proprietario.getCategoria().toString());
-
-            ((TextField) editProprietario.lookup("#textFieldNome")).setText(proprietario.getNome());
-            ((TextField) editProprietario.lookup("#textFieldCPF")).setText(proprietario.getCPF());
-            ((TextField) editProprietario.lookup("#textFieldDDI")).setText(proprietario.getTelefone().getDDI() + "");
-            ((TextField) editProprietario.lookup("#textFieldDDD")).setText(proprietario.getTelefone().getDDD() + "");
-            ((TextField) editProprietario.lookup("#textFieldNumero")).setText(proprietario.getTelefone().getNumero() + "");
-            ((TextField) editProprietario.lookup("#textFieldEmail")).setText(proprietario.getEmail());
-            ((TextField) editProprietario.lookup("#textFieldNumeroCNH")).setText(proprietario.getCNH());
-
-            showNewItem("Novo Proprietario", editProprietario, (m) -> alterarTipoDeGasto());
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        AnchorPane editTipoDeGasto = (AnchorPane) getScene("TipoDeGastosEdit.fxml");
+        TipoDeGastos tipoDeGastos = tipoDeGastosHashMap.get(id);
+        idAtual = id;
+        //AnchorPane itemMarca = (AnchorPane) marcasItems.getChildren().filtered(node -> Integer.parseInt(((Label)node.lookup("#id")).getText()) == id).get(0);
+        ((TextField) editTipoDeGasto.lookup("#textFieldNome")).setText(tipoDeGastos.getNome());
+        try{
+            ((ImageView) editTipoDeGasto.lookup("#imagem")).setImage(new Image(getClass().getResource(tipoDeGastos.getIcone()).toString()));
+        }catch (Exception e){
+            System.out.println("Erro ao pegar a imagem.\nErro: " + e.getMessage());
         }
+
+        Run.telaPrincipal.setEditWindow("Editar Tipo de Gasto", editTipoDeGasto, (m) -> alterarTipoDeGasto());
     }
 
     private void showNewItem(String title, Node anchorPane, ActionListener method){
@@ -92,61 +81,55 @@ public class TelaTipoDeGasto implements Initializable {
 
     @FXML
     void filtrarTipoDeGasto(ActionEvent event) {
+        try {
+            ArrayList<TipoDeGastos> tipoDeGastosArrayList = Run.tipoDeGastosControle.filtrarTipoDeGastos(tipoDeGastosHashMap.values(), searchBarTipoDeGasto.getText());
+
+            TipoDeGastoItems.getChildren().clear();
+            tipoDeGastosArrayList.forEach(tipoDeGastos -> {
+
+                AnchorPane itemTipoDeGasto = (AnchorPane) getScene("Item.fxml");
+                ((Label) itemTipoDeGasto.lookup("#title")).setText(tipoDeGastos.getNome() + "");
+                ((Label) itemTipoDeGasto.lookup("#description")).setText("");
+                ((Label) itemTipoDeGasto.lookup("#id")).setText(tipoDeGastos.getId() + "");
+
+                try{
+                    ((ImageView) itemTipoDeGasto.lookup("#imagem")).setImage(new Image(getClass().getResource(tipoDeGastos.getIcone()).toString()));
+                }catch (Exception erroImagem){
+                    System.out.println("Erro ao pegar a imagem.\nErro: " + erroImagem.getMessage());
+                }
+
+                addItem(itemTipoDeGasto);
 //
-//        try {
-//            ArrayList<Proprietario> proprietarios = Run.proprietarioControle.filtrarProprietario(proprietarioHashMap.values(), searchBarTipoDeGasto.getText());
-//
-//            TipoDeGastoItems.getChildren().clear();
-//
-//            proprietarios.forEach(proprietario -> {
-//
-//                AnchorPane itemProprietario = (AnchorPane) getScene("Item.fxml");
-//                ((Label) itemProprietario.lookup("#title")).setText(proprietario.getNome() + "  -  " + Run.proprietarioControle.imprimeCPF(proprietario.getCPF()));
-//                ((Label) itemProprietario.lookup("#description")).setText("E-mail: " + proprietario.getEmail()
-//                        + " | Telefone: +" + proprietario.getTelefone().getDDI() + " (" + proprietario.getTelefone().getDDD() + ") " + proprietario.getTelefone().getNumero()
-//                        + "\nCNH: " + proprietario.getCNH() + " - " + proprietario.getCategoria().toString() + " | Número de Carros: " + proprietario.getNumeroDeCarros());
-//                AnchorPane.setLeftAnchor((Label) itemProprietario.lookup("#title"), 25.0);
-//                AnchorPane.setLeftAnchor((Label) itemProprietario.lookup("#description"), 25.0);
-//                ((Label) itemProprietario.lookup("#id")).setText(proprietario.getId() + "");
-//
-//                itemProprietario.lookup("FlowPane").setVisible(false);
-//
-//                addItem(itemProprietario);
-//            });
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+//                        Platform.runLater(new Runnable() {
+//                            @Override
+//                            public void run() {
+//                            }
+//                        });
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     void newItemTipoDeGasto(ActionEvent event) {
-        AnchorPane editProprietario = (AnchorPane) getScene("ProprietariosEdit.fxml");
-
-        ComboBox comboBoxProprietario = (ComboBox) editProprietario.lookup("#comboBoxCategoriaCNH");
-
-        comboBoxProprietario.getItems().addAll(CategoriaCNH.values());
-
-        showNewItem("Novo Proprietario", editProprietario, (m) -> inserirTipoDeGasto());
+        showNewItem("Novo Tipo de Gasto", getScene("TipoDeGastosEdit.fxml"), (m) -> inserirTipoDeGasto() /* Comando do banco de dados */);
     }
 
     public void inserirTipoDeGasto(){
         try {
-            Proprietario proprietario = new Proprietario();
-            ProprietariosEdit proprietariosEdit = Run.proprietariosEdit;
-            proprietario.setCPF(proprietariosEdit.textFieldCPF.getText());
-            proprietario.setNome(proprietariosEdit.textFieldNome.getText());
-            Telefone telefone = new Telefone();
-            telefone.setDDI(Integer.parseInt(proprietariosEdit.textFieldDDI.getText()));
-            telefone.setDDD(Integer.parseInt(proprietariosEdit.textFieldDDD.getText()));
-            telefone.setNumero(Integer.parseInt(proprietariosEdit.textFieldNumero.getText()));
+            TipoDeGastos tipoDeGastos = new TipoDeGastos();
+            tipoDeGastos.setNome(Run.tipoDeGastosEdit.textFieldNome.getText());
+            String urlImagemPessoal = Run.tipoDeGastosEdit.imagem.getImage().getUrl().replaceFirst("file:", "").replace("%20", " ");
+            String pontos[] = urlImagemPessoal.split("\\.");
+            String extensao = pontos[pontos.length-1];
+            String url = caminhoPadrao + "imagens/TipoDeGasto/" + tipoDeGastos.getNome() + "." + extensao;
+            File imagemNoProjeto = new File("src/main/resources" + url);
+            tipoDeGastos.setIcone(url);
+            Run.tipoDeGastosControle.incluir(tipoDeGastos);
 
-            proprietario.setTelefone(telefone);
-
-            proprietario.setEmail(proprietariosEdit.textFieldEmail.getText());
-            proprietario.setCNH(proprietariosEdit.textFieldNumeroCNH.getText());
-            proprietario.setCategoria(CategoriaCNH.valueOf(proprietariosEdit.comboBoxCategoriaCNH.getValue() + ""));
-
-            Run.proprietarioControle.incluir(proprietario);
+            File imagemPessoal = new File(urlImagemPessoal);
+            FileUtils.copyFile(imagemPessoal, imagemNoProjeto, StandardCopyOption.REPLACE_EXISTING);
 
             listar();
         } catch (Exception e) {
@@ -156,24 +139,37 @@ public class TelaTipoDeGasto implements Initializable {
 
     public void alterarTipoDeGasto(){
         try {
-            Proprietario proprietario = new Proprietario();
-            ProprietariosEdit proprietariosEdit = Run.proprietariosEdit;
-            proprietario.setId(idAtual);
-            proprietario.setCPF(proprietariosEdit.textFieldCPF.getText());
-            proprietario.setNome(proprietariosEdit.textFieldNome.getText());
-            Telefone telefone = new Telefone();
-            telefone.setDDI(Integer.parseInt(proprietariosEdit.textFieldDDI.getText()));
-            telefone.setDDD(Integer.parseInt(proprietariosEdit.textFieldDDD.getText()));
-            telefone.setNumero(Integer.parseInt(proprietariosEdit.textFieldNumero.getText()));
+            TipoDeGastos tipoDeGastos = new TipoDeGastos();
+            tipoDeGastos.setId(idAtual);
+            tipoDeGastos.setNome(Run.tipoDeGastosEdit.textFieldNome.getText());
+            String urlImagemPessoal = Run.tipoDeGastosEdit.imagem.getImage().getUrl().replaceFirst("file:", "");
+            String pontos[] = urlImagemPessoal.split("\\.");
+            String extensao = pontos[pontos.length-1];
+            String url = caminhoPadrao + "imagens/TipoDeGasto/" + tipoDeGastos.getNome() + "." + extensao;
+            File imagemNoProjeto = new File("src/main/resources" + url);
+            tipoDeGastos.setIcone(url);
 
-            proprietario.setTelefone(telefone);
+            String marcaAnterior = Run.tipoDeGastosControle.buscar(idAtual).getIcone();
 
-            proprietario.setEmail(proprietariosEdit.textFieldEmail.getText());
-            proprietario.setCNH(proprietariosEdit.textFieldNumeroCNH.getText());
-            proprietario.setCategoria(CategoriaCNH.valueOf(proprietariosEdit.comboBoxCategoriaCNH.getValue() + ""));
-            //proprietario.setNumeroDeCarros(proprietarioHashMap.get(idAtual).getNumeroDeCarros());
+            Run.tipoDeGastosControle.alterar(tipoDeGastos);
 
-            Run.proprietarioControle.alterar(proprietario);
+            //if(!marcaAnterior.equals(url)) imagemNoProjeto.createNewFile();
+
+
+            File imagemPessoal = new File(urlImagemPessoal);
+
+            //BufferedImage image = ImageIO.read(imagemPessoal);
+
+            //ImageIO.write(image, extensao, imagemNoProjeto);
+            FileUtils.copyFile(imagemPessoal, imagemNoProjeto, StandardCopyOption.REPLACE_EXISTING);
+            if(!marcaAnterior.equals(url)){
+                try{
+                    File arquivoAntigo = new File("src/main/resources" + marcaAnterior);
+
+                    if(arquivoAntigo.exists()) FileUtils.delete(arquivoAntigo);
+
+                }catch (Exception e){e.printStackTrace();}
+            }
 
             listar();
         } catch (Exception e) {
@@ -205,7 +201,7 @@ public class TelaTipoDeGasto implements Initializable {
                 try{
                     ((ImageView)itemTipoDeGasto.lookup("#imagem")).setImage(new Image(getClass().getResource(tipoDeGastos.getIcone()).toString()));
                 }catch (Exception e){
-                    e.printStackTrace();
+                    System.out.println("Erro ao pegar a imagem.\nErro: " + e.getMessage());
                 }
 
                 addItem(itemTipoDeGasto);

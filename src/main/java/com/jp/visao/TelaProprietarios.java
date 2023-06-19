@@ -58,7 +58,7 @@ public class TelaProprietarios implements Initializable {
 
             idAtual = id;
 
-            Proprietario proprietario = Run.proprietarioControle.buscar(id);
+            Proprietario proprietario = proprietarioHashMap.get(id);
 
             ComboBox comboBoxProprietario = (ComboBox) editProprietario.lookup("#comboBoxCategoriaCNH");
 

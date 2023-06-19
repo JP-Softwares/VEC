@@ -29,3 +29,7 @@ FlowPane{
 .labelObrigatorio{
     -fx-text-fill: #ff0000;
 }
+
+.date-picker .spinner-label {
+    -fx-text-fill: white;
+}

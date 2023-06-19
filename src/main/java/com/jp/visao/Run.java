@@ -24,6 +24,8 @@ public class Run {
 
     public static TelaTipoDeGasto telaTipoDeGasto;
 
+    public static TelaGastos telaGastos;
+
     public static MarcasEdit marcasEdit;
 
     public static ModelosEdit modelosEdit;
@@ -34,12 +36,15 @@ public class Run {
 
     public static TipoDeGastosEdit tipoDeGastosEdit;
 
+    public static GastosEdit gastosEdit;
+
 
     public static IMarcaControle marcaControle;
     public static IModeloControle modeloControle;
     public static IVeiculoControle veiculoControle;
     public static IProprietarioControle proprietarioControle;
     public static ITipoDeGastosControle tipoDeGastosControle;
+    public static IGastosControle gastosControle;
 
     public static void main(String[] args){
         try {
@@ -48,6 +53,7 @@ public class Run {
             veiculoControle = new VeiculoControle();
             proprietarioControle = new ProprietarioControle();
             tipoDeGastosControle = new TipoDeGastosControle();
+            gastosControle = new GastosControle();
         } catch (Exception e) {
             e.printStackTrace();
         }
