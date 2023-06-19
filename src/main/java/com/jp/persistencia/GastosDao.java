@@ -10,6 +10,8 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 
+import static com.jp.visao.Run.tipoDeGastosControle;
+
 public class GastosDao implements IGastosDao{
 
     private Connection conexao = null;
@@ -437,11 +439,53 @@ public class GastosDao implements IGastosDao{
             double somaMes;
             somaMes = 0;
             ArrayList<Gastos> GA = hm.get(i);
-            somaMes = GA.stream().mapToDouble(Gastos::getValor).sum();
-            saida[i - 1] = somaMes;
+            if(GA == null){
+                saida[i - 1] = 0.0;
+            }else{
+                somaMes = GA.stream().mapToDouble(Gastos::getValor).sum();
+                saida[i - 1] = somaMes;
+            }
         }
         return saida;
     }
+
+    public double[] valorTotalTipo(Veiculo objeto, int ano) throws Exception {
+        HashMap<Integer, ArrayList> hm = listarPorMes(objeto, ano);
+        HashMap<String, Double> tp = new HashMap<>();
+        //coloco os tipos de gasto em uma lista de depois preencho um hashmap usando eles de key;
+        ArrayList<TipoDeGastos> listaDeTipos = tipoDeGastosControle.listar();
+        Iterator<TipoDeGastos> itezinho = listaDeTipos.iterator();
+        while(itezinho.hasNext()){
+            TipoDeGastos aux = itezinho.next();
+            tp.put(aux.getNome(), 0.0);
+        }
+        //Passando pelos gastos dos 12 meses usando o HashMap HM
+        for(int i = 1; i < 13; i++){
+            ArrayList<Gastos> lista = hm.get(i);
+            //se existir um Array de Gastos relacionado com aquele Mes eu entro no IF
+            if(lista != null){
+                Iterator<Gastos> indice = lista.iterator();
+                //Para cada Gasto nesse Mes eu executo esse While
+                while(indice.hasNext()){
+                    Gastos atual = indice.next();
+                    TipoDeGastos aux = atual.getTipoDeGastos();
+                    //Usando o Tipo de Gasto como Key eu consigo checar se ja existe uma Arraylist de gastos Relacionada a ele ou não
+                    if(tp.get(aux.getNome()) == null){
+                        //se não existir eu crio uma vazia, coloco o gasto atual nela e guardo no HashMap
+                        ArrayList<Gastos> Comgastos = new ArrayList<>();
+                        Comgastos.add(atual);
+                        //tp.put(aux.getNome(),Comgastos);
+                    }else{
+                        //se ja existir eu adiciono o Gasto na Arraylist
+                        //tp.get(aux.getNome()).add(atual);
+                    }
+                }
+            }
+
+        }
+        return saida;
+    }
+
 
     @Override
     public ArrayList<Gastos> filtrarGastos(Collection<Gastos> gastos, String filtro) throws Exception {
