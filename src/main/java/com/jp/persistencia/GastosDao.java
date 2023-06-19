@@ -433,7 +433,7 @@ public class GastosDao implements IGastosDao{
     public ArrayList<Gastos> filtrarGastos(Collection<Gastos> gastos, String filtro) throws Exception {
         ArrayList<Gastos> GA = new ArrayList<>();
         gastos.forEach(gasto -> {
-            if(gasto.getTipoDeGastos().getNome().toLowerCase().contains(filtro.toLowerCase())) GA.add(gasto);
+            if(gasto.getTipoDeGastos().getNome().toLowerCase().contains(filtro.toLowerCase()) || gasto.getDescricao().toLowerCase().contains(filtro.toLowerCase())) GA.add(gasto);
         });
         return GA;
     }
