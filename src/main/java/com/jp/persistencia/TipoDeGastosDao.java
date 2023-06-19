@@ -113,7 +113,7 @@ public class TipoDeGastosDao implements ITipoDeGastosDao{
     public ArrayList<TipoDeGastos> filtrarTipoDeGastos(Collection<TipoDeGastos> tipoDeGastos, String filtro) throws Exception {
         ArrayList<TipoDeGastos> TA = new ArrayList<>();
         tipoDeGastos.forEach(t -> {
-            if(!t.getNome().toLowerCase().contains(filtro.toLowerCase())) TA.add(t);
+            if(t.getNome().toLowerCase().contains(filtro.toLowerCase())) TA.add(t);
         });
         return TA;
     }
