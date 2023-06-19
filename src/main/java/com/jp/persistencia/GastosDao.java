@@ -39,7 +39,7 @@ public class GastosDao implements IGastosDao{
     @Override
     public void alterar(Gastos objeto) throws Exception {
         try {
-            String sql = "update Gastos set descricao = ?, valor = ?, data = ?, idVeiculo = ?, idTipoDeGasto  where (id = ?)";
+            String sql = "update Gastos set descricao = ?, valor = ?, data = ?, idVeiculo = ?, idTipoDeGasto = ?  where (id = ?)";
             PreparedStatement preparedStatement = conexao.prepareStatement(sql);
             // Parameters iniciar os elementos
             preparedStatement.setString(1, objeto.getDescricao());
