@@ -41,7 +41,7 @@ public class TipoDeGastosDao implements ITipoDeGastosDao{
             // Parameters iniciar os elementos
             preparedStatement.setString(1, objeto.getNome());
             preparedStatement.setString(2, objeto.getIcone() + "");
-            preparedStatement.setString(3, objeto.getId() + "");
+            preparedStatement.setInt(3, objeto.getId());
             preparedStatement.executeUpdate();
         } catch (SQLException erro) {
             throw new Exception("SQL Erro: "+ erro.getMessage());

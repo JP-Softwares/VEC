@@ -574,7 +574,7 @@ public class GerarPDF {
         return null;
     }
 
-    private String ArrumarData(Date data){
+    public String ArrumarData(Date data){
 
         String dia = data.toLocalDate().getDayOfMonth() + "";
         if(dia.length() < 2){
