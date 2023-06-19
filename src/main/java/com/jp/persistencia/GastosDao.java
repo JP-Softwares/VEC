@@ -483,7 +483,7 @@ public class GastosDao implements IGastosDao{
             }
 
         }
-        return saida;
+        return null;
     }
 
 
