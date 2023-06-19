@@ -37,8 +37,8 @@ public class GerarPDF {
             HashMap<Integer, ArrayList> hm = new HashMap<>();
             hm = gastosControle.listarPorMes(objeto, ano);
             // adicionando um parágrafo no documento
-            document.add(new Paragraph("Relatorio de Gastos - "+objeto.getModelo().getNome(), FontFactory.getFont(FontFactory.TIMES_BOLD, 26)));
-            document.add(new Paragraph("Placa: "+objeto.getPlaca() +" | Ano de Fabricação: "+objeto.getAnoFabricacao()+ " | Ano do Modelo: "+objeto.getAnoModelo() + " | Marca: "+objeto.getModelo().getMarca().getNome(), FontFactory.getFont(FontFactory.TIMES, 11)));
+            document.add(new Paragraph("Relatorio de Gastos - " + ano, FontFactory.getFont(FontFactory.TIMES_BOLD, 26)));
+            document.add(new Paragraph("Modelo: "+objeto.getModelo().getNome()+"  |  Placa: "+objeto.getPlaca() +" | Ano de Fabricação: "+objeto.getAnoFabricacao()+ " | Ano do Modelo: "+objeto.getAnoModelo() + " | Marca: "+objeto.getModelo().getMarca().getNome(), FontFactory.getFont(FontFactory.TIMES, 11)));
             document.add(new Paragraph("\n \nJaneiro", FontFactory.getFont( FontFactory.TIMES_BOLD, 15)));
             document.add(new Paragraph("______________________________________________________________________________"));
             if(hm.get(1) != null){
@@ -436,7 +436,7 @@ public class GerarPDF {
             TipoDeGastosControle tipoDeGastosControle = new TipoDeGastosControle();
             document.open();
 
-            HashMap<Integer, ArrayList> hm = gastosControle.listarPorMes(objeto, 2023);
+            HashMap<Integer, ArrayList> hm = gastosControle.listarPorMes(objeto, ano);
             HashMap<String, ArrayList> tp = new HashMap<>();
             //coloco os tipos de gasto em uma lista de depois preencho um hashmap usando eles de key;
             ArrayList<TipoDeGastos> listaDeTipos = tipoDeGastosControle.listar();

@@ -74,7 +74,7 @@ public class TipoDeGastosDao implements ITipoDeGastosDao{
     @Override
     public TipoDeGastos buscar(String nome) throws Exception {
         try {
-            String sql = "select * from TipoDeGastos where nome = '"+nome+"'";
+            String sql = "select * from TipoDeGasto where nome = '"+nome+"'";
             Statement statement = conexao.createStatement();
             ResultSet rs = statement.executeQuery(sql);
             TipoDeGastos tipoDeGastos = new TipoDeGastos();

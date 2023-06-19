@@ -60,7 +60,7 @@ public class TipoDeGastosControle implements ITipoDeGastosControle {
     }
 
     private boolean verificarCampos(TipoDeGastos objeto) throws Exception {
-        if (objeto.getNome().length() < 1) throw new Exception("A descrição informada é inválida");
+        if (objeto.getNome().length() < 1) throw new Exception("O nome informado é inválido");
         return true;
     }
 }

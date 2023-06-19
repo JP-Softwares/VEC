@@ -63,7 +63,7 @@ public class TesteBancoDeDados {
         veiculoteste.setSituacao(SituacaoDoVeiculo.DISPONIVEL);
         veiculoteste.setAnoFabricacao(2009);
         veiculoteste.setAnoModelo(2007);
-        veiculoControle.incluir(veiculoteste);
+        //veiculoControle.incluir(veiculoteste);
 
         TipoDeGastosControle tipoDeGastosControle = new TipoDeGastosControle();
         TipoDeGastos tipoDeGastosteste = new TipoDeGastos();
@@ -101,8 +101,11 @@ public class TesteBancoDeDados {
         }*/
 
         GerarPDF gerarPDF = new GerarPDF();
-        //gerarPDF.gerarPDFTipo(caminho, veiculoControle.buscar(1), 2023);
+        gerarPDF.gerarPDFTipo(caminho, veiculoControle.buscar(1), 1300);
         //System.out.println(bomDia());
-
+        String testeData = "2023-07-05";
+        Date testando;
+        testando = Date.valueOf(testeData);
+        System.out.println(testando.toLocalDate().toString());
     }
 }
