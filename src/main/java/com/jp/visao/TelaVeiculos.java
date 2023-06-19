@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -107,7 +108,12 @@ public class TelaVeiculos implements Initializable {
         idAtual = id;
         //AnchorPane itemMarca = (AnchorPane) marcasItems.getChildren().filtered(node -> Integer.parseInt(((Label)node.lookup("#id")).getText()) == id).get(0);
         ((TextField) editMarca.lookup("#textFieldNome")).setText(marca.getNome());
-        ((ImageView) editMarca.lookup("#imagem")).setImage(new Image(getClass().getResource(marca.getUrl()).toString()));
+
+        try{
+            ((ImageView) editMarca.lookup("#imagem")).setImage(new Image(getClass().getResource(marca.getUrl()).toString()));
+        }catch (Exception erroImagem){
+            System.out.println("Erro ao pegar a imagem.\nErro: " + erroImagem.getMessage());
+        }
 
         Run.telaPrincipal.setEditWindow("Editar Marca", editMarca, (m) -> alterarMarca());
     }
@@ -119,7 +125,13 @@ public class TelaVeiculos implements Initializable {
         idAtual = id;
 
         ((TextField) editModelo.lookup("#textFieldNome")).setText(modelo.getNome());
-        ((ImageView) editModelo.lookup("#imagem")).setImage(new Image(getClass().getResource(modelo.getUrlModelo()).toString()));
+
+        try{
+            ((ImageView) editModelo.lookup("#imagem")).setImage(new Image(getClass().getResource(modelo.getUrlModelo()).toString()));
+        }catch (Exception erroImagem){
+            System.out.println("Erro ao pegar a imagem.\nErro: " + erroImagem.getMessage());
+        }
+
         ComboBox comboBoxmarca = (ComboBox) editModelo.lookup("#marca");
         Collection<Marca> marcas = marcaHashMap.values();
         ArrayList<String> nomeDasMarcas = new ArrayList<>();
@@ -255,7 +267,7 @@ public class TelaVeiculos implements Initializable {
         try {
             Marca marca = new Marca();
             marca.setNome(Run.marcasEdit.textFieldNome.getText());
-            String urlImagemPessoal = Run.marcasEdit.imagem.getImage().getUrl().replaceFirst("file:", "");
+            String urlImagemPessoal = Run.marcasEdit.imagem.getImage().getUrl().replaceFirst("file:", "").replace("%20", " ");
             String pontos[] = urlImagemPessoal.split("\\.");
             String extensao = pontos[pontos.length-1];
             String url = "src/main/resources/com/jp/imagens/Marcas/" + marca.getNome() + "." + extensao;
@@ -268,7 +280,7 @@ public class TelaVeiculos implements Initializable {
 
             listar(TipoDoVeiculo.MARCA);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 
@@ -276,7 +288,7 @@ public class TelaVeiculos implements Initializable {
         try {
             Modelo modelo = new Modelo();
             modelo.setNome(Run.modelosEdit.textFieldNome.getText());
-            String urlImagemPessoal = Run.modelosEdit.imagem.getImage().getUrl().replaceFirst("file:", "");
+            String urlImagemPessoal = Run.modelosEdit.imagem.getImage().getUrl().replaceFirst("file:", "").replace("%20", " ");
             String pontos[] = urlImagemPessoal.split("\\.");
             String extensao = pontos[pontos.length-1];
             String url = "src/main/resources/com/jp/imagens/Modelos/" + modelo.getNome() + "." + extensao;
@@ -334,7 +346,7 @@ public class TelaVeiculos implements Initializable {
 
             Run.marcaControle.alterar(marca);
 
-            if(!marcaAnterior.equals(url)) imagemNoProjeto.createNewFile();
+            //if(!marcaAnterior.equals(url)) imagemNoProjeto.createNewFile();
 
 
             File imagemPessoal = new File(urlImagemPessoal);
@@ -343,6 +355,7 @@ public class TelaVeiculos implements Initializable {
 
             //ImageIO.write(image, extensao, imagemNoProjeto);
             FileUtils.copyFile(imagemPessoal, imagemNoProjeto, StandardCopyOption.REPLACE_EXISTING);
+
             if(!marcaAnterior.equals(url)){
                 try{
                     File arquivoAntigo = new File("src/main/resources" + marcaAnterior);
@@ -438,7 +451,11 @@ public class TelaVeiculos implements Initializable {
                         ((Label) itemMarca.lookup("#description")).setText("");
                         ((Label) itemMarca.lookup("#id")).setText(marca.getId() + "");
 
-                        ((ImageView) itemMarca.lookup("#imagem")).setImage(new Image(getClass().getResource(marca.getUrl()).toString()));
+                        try{
+                            ((ImageView) itemMarca.lookup("#imagem")).setImage(new Image(getClass().getResource(marca.getUrl()).toString()));
+                        }catch (Exception erroImagem){
+                            System.out.println("Erro ao pegar a imagem.\nErro: " + erroImagem.getMessage());
+                        }
 
                         addItem(marcasItems, PanefundoMarcas, itemMarca, tipoDoVeiculo);
                         marcaHashMap.put(marca.getId(), marca);
@@ -466,7 +483,12 @@ public class TelaVeiculos implements Initializable {
                         ((Label) itemModelo.lookup("#title")).setText(modelo.getNome() + " - " + modelo.getMarca().getNome());
                         ((Label) itemModelo.lookup("#description")).setText("Tipo do Veículo: " + modelo.getTipo().toString());
                         ((Label) itemModelo.lookup("#id")).setText(modelo.getId() + "");
-                        ((ImageView) itemModelo.lookup("#imagem")).setImage(new Image(getClass().getResource(modelo.getUrlModelo()).toString()));
+
+                        try{
+                            ((ImageView) itemModelo.lookup("#imagem")).setImage(new Image(getClass().getResource(modelo.getUrlModelo()).toString()));
+                        }catch (Exception erroImagem){
+                            System.out.println("Erro ao pegar a imagem.\nErro: " + erroImagem.getMessage());
+                        }
                         addItem(modelosItems, PanefundoModelos, itemModelo, tipoDoVeiculo);
                         modeloHashMap.put(modelo.getId(), modelo);
 //                        Platform.runLater(new Runnable() {
@@ -494,7 +516,13 @@ public class TelaVeiculos implements Initializable {
                         ((Label) itemVeiculo.lookup("#description")).setText("Marca: "+ veiculo.getModelo().getMarca().getNome()
                                 +"\nProprietário: " + veiculo.getProprietario().getNome());
                         ((Label) itemVeiculo.lookup("#id")).setText(veiculo.getId() + "");
-                        ((ImageView) itemVeiculo.lookup("#imagem")).setImage(new Image(getClass().getResource(veiculo.getModelo().getUrlModelo()).toString()));
+
+                        try{
+                            ((ImageView) itemVeiculo.lookup("#imagem")).setImage(new Image(getClass().getResource(veiculo.getModelo().getUrlModelo()).toString()));
+                        }catch (Exception erroImagem){
+                            System.out.println("Erro ao pegar a imagem.\nErro: " + erroImagem.getMessage());
+                        }
+                        addActionTelaGastos(itemVeiculo);
                         addItem(veiculoItems, PanefundoVeiculos, itemVeiculo, tipoDoVeiculo);
                         veiculoHashMap.put(veiculo.getId(), veiculo);
 //                        Platform.runLater(new Runnable() {
@@ -526,7 +554,11 @@ public class TelaVeiculos implements Initializable {
                 ((Label) itemMarca.lookup("#description")).setText("");
                 ((Label) itemMarca.lookup("#id")).setText(marca.getId() + "");
 
-                ((ImageView) itemMarca.lookup("#imagem")).setImage(new Image(getClass().getResource(marca.getUrl()).toString()));
+                try{
+                    ((ImageView) itemMarca.lookup("#imagem")).setImage(new Image(getClass().getResource(marca.getUrl()).toString()));
+                }catch (Exception erroImagem){
+                    System.out.println("Erro ao pegar a imagem.\nErro: " + erroImagem.getMessage());
+                }
 
                 addItem(marcasItems, PanefundoMarcas, itemMarca, TipoDoVeiculo.MARCA);
 //
@@ -542,6 +574,18 @@ public class TelaVeiculos implements Initializable {
 
     }
 
+    public void addActionTelaGastos(AnchorPane item){
+        item.setCursor(Cursor.HAND);
+
+        item.setOnMouseClicked(mouseEvent -> {
+            Run.telaPrincipal.setScene("TelaGastos.fxml");
+
+            Run.telaGastos.veiculo = veiculoHashMap.get(Integer.parseInt(((Label) item.lookup("#id")).getText()));
+
+            Run.telaGastos.listar();
+        });
+    }
+
     @FXML
     void filtrarModelo(ActionEvent event) {
         try {
@@ -555,7 +599,13 @@ public class TelaVeiculos implements Initializable {
                 ((Label) itemModelo.lookup("#title")).setText(modelo.getNome() + " - " + modelo.getMarca().getNome());
                 ((Label) itemModelo.lookup("#description")).setText("Tipo do Veículo: " + modelo.getTipo().toString());
                 ((Label) itemModelo.lookup("#id")).setText(modelo.getId() + "");
-                ((ImageView) itemModelo.lookup("#imagem")).setImage(new Image(getClass().getResource(modelo.getUrlModelo()).toString()));
+
+                try{
+                    ((ImageView) itemModelo.lookup("#imagem")).setImage(new Image(getClass().getResource(modelo.getUrlModelo()).toString()));
+                }catch (Exception erroImagem){
+                    System.out.println("Erro ao pegar a imagem.\nErro: " + erroImagem.getMessage());
+                }
+
                 addItem(modelosItems, PanefundoModelos, itemModelo, TipoDoVeiculo.MODELO);
 //                        Platform.runLater(new Runnable() {
 //                            @Override
@@ -584,7 +634,12 @@ public class TelaVeiculos implements Initializable {
                 ((Label) itemVeiculo.lookup("#description")).setText("Marca: "+ veiculo.getModelo().getMarca().getNome()
                         +"\nProprietário: " + veiculo.getProprietario().getNome());
                 ((Label) itemVeiculo.lookup("#id")).setText(veiculo.getId() + "");
-                ((ImageView) itemVeiculo.lookup("#imagem")).setImage(new Image(getClass().getResource(veiculo.getModelo().getUrlModelo()).toString()));
+
+                try{
+                    ((ImageView) itemVeiculo.lookup("#imagem")).setImage(new Image(getClass().getResource(veiculo.getModelo().getUrlModelo()).toString()));
+                }catch (Exception erroImagem){
+                    System.out.println("Erro ao pegar a imagem.\nErro: " + erroImagem.getMessage());
+                }
                 addItem(veiculoItems, PanefundoVeiculos, itemVeiculo, TipoDoVeiculo.VEICULO);
 //                        Platform.runLater(new Runnable() {
 //

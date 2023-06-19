@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="487.0" prefWidth="460.0" stylesheets="@EditStylesheet.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jp.visao.GastosEdit">
+   <children>
+      <TextField id="textFieldDescricao" fx:id="textFieldDescricao" layoutX="14.0" layoutY="108.0" prefHeight="36.0" prefWidth="227.0" AnchorPane.topAnchor="108.0" />
+      <Label layoutX="14.0" layoutY="82.0" prefHeight="26.0" prefWidth="416.0" text="Descricao" />
+      <Label layoutX="102.0" layoutY="83.0" styleClass="labelObrigatorio" text="*" />
+      <TextField id="textFieldValor" fx:id="textFieldValor" layoutX="14.0" layoutY="178.0" prefHeight="36.0" prefWidth="131.0" />
+      <Label layoutX="14.0" layoutY="152.0" prefHeight="26.0" prefWidth="416.0" text="Valor" />
+      <Label layoutX="62.0" layoutY="153.0" styleClass="labelObrigatorio" text="*" />
+      <Label layoutX="14.0" layoutY="218.0" prefHeight="26.0" prefWidth="416.0" text="Data" />
+      <Label layoutX="65.0" layoutY="219.0" styleClass="labelObrigatorio" text="*" />
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="416.0" text="Tipo de Gasto" />
+      <Label layoutX="136.0" layoutY="15.0" styleClass="labelObrigatorio" text="*" />
+      <ComboBox id="comboBoxTipoDeGasto" fx:id="comboBoxTipoDeGasto" layoutX="14.0" layoutY="40.0" prefHeight="36.0" prefWidth="416.0" />
+      <DatePicker id="datePicker" fx:id="datePicker" layoutX="14.0" layoutY="243.0" prefHeight="26.0" prefWidth="159.0" />
+   </children>
+</AnchorPane>

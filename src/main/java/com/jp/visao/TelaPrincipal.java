@@ -61,7 +61,7 @@ public class TelaPrincipal implements Initializable{
     private Pane blurPane;
 
     @FXML
-    private Button botaoVeiculos;
+    public Button botaoVeiculos;
 
     @FXML
     private Button botaoHome;
