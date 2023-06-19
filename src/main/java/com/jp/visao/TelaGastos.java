@@ -7,10 +7,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.DirectoryChooser;
+import javafx.stage.Stage;
 
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -85,7 +88,7 @@ public class TelaGastos implements Initializable {
             ((TextField) editGasto.lookup("#textFieldValor")).setText(gastos.getValor() + "");
             ((DatePicker)editGasto.lookup("#datePicker")).setValue(gastos.getData().toLocalDate());
 
-            showNewItem("Editar Gasto", editGasto, (m) -> inserirGasto());
+            showNewItem("Editar Gasto", editGasto, (m) -> alterarGasto());
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -97,30 +100,27 @@ public class TelaGastos implements Initializable {
 
     @FXML
     void filtrarGasto(ActionEvent event) {
+        try {
+            ArrayList<Gastos> gastos = Run.gastosControle.filtrarGastos(gastosHashMap.values(), searchBarGastos.getText());
 
-//        try {
-//            ArrayList<Proprietario> proprietarios = Run.proprietarioControle.filtrarProprietario(gastosHashMap.values(), searchBarGastos.getText());
-//
-//            gastosItems.getChildren().clear();
-//
-//            proprietarios.forEach(proprietario -> {
-//
-//                AnchorPane itemProprietario = (AnchorPane) getScene("Item.fxml");
-//                ((Label) itemProprietario.lookup("#title")).setText(proprietario.getNome() + "  -  " + Run.proprietarioControle.imprimeCPF(proprietario.getCPF()));
-//                ((Label) itemProprietario.lookup("#description")).setText("E-mail: " + proprietario.getEmail()
-//                        + " | Telefone: +" + proprietario.getTelefone().getDDI() + " (" + proprietario.getTelefone().getDDD() + ") " + proprietario.getTelefone().getNumero()
-//                        + "\nCNH: " + proprietario.getCNH() + " - " + proprietario.getCategoria().toString() + " | Número de Carros: " + proprietario.getNumeroDeCarros());
-//                AnchorPane.setLeftAnchor((Label) itemProprietario.lookup("#title"), 25.0);
-//                AnchorPane.setLeftAnchor((Label) itemProprietario.lookup("#description"), 25.0);
-//                ((Label) itemProprietario.lookup("#id")).setText(proprietario.getId() + "");
-//
-//                itemProprietario.lookup("FlowPane").setVisible(false);
-//
-//                addItem(itemProprietario);
-//            });
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+            gastosItems.getChildren().clear();
+            gastos.forEach(gasto -> {
+
+                AnchorPane itemGasto = (AnchorPane) getScene("Item.fxml");
+                ((Label) itemGasto.lookup("#title")).setText(gasto.getTipoDeGastos().getNome());
+                ((Label) itemGasto.lookup("#description")).setText("Descrição: " + gasto.getDescricao()
+                        + "\nValor: " + gasto.getValor() + "   |   " + arrumarData(gasto.getData()));
+                AnchorPane.setLeftAnchor((Label) itemGasto.lookup("#title"), 25.0);
+                AnchorPane.setLeftAnchor((Label) itemGasto.lookup("#description"), 25.0);
+                ((Label) itemGasto.lookup("#id")).setText(gasto.getId() + "");
+
+                itemGasto.lookup("FlowPane").setVisible(false);
+
+                addItem(itemGasto);
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -156,6 +156,7 @@ public class TelaGastos implements Initializable {
             gastos.setDescricao(edit.textFieldDescricao.getText());
             gastos.setValor(Double.parseDouble(edit.textFieldValor.getText()));
             gastos.setData(Date.valueOf(edit.datePicker.getValue().toString()));
+            gastos.setVeiculo(veiculo);
 
             Run.gastosControle.incluir(gastos);
 
@@ -167,24 +168,16 @@ public class TelaGastos implements Initializable {
 
     public void alterarGasto(){
         try {
-            Proprietario proprietario = new Proprietario();
-            ProprietariosEdit proprietariosEdit = Run.proprietariosEdit;
-            proprietario.setId(idAtual);
-            proprietario.setCPF(proprietariosEdit.textFieldCPF.getText());
-            proprietario.setNome(proprietariosEdit.textFieldNome.getText());
-            Telefone telefone = new Telefone();
-            telefone.setDDI(Integer.parseInt(proprietariosEdit.textFieldDDI.getText()));
-            telefone.setDDD(Integer.parseInt(proprietariosEdit.textFieldDDD.getText()));
-            telefone.setNumero(Integer.parseInt(proprietariosEdit.textFieldNumero.getText()));
+            Gastos gastos = new Gastos();
+            GastosEdit edit = Run.gastosEdit;
+            gastos.setId(idAtual);
+            gastos.setTipoDeGastos(Run.tipoDeGastosControle.buscar(edit.comboBoxTipoDeGasto.getValue() + ""));
+            gastos.setDescricao(edit.textFieldDescricao.getText());
+            gastos.setValor(Double.parseDouble(edit.textFieldValor.getText()));
+            gastos.setData(Date.valueOf(edit.datePicker.getValue().toString()));
+            gastos.setVeiculo(veiculo);
 
-            proprietario.setTelefone(telefone);
-
-            proprietario.setEmail(proprietariosEdit.textFieldEmail.getText());
-            proprietario.setCNH(proprietariosEdit.textFieldNumeroCNH.getText());
-            proprietario.setCategoria(CategoriaCNH.valueOf(proprietariosEdit.comboBoxCategoriaCNH.getValue() + ""));
-            //proprietario.setNumeroDeCarros(gastosHashMap.get(idAtual).getNumeroDeCarros());
-
-            Run.proprietarioControle.alterar(proprietario);
+            Run.gastosControle.alterar(gastos);
 
             listar();
         } catch (Exception e) {
@@ -243,7 +236,15 @@ public class TelaGastos implements Initializable {
 
     @FXML
     void gerarGrafico(ActionEvent event) {
-
+        Stage novaTela = new Stage();
+        novaTela.setTitle("Gráfico de " + veiculo.getModelo().getNome() + " da placa " + veiculo.getPlaca() + " - " + Integer.parseInt(textFieldAno.getText()));
+        novaTela.setOnShown(windowEvent -> {
+            Run.telaGrafico.borderPane.setCenter(Run.telaGrafico.buildBarChartMensal());
+        });
+        novaTela.setScene(new Scene((Parent) getScene("TelaGrafico.fxml")));
+        Run.telaGrafico.veiculo = veiculo;
+        Run.telaGrafico.ano = Integer.parseInt(textFieldAno.getText());
+        novaTela.show();
     }
 
     @FXML

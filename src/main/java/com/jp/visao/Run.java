@@ -26,6 +26,8 @@ public class Run {
 
     public static TelaGastos telaGastos;
 
+    public static TelaGrafico telaGrafico;
+
     public static MarcasEdit marcasEdit;
 
     public static ModelosEdit modelosEdit;
