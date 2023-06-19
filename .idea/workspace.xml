@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="57341413-cd13-44ba-aa29-fa68173f3b4f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/tools/GerarPDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/tools/GerarPDF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/controle/GastosControle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/controle/GastosControle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/controle/IGastosControle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/controle/IGastosControle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/GastosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/GastosDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/IGastosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/persistencia/IGastosDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1687132516096</updated>
       <workItem from="1687132516099" duration="160000" />
-      <workItem from="1687137996327" duration="7777000" />
+      <workItem from="1687137996327" duration="9384000" />
     </task>
     <servers />
   </component>

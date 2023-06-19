@@ -430,6 +430,20 @@ public class GastosDao implements IGastosDao{
     }
 
     @Override
+    public double[] valorTotalMes(Veiculo objeto, int ano) throws Exception {
+        HashMap<Integer, ArrayList> hm = listarPorMes(objeto,ano);
+        double[] saida = new double[12];
+        for(int i = 1; i < 13; i++) {
+            double somaMes;
+            somaMes = 0;
+            ArrayList<Gastos> GA = hm.get(i);
+            somaMes = GA.stream().mapToDouble(Gastos::getValor).sum();
+            saida[i - 1] = somaMes;
+        }
+        return saida;
+    }
+
+    @Override
     public ArrayList<Gastos> filtrarGastos(Collection<Gastos> gastos, String filtro) throws Exception {
         ArrayList<Gastos> GA = new ArrayList<>();
         gastos.forEach(gasto -> {

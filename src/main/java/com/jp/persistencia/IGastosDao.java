@@ -21,5 +21,7 @@ public interface IGastosDao {
 
     Gastos buscar(TipoDeGastos tipoDeGastos)throws Exception;
 
+    double[] valorTotalMes(Veiculo objeto, int ano) throws Exception;
+
     ArrayList<Gastos> filtrarGastos(Collection<Gastos> gastos, String filtro)throws Exception;
 }

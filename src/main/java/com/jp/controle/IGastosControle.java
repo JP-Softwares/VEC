@@ -16,5 +16,7 @@ public interface IGastosControle {
     Gastos buscar(int id) throws Exception;
     Gastos buscar(TipoDeGastos TipoDeGastos) throws Exception;
 
+    double[] valorTotalMes(Veiculo objeto, int ano) throws Exception;
+
     ArrayList<Gastos> filtrarGastos(Collection gastos, String filtro)throws Exception;
 }
