@@ -93,7 +93,7 @@ public class GerarPDF {
             soma = 0.0;
 
             if(cont > LimitePagina){
-                document.newPage();
+                //document.newPage();
                 cont = 0;
             }
             document.add(new Paragraph("\n \nMarço", FontFactory.getFont( FontFactory.TIMES_BOLD, 15)));
@@ -103,7 +103,7 @@ public class GerarPDF {
                 Iterator<Gastos> listaMarco = hm.get(3).iterator();
                 while(listaMarco.hasNext()){
                     if(cont > LimitePagina){
-                        document.newPage();
+                        //document.newPage();
                         cont = 0;
                     }
                     Gastos aux1 = listaMarco.next();
@@ -122,7 +122,7 @@ public class GerarPDF {
             soma = 0.0;
 
             if(cont > LimitePagina){
-                document.newPage();
+                //document.newPage();
                 cont = 0;
             }
 
@@ -229,7 +229,6 @@ public class GerarPDF {
                 while(listaJulho.hasNext()){
                     if(cont > LimitePagina){
                         //document.newPage();
-                        System.out.println(cont + "");
                         cont = 0;
                     }
                     Gastos aux1 = listaJulho.next();
@@ -250,8 +249,6 @@ public class GerarPDF {
 
             if(cont > LimitePagina){
                 //document.newPage();
-
-                System.out.println(cont + " aquiznho");
                 cont = 0;
             }
 
@@ -282,7 +279,6 @@ public class GerarPDF {
 
             if(cont > LimitePagina){
                 //document.newPage();
-                System.out.println(cont + "aqui");
                 cont = 0;
             }
 
