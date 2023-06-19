@@ -66,6 +66,11 @@ public class GastosControle implements IGastosControle{
     }
 
     @Override
+    public HashMap<String, Double> valorTotalTipo(Veiculo objeto, int ano) throws Exception {
+        return GastosPersistencia.valorTotalTipo(objeto,ano);
+    }
+
+    @Override
     public ArrayList<Gastos> filtrarGastos(Collection gastos, String filtro) throws Exception {
         return GastosPersistencia.filtrarGastos(gastos,filtro);
     }

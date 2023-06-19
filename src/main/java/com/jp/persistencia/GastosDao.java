@@ -449,7 +449,7 @@ public class GastosDao implements IGastosDao{
         return saida;
     }
 
-    public double[] valorTotalTipo(Veiculo objeto, int ano) throws Exception {
+    public HashMap<String, Double> valorTotalTipo(Veiculo objeto, int ano) throws Exception {
         HashMap<Integer, ArrayList> hm = listarPorMes(objeto, ano);
         HashMap<String, Double> tp = new HashMap<>();
         //coloco os tipos de gasto em uma lista de depois preencho um hashmap usando eles de key;
@@ -470,20 +470,18 @@ public class GastosDao implements IGastosDao{
                     Gastos atual = indice.next();
                     TipoDeGastos aux = atual.getTipoDeGastos();
                     //Usando o Tipo de Gasto como Key eu consigo checar se ja existe uma Arraylist de gastos Relacionada a ele ou não
-                    if(tp.get(aux.getNome()) == null){
+                    if(tp.get(aux.getNome()) == 0.0){
                         //se não existir eu crio uma vazia, coloco o gasto atual nela e guardo no HashMap
-                        ArrayList<Gastos> Comgastos = new ArrayList<>();
-                        Comgastos.add(atual);
-                        //tp.put(aux.getNome(),Comgastos);
+                        tp.put(aux.getNome(), atual.getValor());
                     }else{
                         //se ja existir eu adiciono o Gasto na Arraylist
-                        //tp.get(aux.getNome()).add(atual);
+                        tp.put(aux.getNome(),tp.get(aux.getNome()) + atual.getValor());
                     }
                 }
             }
 
         }
-        return null;
+        return tp;
     }
 
 

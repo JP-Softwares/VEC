@@ -23,5 +23,7 @@ public interface IGastosDao {
 
     double[] valorTotalMes(Veiculo objeto, int ano) throws Exception;
 
+    public HashMap<String, Double> valorTotalTipo(Veiculo objeto, int ano) throws Exception;
+
     ArrayList<Gastos> filtrarGastos(Collection<Gastos> gastos, String filtro)throws Exception;
 }

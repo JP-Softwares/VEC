@@ -18,5 +18,7 @@ public interface IGastosControle {
 
     double[] valorTotalMes(Veiculo objeto, int ano) throws Exception;
 
+    public HashMap<String, Double> valorTotalTipo(Veiculo objeto, int ano) throws Exception;
+
     ArrayList<Gastos> filtrarGastos(Collection gastos, String filtro)throws Exception;
 }
