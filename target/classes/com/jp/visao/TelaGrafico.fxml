@@ -13,7 +13,6 @@
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#handleMostrarGraficoMensal" text="Mostrar Gráfico Mensal" />
                         <MenuItem mnemonicParsing="false" onAction="#handleMostrarGraficoPorTipo" text="Mostrar Gráfico por Tipo" />
-                        <MenuItem mnemonicParsing="false" onAction="#handleClose" text="Close" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
