@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="57341413-cd13-44ba-aa29-fa68173f3b4f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/jp/imagens/Marcas/teste.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/teste.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_06_2023_11_24_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_06_2023_11_24__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jp/tools/ConexaoBD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jp/tools/ConexaoBD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/imagens/Marcas/Fiat.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/imagens/Marcas/Santaninha.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/imagens/Marcas/Toyota.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/imagens/Modelos/Potente.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/imagens/Modelos/Teste2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/imagens/Modelos/camaro.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/imagens/Modelos/fiat uno.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/imagens/TipoDeGasto/Teste.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaGrafico.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/jp/visao/TelaGrafico.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="57341413-cd13-44ba-aa29-fa68173f3b4f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,12 +33,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Woly/Desktop/Busca-em-Arvores",
+    "last_opened_file_path": "C:/Users/aluno/Documents/GitHub/VEC",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -91,27 +74,11 @@
       <updated>1687132516096</updated>
       <workItem from="1687132516099" duration="160000" />
       <workItem from="1687137996327" duration="10971000" />
-      <workItem from="1689476699229" duration="2690000" />
-      <workItem from="1689554906667" duration="2004000" />
-      <workItem from="1694049467875" duration="43000" />
+      <workItem from="1695945835679" duration="1010000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/jp/tools/ConexaoBD.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
